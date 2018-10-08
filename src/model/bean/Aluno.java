@@ -30,7 +30,7 @@ public class Aluno extends Pessoa{
     
     public Aluno(String cpf){
         super();
-        super.cpf = cpf;
+        super.CPF = cpf;
     }
     
     public Aluno(String nome, String sexo, String CPF, String RG, String CEP, String fone1, 
