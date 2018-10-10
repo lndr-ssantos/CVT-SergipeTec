@@ -46,7 +46,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         modelo.setNumRows(0);
         CursoDAO cdao = new CursoDAO();
         cdao.show(nomeConsulta);
-        
+
         cdao.show(nomeConsulta).forEach((c) -> {
             modelo.addRow(new Object[]{
                 c.getCodCurso(),
@@ -1124,9 +1124,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoBoxActionPerformed
 
     private void estadoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_estadoBoxItemStateChanged
-
-         cidadeBox.removeAllItems();
-
         cidadeBox.removeAllItems();
 
         int idUF = 0;
@@ -1213,34 +1210,36 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             case "TO":
                 idUF = 17;
                 break;
-            case "":
-                idUF = 0;
+            case "Selecione um estado":
+                cidadeBox.removeAllItems();
                 break;
         }
 
-        try {
-            //URL API IBGE para municipios
-            URL url = new URL("https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + idUF + "/municipios");
-            
-            //JSON retornado para a variável jsonScanner. String criada com o JSON retornado
-            Scanner jsonScanner = new Scanner(url.openStream());
-            String jsonString = "";
-            while (jsonScanner.hasNext()) {
-                jsonString += jsonScanner.nextLine();
-            }
+        if (idUF > 0) {
+            try {
+                //URL API IBGE para municipios
+                URL url = new URL("https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + idUF + "/municipios");
 
-            //Parsing da String para JSON array. Assim é possível acessar as informações retornadas
-            JSONArray jsonarray = new JSONArray(jsonString);
-            List municipios = new ArrayList();
-            for (int i = 0; i < jsonarray.length(); i++) {
-                JSONObject jsonobject = jsonarray.getJSONObject(i);
-                municipios.add(jsonobject.getString("nome"));
+                //JSON retornado para a variável jsonScanner. String criada com o JSON retornado
+                Scanner jsonScanner = new Scanner(url.openStream());
+                String jsonString = "";
+                while (jsonScanner.hasNext()) {
+                    jsonString += jsonScanner.nextLine();
+                }
+
+                //Parsing da String para JSON array. Assim é possível acessar as informações retornadas
+                JSONArray jsonarray = new JSONArray(jsonString);
+                List municipios = new ArrayList();
+                for (int i = 0; i < jsonarray.length(); i++) {
+                    JSONObject jsonobject = jsonarray.getJSONObject(i);
+                    municipios.add(jsonobject.getString("nome"));
+                }
+
+                for (Object municipio : municipios) {
+                    cidadeBox.addItem(municipio.toString());
+                }
+            } catch (Exception e) {
             }
-            
-            for (Object municipio : municipios) {
-                cidadeBox.addItem(municipio.toString());
-            }
-        } catch (Exception e) {
         }
     }//GEN-LAST:event_estadoBoxItemStateChanged
 
@@ -1395,19 +1394,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        
         java.awt.EventQueue.invokeLater(() -> {
             new SistemaDeCadastro().setVisible(true);
         });
     }
-    
+
     //<editor-fold defaultstate="collapsed" desc="Declaração de variáveis"> 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoRua;
