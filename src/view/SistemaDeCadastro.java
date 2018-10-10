@@ -10,6 +10,7 @@ import br.com.parg.viacep.ViaCEPException;
 import model.bean.Aluno;
 import model.dao.AlunoDAO;
 import java.awt.CardLayout;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ import model.bean.Curso;
 import model.bean.Responsavel;
 import model.dao.CursoDAO;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -1235,10 +1237,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     municipios.add(jsonobject.getString("nome"));
                 }
 
-                for (Object municipio : municipios) {
+                municipios.forEach((municipio) -> {
                     cidadeBox.addItem(municipio.toString());
-                }
-            } catch (Exception e) {
+                });
+            } catch (IOException | JSONException e) {
             }
         }
     }//GEN-LAST:event_estadoBoxItemStateChanged
