@@ -27,17 +27,7 @@ public class Aluno extends Pessoa{
     }
     
     //instanciando a classe
-<<<<<<< HEAD
-    public Aluno() {
-=======
-    
-    public Aluno(){
-        //construtor vazio por causa da linha 6696 do SistemaDeCadastro.java
-    }
-    
-    public Aluno(){
-        //construtor vazio por causa da linha 6696 do SistemaDeCadastro.java
-    }
+
     
     public Aluno(){
         //construtor vazio por causa da linha 6696 do SistemaDeCadastro.java
@@ -46,13 +36,6 @@ public class Aluno extends Pessoa{
     public Aluno(String cpf){
         super();
         super.setCPF(cpf);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
-=======
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
->>>>>>> Stashed changes
     }
     
     public Aluno(String nome, String sexo, String CPF, String RG, String CEP, String fone1, 

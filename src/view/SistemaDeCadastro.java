@@ -5,60 +5,15 @@
  */
 package view;
 
-<<<<<<< Updated upstream
-//import connection.ConnectionFactory;
-import br.com.parg.viacep.ViaCEP;
-import br.com.parg.viacep.ViaCEPException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-import model.bean.Aluno;
-import model.dao.AlunoDAO;
-import java.awt.CardLayout;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-import br.com.parg.viacep.ViaCEP;
-import br.com.parg.viacep.ViaCEPException;
-import model.bean.Aluno;
-import model.dao.AlunoDAO;
-import java.awt.CardLayout;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-=======
-//import connection.ConnectionFactory;
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import model.bean.Aluno;
 import model.dao.AlunoDAO;
 import java.awt.CardLayout;
-=======
-//import connection.ConnectionFactory;
-import br.com.parg.viacep.ViaCEP;
-import br.com.parg.viacep.ViaCEPException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-import model.bean.Aluno;
-import model.dao.AlunoDAO;
-import java.awt.CardLayout;
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
->>>>>>> Stashed changes
-//import java.io.IOException;
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.SQLException;
-//import java.time.LocalDate;
-//import java.util.Iterator;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
-=======
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
->>>>>>> Stashed changes
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -91,23 +46,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         modelo.setNumRows(0);
         CursoDAO cdao = new CursoDAO();
         cdao.show(nomeConsulta);
-<<<<<<< Updated upstream
         
         cdao.show(nomeConsulta).forEach((c) -> {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        for (Curso c : cdao.show(nomeConsulta)) {
-=======
-        
-        cdao.show(nomeConsulta).forEach((c) -> {
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
-=======
-        
-        cdao.show(nomeConsulta).forEach((c) -> {
->>>>>>> 98fc059b058ca4da4debd98724b84b819be0aef5
->>>>>>> Stashed changes
             modelo.addRow(new Object[]{
                 c.getCodCurso(),
                 c.getNomeCurso()
