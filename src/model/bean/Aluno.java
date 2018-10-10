@@ -28,6 +28,10 @@ public class Aluno extends Pessoa{
     
     //instanciando a classe
     
+    public Aluno(){
+        //construtor vazio por causa da linha 6696 do SistemaDeCadastro.java
+    }
+    
     public Aluno(String cpf){
         super();
         super.setCPF(cpf);
