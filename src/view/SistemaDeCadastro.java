@@ -5,6 +5,7 @@
  */
 package view;
 
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,10 @@ import br.com.parg.viacep.ViaCEPException;
 import model.bean.Aluno;
 import model.dao.AlunoDAO;
 import java.awt.CardLayout;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -1124,7 +1129,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoBoxActionPerformed
 
     private void estadoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_estadoBoxItemStateChanged
+
+         cidadeBox.removeAllItems();
+
         cidadeBox.removeAllItems();
+
         int idUF = 0;
 
         switch (estadoBox.getSelectedItem().toString()) {
