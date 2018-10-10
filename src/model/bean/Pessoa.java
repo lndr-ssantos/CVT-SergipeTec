@@ -3,7 +3,7 @@ package model.bean;
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String sexo; //M, F, O
     private String CPF;

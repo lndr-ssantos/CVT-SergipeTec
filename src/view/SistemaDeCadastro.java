@@ -5,6 +5,11 @@
  */
 package view;
 
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
 import model.bean.Aluno;
@@ -30,6 +35,7 @@ import org.json.JSONObject;
  * @author rodrygo.matos
  */
 public class SistemaDeCadastro extends javax.swing.JFrame {
+
     /**
      * Creates new form Tela
      */
@@ -37,10 +43,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) tableTurma.getModel();
         tableTurma.setRowSorter(new TableRowSorter(modelo));
-        
+
     }
-    
-    public void readTable(String nomeConsulta){
+
+    public void readTable(String nomeConsulta) {
         DefaultTableModel modelo = (DefaultTableModel) tableTurma.getModel();
         modelo.setNumRows(0);
         CursoDAO cdao = new CursoDAO();
@@ -53,8 +59,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             });
         });
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -220,7 +225,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         labelNaturalidade.setText("Naturalidade");
 
-        estadoBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RP", "SC", "SP", "SE", "TO" }));
+        estadoBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um estado", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RP", "SC", "SP", "SE", "TO" }));
         estadoBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 estadoBoxItemStateChanged(evt);
@@ -1124,7 +1129,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoBoxActionPerformed
 
     private void estadoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_estadoBoxItemStateChanged
+
          cidadeBox.removeAllItems();
+
+        cidadeBox.removeAllItems();
+
         int idUF = 0;
 
         switch (estadoBox.getSelectedItem().toString()) {
@@ -1268,18 +1277,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setCidadeNasc(cidadeBox.getSelectedItem().toString());
             aluno.setEstadoNasc(estadoBox.getSelectedItem().toString());
             aluno.setNumResidencia(Integer.parseInt(campoNumero.getText()));
-            
+
             responsavel.setNome(campoNomeResponsavel.getText());
             responsavel.setCPF(campoCPFResponsavel.getText());
             responsavel.setRG(campoRGResponsavel.getText());
-            
+
             aluno.setResponsavel(responsavel);
-            
+
             alunoDAO.save(aluno);
         }
-        
-        
-
     }//GEN-LAST:event_botaoProximoActionPerformed
 
     private void campoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRGActionPerformed
@@ -1295,24 +1301,24 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelCursoTurma");
     }//GEN-LAST:event_cadastrarCursoTurmaActionPerformed
-    
+
     private void campoCEPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoCEPFocusLost
-        if(!campoCEP.getText().equals("")){
-        try {
-            ViaCEP viacep = new ViaCEP();           
-            viacep.buscar(campoCEP.getText().trim());
-            campoEstado.setText(viacep.getUf());
-            campoCidade.setText(viacep.getLocalidade());
-            campoBairro.setText(viacep.getBairro());
-            CampoRua.setText(viacep.getLogradouro());
-        } catch (ViaCEPException ex) {
-            campoEstado.setText("");
-            campoCidade.setText("");
-            campoBairro.setText("");
-            CampoRua.setText("");
-            Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        }else{
+        if (!campoCEP.getText().equals("")) {
+            try {
+                ViaCEP viacep = new ViaCEP();
+                viacep.buscar(campoCEP.getText().trim());
+                campoEstado.setText(viacep.getUf());
+                campoCidade.setText(viacep.getLocalidade());
+                campoBairro.setText(viacep.getBairro());
+                CampoRua.setText(viacep.getLogradouro());
+            } catch (ViaCEPException ex) {
+                campoEstado.setText("");
+                campoCidade.setText("");
+                campoBairro.setText("");
+                CampoRua.setText("");
+                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
             campoEstado.setText("");
             campoCidade.setText("");
             campoBairro.setText("");
@@ -1331,7 +1337,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_menuConsultarAlunosActionPerformed
 
     private void consultarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarCursoActionPerformed
-        
+
         readTable(campoConsultarCurso.getText().trim());
     }//GEN-LAST:event_consultarCursoActionPerformed
 
@@ -1344,7 +1350,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         CursoDAO cursoDAO = new CursoDAO();
         if (campoNomeCurso.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
-        }else{
+        } else {
             curso.setNomeCurso(campoNomeCurso.getText());
             cursoDAO.save(curso);
         }
@@ -1406,7 +1412,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             new SistemaDeCadastro().setVisible(true);
         });
     }
-
+    
+    //<editor-fold defaultstate="collapsed" desc="Declaração de variáveis"> 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CampoRua;
     private javax.swing.JScrollPane ScrollPaneCurso;
@@ -1538,4 +1545,5 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTable tableCurso1;
     private javax.swing.JTable tableTurma;
     // End of variables declaration//GEN-END:variables
+    // </editor-fold>
 }
