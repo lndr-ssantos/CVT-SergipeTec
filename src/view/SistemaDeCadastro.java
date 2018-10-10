@@ -1210,7 +1210,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             case "TO":
                 idUF = 17;
                 break;
-            case "Selecione umss estado":
+            case "Selecione um estado":
                 cidadeBox.removeAllItems();
                 break;
         }
