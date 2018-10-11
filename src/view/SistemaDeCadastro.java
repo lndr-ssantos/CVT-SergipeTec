@@ -719,7 +719,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRadioSexoProfessorO))
                     .addComponent(botaoCadastroProf))
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
         painelCadastroProfessorLayout.setVerticalGroup(
             painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,9 +742,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(jRadioSexoProfessorM)
                     .addComponent(jRadioSexoProfessorF)
                     .addComponent(jRadioSexoProfessorO))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoCadastroProf)
-                .addContainerGap(471, Short.MAX_VALUE))
+                .addContainerGap(501, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelCadastroProfessor, "painelCadastroProfessor");
