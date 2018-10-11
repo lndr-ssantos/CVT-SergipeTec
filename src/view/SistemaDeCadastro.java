@@ -66,12 +66,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
-        buttonGroup5 = new javax.swing.ButtonGroup();
-        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroupSexoAluno = new javax.swing.ButtonGroup();
+        buttonGroupEnsinoFM = new javax.swing.ButtonGroup();
+        buttonGroupEnsinoM = new javax.swing.ButtonGroup();
+        buttonGroupNivelS = new javax.swing.ButtonGroup();
+        buttonGroupDProfissionais = new javax.swing.ButtonGroup();
         buttonGroupSexoProfessor = new javax.swing.ButtonGroup();
         painelPrincipal = new javax.swing.JPanel();
         painelGuiasAluno = new javax.swing.JTabbedPane();
@@ -79,9 +78,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelNome = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
         labelSexo = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        radioMasc = new javax.swing.JRadioButton();
+        radioFem = new javax.swing.JRadioButton();
+        radioOutro = new javax.swing.JRadioButton();
         labelNaturalidade = new javax.swing.JLabel();
         estadoBox = new javax.swing.JComboBox<>();
         cidadeBox = new javax.swing.JComboBox<>();
@@ -234,14 +233,14 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         labelSexo.setText("Sexo");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Masculino");
+        buttonGroupSexoAluno.add(radioMasc);
+        radioMasc.setText("Masculino");
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Feminino");
+        buttonGroupSexoAluno.add(radioFem);
+        radioFem.setText("Feminino");
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setText("Outro");
+        buttonGroupSexoAluno.add(radioOutro);
+        radioOutro.setText("Outro");
 
         labelNaturalidade.setText("Naturalidade");
 
@@ -372,11 +371,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelSexo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton3)
+                                .addComponent(radioMasc)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton4)
+                                .addComponent(radioFem)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton5))
+                                .addComponent(radioOutro))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelNaturalidade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -412,9 +411,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSexo)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
+                    .addComponent(radioMasc)
+                    .addComponent(radioFem)
+                    .addComponent(radioOutro))
                 .addGap(18, 18, 18)
                 .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNaturalidade)
@@ -477,26 +476,26 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         labelEFM.setText("Ensino Fundamental Maior");
 
-        buttonGroup2.add(botaoRadioEFMC);
+        buttonGroupEnsinoFM.add(botaoRadioEFMC);
         botaoRadioEFMC.setText("Completo");
 
-        buttonGroup2.add(botaoRadioEFMI);
+        buttonGroupEnsinoFM.add(botaoRadioEFMI);
         botaoRadioEFMI.setText("Incompleto");
 
         labelEM.setText("Ensino Médio");
 
-        buttonGroup3.add(botaoRadioEMC);
+        buttonGroupEnsinoM.add(botaoRadioEMC);
         botaoRadioEMC.setText("Completo");
 
-        buttonGroup3.add(botaoRadioEMI);
+        buttonGroupEnsinoM.add(botaoRadioEMI);
         botaoRadioEMI.setText("Incompleto");
 
         labelNS.setText("Nível Superior");
 
-        buttonGroup4.add(botaoRadioNSC);
+        buttonGroupNivelS.add(botaoRadioNSC);
         botaoRadioNSC.setText("Completo");
 
-        buttonGroup4.add(botaoRadioNSI);
+        buttonGroupNivelS.add(botaoRadioNSI);
         botaoRadioNSI.setText("Incompleto");
 
         javax.swing.GroupLayout painelDadosEscolaresLayout = new javax.swing.GroupLayout(painelDadosEscolares);
@@ -548,22 +547,22 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         painelGuiasAluno.addTab("D. Escolares", painelDadosEscolares);
 
-        buttonGroup5.add(botaoRadioDP7);
+        buttonGroupDProfissionais.add(botaoRadioDP7);
         botaoRadioDP7.setText("Não encontrei emprego ou atividade remunerada");
 
-        buttonGroup5.add(botaoRadioDP8);
+        buttonGroupDProfissionais.add(botaoRadioDP8);
         botaoRadioDP8.setText("Somente estudo");
 
-        buttonGroup5.add(botaoRadioDP9);
+        buttonGroupDProfissionais.add(botaoRadioDP9);
         botaoRadioDP9.setText("Empregado com carteira assinada");
 
-        buttonGroup5.add(botaoRadioDP10);
+        buttonGroupDProfissionais.add(botaoRadioDP10);
         botaoRadioDP10.setText("Empregado sem carteira assinada");
 
-        buttonGroup5.add(botaoRadioDP11);
+        buttonGroupDProfissionais.add(botaoRadioDP11);
         botaoRadioDP11.setText("Profissional liberal ou tem próprio negócio");
 
-        buttonGroup5.add(botaoRadioDP12);
+        buttonGroupDProfissionais.add(botaoRadioDP12);
         botaoRadioDP12.setText("Outro");
 
         javax.swing.GroupLayout painelDadosProfissionaisLayout = new javax.swing.GroupLayout(painelDadosProfissionais);
@@ -1192,7 +1191,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(consultarCursoTA))
                         .addComponent(ScrollPaneCurso2)))
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         painelConsultaCursoTurmaAlunosLayout.setVerticalGroup(
             painelConsultaCursoTurmaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1214,7 +1213,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addComponent(botaoConsultarTurma)
                 .addGap(18, 18, 18)
                 .addComponent(scrollPaneAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelConsultaCursoTurmaAlunos, "painelConsultaCursoTurma");
@@ -1430,6 +1429,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         AlunoDAO alunoDAO = new AlunoDAO();
         if (campoNome.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
+        } else if (!radioMasc.isSelected() & !radioFem.isSelected() & !radioOutro.isSelected()){
+            JOptionPane.showMessageDialog(null, "Informe o sexo");
+        } else if (estadoBox.getSelectedItem().toString().equals("Selecione um estado")){
+            JOptionPane.showMessageDialog(null, "Selecione um estado");
         } else if (campoDataNascimento.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Data de nascimento");
         } else if (campoCPF.getText().trim().equals("")) {
@@ -1442,7 +1445,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Telefone");
         } else if (campoCEP.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
-        } else {
+        }else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
             aluno.setCPF(campoCPF.getText());
@@ -1629,12 +1632,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JRadioButton botaoRadioEMI;
     private javax.swing.JRadioButton botaoRadioNSC;
     private javax.swing.JRadioButton botaoRadioNSI;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroupDProfissionais;
+    private javax.swing.ButtonGroup buttonGroupEnsinoFM;
+    private javax.swing.ButtonGroup buttonGroupEnsinoM;
+    private javax.swing.ButtonGroup buttonGroupNivelS;
+    private javax.swing.ButtonGroup buttonGroupSexoAluno;
     private javax.swing.ButtonGroup buttonGroupSexoProfessor;
     private javax.swing.JMenuItem cadastrarAluno;
     private javax.swing.JMenuItem cadastrarCursoTurma;
@@ -1686,9 +1688,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> estadoBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioSexoProfessorF;
     private javax.swing.JRadioButton jRadioSexoProfessorM;
     private javax.swing.JRadioButton jRadioSexoProfessorO;
@@ -1753,6 +1752,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel painelDadosResponsavel;
     private javax.swing.JTabbedPane painelGuiasAluno;
     private javax.swing.JPanel painelPrincipal;
+    private javax.swing.JRadioButton radioFem;
+    private javax.swing.JRadioButton radioMasc;
+    private javax.swing.JRadioButton radioOutro;
     private javax.swing.JScrollPane scrollPaneAluno;
     private javax.swing.JScrollPane scrollPaneAluno1;
     private javax.swing.JScrollPane scrollPaneAluno2;
