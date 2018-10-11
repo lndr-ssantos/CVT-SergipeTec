@@ -564,6 +564,7 @@
                 <Component class="javax.swing.JTextField" name="campoCEP">
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCEPFocusLost"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCEPActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1445,10 +1446,10 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="campoConsultaRGAluno1" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
-                                          <Component id="campoConsultaCPFAluno1" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
-                                          <Component id="campoConsultaNomeAluno1" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
-                                          <Component id="campoConsultaMatAluno1" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Component id="campoConsultaRGProfessor" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                          <Component id="campoConsultaCPFProfessor" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                          <Component id="campoConsultaNomeProfessor" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                          <Component id="campoConsultaMatProfessor" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="scrollPaneTAluno1" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
@@ -1465,22 +1466,22 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelConsultaNomeAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoConsultaNomeAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoConsultaNomeProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelConsultaCPFAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoConsultaCPFAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoConsultaCPFProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelConsultaRGAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoConsultaRGAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoConsultaRGProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelConsultaMatAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoConsultaMatAluno1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoConsultaMatProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="botaoConsultaAluno1" min="-2" max="-2" attributes="0"/>
@@ -1520,28 +1521,45 @@
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoConsultaNomeAluno1">
+            <Component class="javax.swing.JTextField" name="campoConsultaNomeProfessor">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaNomeProfessorFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaNomeProfessorFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaCPFAluno1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoConsultaCPFAluno1">
+            <Component class="javax.swing.JTextField" name="campoConsultaCPFProfessor">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaCPFProfessorFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaCPFProfessorFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoConsultaCPFProfessorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaRGAluno1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="RG"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoConsultaRGAluno1">
+            <Component class="javax.swing.JTextField" name="campoConsultaRGProfessor">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaRGProfessorFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaRGProfessorFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaMatAluno1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoConsultaMatAluno1">
+            <Component class="javax.swing.JTextField" name="campoConsultaMatProfessor">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatProfessorFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatProfessorFocusLost"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1606,8 +1624,13 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="botaoConsultarTurma" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="scrollPaneAluno2" min="-2" pref="141" max="-2" attributes="0"/>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
+=======
+                      <Component id="ScrollPaneTurma" min="-2" pref="220" max="-2" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
+>>>>>>> consulta-professor
                   </Group>
               </Group>
             </DimensionLayout>

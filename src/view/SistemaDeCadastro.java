@@ -187,12 +187,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         tableAluno1 = new javax.swing.JTable();
         labelConsultaNomeAluno1 = new javax.swing.JLabel();
         botaoConsultaAluno1 = new javax.swing.JButton();
-        campoConsultaNomeAluno1 = new javax.swing.JTextField();
+        campoConsultaNomeProfessor = new javax.swing.JTextField();
         labelConsultaCPFAluno1 = new javax.swing.JLabel();
-        campoConsultaCPFAluno1 = new javax.swing.JTextField();
+        campoConsultaCPFProfessor = new javax.swing.JTextField();
         labelConsultaRGAluno1 = new javax.swing.JLabel();
-        campoConsultaRGAluno1 = new javax.swing.JTextField();
+        campoConsultaRGProfessor = new javax.swing.JTextField();
         labelConsultaMatAluno1 = new javax.swing.JLabel();
+<<<<<<< HEAD
         campoConsultaMatAluno1 = new javax.swing.JTextField();
         painelConsultaCursoTurmaAlunos = new javax.swing.JPanel();
         ScrollPaneCurso2 = new javax.swing.JScrollPane();
@@ -202,6 +203,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         scrollPaneAluno2 = new javax.swing.JScrollPane();
         tableCTAluno = new javax.swing.JTable();
         consultarCursoTA = new javax.swing.JButton();
+=======
+        campoConsultaMatProfessor = new javax.swing.JTextField();
+        painelConsultaCursoTurma = new javax.swing.JPanel();
+        ScrollPaneCurso = new javax.swing.JScrollPane();
+        tableCurso = new javax.swing.JTable();
+        ScrollPaneTurma = new javax.swing.JScrollPane();
+        tableTurma = new javax.swing.JTable();
+        consultarCurso = new javax.swing.JButton();
+>>>>>>> consulta-professor
         nomeCursoConsulta = new javax.swing.JLabel();
         consultarConsultarCurso = new javax.swing.JButton();
         campoConsultarCurso = new javax.swing.JTextField();
@@ -311,6 +321,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         campoCEP.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 campoCEPFocusLost(evt);
+            }
+        });
+        campoCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoCEPActionPerformed(evt);
             }
         });
 
@@ -1011,11 +1026,52 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         botaoConsultaAluno1.setText("Consultar");
 
+        campoConsultaNomeProfessor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaNomeProfessorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaNomeProfessorFocusLost(evt);
+            }
+        });
+
         labelConsultaCPFAluno1.setText("CPF");
+
+        campoConsultaCPFProfessor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaCPFProfessorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaCPFProfessorFocusLost(evt);
+            }
+        });
+        campoConsultaCPFProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoConsultaCPFProfessorActionPerformed(evt);
+            }
+        });
 
         labelConsultaRGAluno1.setText("RG");
 
+        campoConsultaRGProfessor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaRGProfessorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaRGProfessorFocusLost(evt);
+            }
+        });
+
         labelConsultaMatAluno1.setText("Código");
+
+        campoConsultaMatProfessor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaMatProfessorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaMatProfessorFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelConsultaProfessorLayout = new javax.swing.GroupLayout(painelConsultaProfessor);
         painelConsultaProfessor.setLayout(painelConsultaProfessorLayout);
@@ -1037,10 +1093,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(labelConsultaCPFAluno1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(campoConsultaRGAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoConsultaCPFAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoConsultaNomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoConsultaMatAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(campoConsultaRGProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoConsultaCPFProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoConsultaNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoConsultaMatProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(scrollPaneTAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 192, Short.MAX_VALUE))))
         );
@@ -1050,19 +1106,19 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultaNomeAluno1)
-                    .addComponent(campoConsultaNomeAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoConsultaNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultaCPFAluno1)
-                    .addComponent(campoConsultaCPFAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoConsultaCPFProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultaRGAluno1)
-                    .addComponent(campoConsultaRGAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoConsultaRGProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelConsultaMatAluno1)
-                    .addComponent(campoConsultaMatAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoConsultaMatProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoConsultaAluno1)
                 .addGap(18, 18, 18)
@@ -1212,8 +1268,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoConsultarTurma)
                 .addGap(18, 18, 18)
+<<<<<<< HEAD
                 .addComponent(scrollPaneAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
+=======
+                .addComponent(ScrollPaneTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+>>>>>>> consulta-professor
         );
 
         painelPrincipal.add(painelConsultaCursoTurmaAlunos, "painelConsultaCursoTurma");
@@ -1571,10 +1632,76 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         cl.show(painelPrincipal, "painelConsultaProfessor");
     }//GEN-LAST:event_menuConsultarProfessorActionPerformed
 
+<<<<<<< HEAD
     private void consultarCursoTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarCursoTAActionPerformed
 
         readTable(campoConsultarCurso.getText().trim());
     }//GEN-LAST:event_consultarCursoTAActionPerformed
+=======
+    private void campoConsultaCPFProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoConsultaCPFProfessorActionPerformed
+
+    private void campoCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCEPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCEPActionPerformed
+
+    private void campoConsultaNomeProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeProfessorFocusGained
+        if(campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+            campoConsultaNomeProfessor.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaNomeProfessorFocusGained
+
+    private void campoConsultaNomeProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeProfessorFocusLost
+        if(!campoConsultaNomeProfessor.getText().equals("")) {
+           campoConsultaCPFProfessor.setEditable(false);
+           campoConsultaRGProfessor.setEditable(false);
+           campoConsultaMatProfessor.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaNomeProfessorFocusLost
+
+    private void campoConsultaCPFProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorFocusGained
+        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+            campoConsultaCPFProfessor.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaCPFProfessorFocusGained
+
+    private void campoConsultaCPFProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorFocusLost
+        if(!campoConsultaCPFProfessor.getText().equals("")) {
+            campoConsultaNomeProfessor.setEditable(false);
+            campoConsultaRGProfessor.setEditable(false);
+            campoConsultaMatProfessor.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaCPFProfessorFocusLost
+
+    private void campoConsultaRGProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGProfessorFocusGained
+        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+            campoConsultaRGProfessor.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaRGProfessorFocusGained
+
+    private void campoConsultaRGProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGProfessorFocusLost
+        if(!campoConsultaRGProfessor.getText().equals("")) {
+            campoConsultaNomeProfessor.setEditable(false);
+            campoConsultaCPFProfessor.setEditable(false);
+            campoConsultaMatProfessor.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaRGProfessorFocusLost
+
+    private void campoConsultaMatProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatProfessorFocusGained
+        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("")) {
+            campoConsultaMatProfessor.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaMatProfessorFocusGained
+
+    private void campoConsultaMatProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatProfessorFocusLost
+        if(!campoConsultaMatProfessor.getText().equals("")) {
+            campoConsultaNomeProfessor.setEditable(false);
+            campoConsultaCPFProfessor.setEditable(false);
+            campoConsultaRGProfessor.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaMatProfessorFocusLost
+>>>>>>> consulta-professor
 
     /**
      * @param args the command line arguments
@@ -1646,13 +1773,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoCodCurso;
     private javax.swing.JTextField campoComplemento;
     private javax.swing.JTextField campoConsultaCPFAluno;
-    private javax.swing.JTextField campoConsultaCPFAluno1;
+    private javax.swing.JTextField campoConsultaCPFProfessor;
     private javax.swing.JTextField campoConsultaMatAluno;
-    private javax.swing.JTextField campoConsultaMatAluno1;
+    private javax.swing.JTextField campoConsultaMatProfessor;
     private javax.swing.JTextField campoConsultaNomeAluno;
-    private javax.swing.JTextField campoConsultaNomeAluno1;
+    private javax.swing.JTextField campoConsultaNomeProfessor;
     private javax.swing.JTextField campoConsultaRGAluno;
-    private javax.swing.JTextField campoConsultaRGAluno1;
+    private javax.swing.JTextField campoConsultaRGProfessor;
     private javax.swing.JTextField campoConsultarCurso;
     private javax.swing.JFormattedTextField campoDataNascimento;
     private javax.swing.JTextField campoEstado;
