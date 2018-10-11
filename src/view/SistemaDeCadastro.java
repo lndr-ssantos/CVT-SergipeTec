@@ -146,12 +146,19 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelNomeCurso = new javax.swing.JLabel();
         campoNomeCurso = new javax.swing.JTextField();
         botaoCurso = new javax.swing.JToggleButton();
-        labelTurmaInicio1 = new javax.swing.JLabel();
-        campoInicioTurma1 = new javax.swing.JFormattedTextField();
-        labelTurmaTermino1 = new javax.swing.JLabel();
-        campoFimTurma1 = new javax.swing.JFormattedTextField();
+        labelTurmaInicio = new javax.swing.JLabel();
+        campoInicioTurma = new javax.swing.JFormattedTextField();
+        labelTurmaTermino = new javax.swing.JLabel();
+        campoFimTurma = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         botaoCurso1 = new javax.swing.JToggleButton();
+        labelQntVagas = new javax.swing.JLabel();
+        campoQntVagas = new javax.swing.JTextField();
+        labelDiaTurma = new javax.swing.JLabel();
+        comboDia1 = new javax.swing.JComboBox<>();
+        comboDia2 = new javax.swing.JComboBox<>();
+        campoInicioTurma2 = new javax.swing.JTextField();
+        campoFimTurma2 = new javax.swing.JTextField();
         painelConsultaAluno = new javax.swing.JPanel();
         scrollPaneTAluno = new javax.swing.JScrollPane();
         tableAluno = new javax.swing.JTable();
@@ -678,13 +685,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
-        labelTurmaInicio1.setText("Informe o horário de início da aula da turma");
+        labelTurmaInicio.setText("Informe o horário de início da aula da turma");
 
-        campoInicioTurma1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        campoInicioTurma.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
-        labelTurmaTermino1.setText("Informe o horário de término da aula da turma");
+        labelTurmaTermino.setText("Informe o horário de término da aula da turma");
 
-        campoFimTurma1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+        campoFimTurma.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
         jButton1.setText("Consultar");
 
@@ -695,39 +702,74 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
+        labelQntVagas.setText("Quantidade de vagas disponíveis para a turma");
+
+        labelDiaTurma.setText("Informe o(s) dia(s) da aula da turma");
+
+        comboDia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um dia", "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" }));
+
+        comboDia2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um dia", "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" }));
+
+        campoInicioTurma2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoInicioTurma2ActionPerformed(evt);
+            }
+        });
+
+        campoFimTurma2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoFimTurma2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelCursoTurmaLayout = new javax.swing.GroupLayout(painelCursoTurma);
         painelCursoTurma.setLayout(painelCursoTurmaLayout);
         painelCursoTurmaLayout.setHorizontalGroup(
             painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addComponent(labelNomeCurso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                        .addComponent(botaoCurso)
-                                        .addGap(139, 139, 139)
-                                        .addComponent(jButton1))
-                                    .addComponent(campoNomeCurso)))
-                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelTurmaTermino1)
-                                    .addComponent(labelTurmaInicio1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(campoFimTurma1)
-                                    .addComponent(campoInicioTurma1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                    .addComponent(labelNomeCurso)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                            .addComponent(botaoCurso)
+                                            .addGap(139, 139, 139)
+                                            .addComponent(jButton1))
+                                        .addComponent(campoNomeCurso)))
+                                .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                    .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(labelTurmaTermino)
+                                        .addComponent(labelTurmaInicio)
+                                        .addComponent(labelQntVagas))
+                                    .addGap(10, 10, 10)
+                                    .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                            .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(campoInicioTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(campoFimTurma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(campoInicioTurma2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(campoFimTurma2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(campoQntVagas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(37, 37, 37)
                         .addComponent(botaoCurso1))
                     .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelDiaTurma)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboDia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboDia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(128, 192, Short.MAX_VALUE))
         );
         painelCursoTurmaLayout.setVerticalGroup(
             painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -741,21 +783,30 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(botaoCurso)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelDiaTurma)
+                    .addComponent(comboDia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboDia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTurmaInicio)
+                    .addComponent(campoInicioTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoInicioTurma2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTurmaInicio1)
-                    .addComponent(campoInicioTurma1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelTurmaTermino)
+                    .addComponent(campoFimTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoFimTurma2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTurmaTermino1)
-                    .addComponent(campoFimTurma1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                    .addComponent(labelQntVagas)
+                    .addComponent(campoQntVagas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(botaoCurso1)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
-
-        botaoCurso.getAccessibleContext().setAccessibleName("");
 
         painelPrincipal.add(painelCursoTurma, "painelCursoTurma");
 
@@ -1337,21 +1388,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         readTable(campoConsultarCurso.getText().trim());
     }//GEN-LAST:event_consultarCursoActionPerformed
 
-    private void botaoCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCurso1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoCurso1ActionPerformed
-
-    private void botaoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCursoActionPerformed
-        Curso curso = new Curso();
-        CursoDAO cursoDAO = new CursoDAO();
-        if (campoNomeCurso.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
-        } else {
-            curso.setNomeCurso(campoNomeCurso.getText());
-            cursoDAO.save(curso);
-        }
-    }//GEN-LAST:event_botaoCursoActionPerformed
-
     private void cadastrarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProfessorActionPerformed
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelCadastroProfessor");
@@ -1372,6 +1408,29 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
+
+    private void botaoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCursoActionPerformed
+        Curso curso = new Curso();
+        CursoDAO cursoDAO = new CursoDAO();
+        if (campoNomeCurso.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
+        }else{
+            curso.setNomeCurso(campoNomeCurso.getText());
+            cursoDAO.save(curso);
+        }
+    }//GEN-LAST:event_botaoCursoActionPerformed
+
+    private void botaoCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCurso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoCurso1ActionPerformed
+
+    private void campoInicioTurma2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoInicioTurma2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoInicioTurma2ActionPerformed
+
+    private void campoFimTurma2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoFimTurma2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoFimTurma2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1456,8 +1515,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoConsultarCurso;
     private javax.swing.JFormattedTextField campoDataNascimento;
     private javax.swing.JTextField campoEstado;
-    private javax.swing.JFormattedTextField campoFimTurma1;
-    private javax.swing.JFormattedTextField campoInicioTurma1;
+    private javax.swing.JFormattedTextField campoFimTurma;
+    private javax.swing.JTextField campoFimTurma2;
+    private javax.swing.JFormattedTextField campoInicioTurma;
+    private javax.swing.JTextField campoInicioTurma2;
     private javax.swing.JTextField campoMae;
     private javax.swing.JTextField campoNome;
     private javax.swing.JTextField campoNomeCurso;
@@ -1466,12 +1527,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoNumero;
     private javax.swing.JTextField campoOutro;
     private javax.swing.JTextField campoPai;
+    private javax.swing.JTextField campoQntVagas;
     private javax.swing.JTextField campoRG;
     private javax.swing.JTextField campoRGProf;
     private javax.swing.JTextField campoRGResponsavel;
     private javax.swing.JTextField campoTel1;
     private javax.swing.JTextField campoTel2;
     private javax.swing.JComboBox<String> cidadeBox;
+    private javax.swing.JComboBox<String> comboDia1;
+    private javax.swing.JComboBox<String> comboDia2;
     private javax.swing.JButton consultarCurso;
     private javax.swing.JButton consultarTurma;
     private javax.swing.JComboBox<String> estadoBox;
@@ -1496,6 +1560,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelConsultaNomeAluno;
     private javax.swing.JLabel labelConsultaRGAluno;
     private javax.swing.JLabel labelDataNascimento;
+    private javax.swing.JLabel labelDiaTurma;
     private javax.swing.JLabel labelEFM;
     private javax.swing.JLabel labelEM;
     private javax.swing.JLabel labelEndereco;
@@ -1510,14 +1575,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomeProf;
     private javax.swing.JLabel labelNomeResponsavel;
     private javax.swing.JLabel labelPai;
+    private javax.swing.JLabel labelQntVagas;
     private javax.swing.JLabel labelRG;
     private javax.swing.JLabel labelRGProf;
     private javax.swing.JLabel labelRGResponsavel;
     private javax.swing.JLabel labelRua;
     private javax.swing.JLabel labelSexo;
     private javax.swing.JLabel labelTelefone;
-    private javax.swing.JLabel labelTurmaInicio1;
-    private javax.swing.JLabel labelTurmaTermino1;
+    private javax.swing.JLabel labelTurmaInicio;
+    private javax.swing.JLabel labelTurmaTermino;
     private javax.swing.JLabel labemCPFProf;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenu menuConsultar;
