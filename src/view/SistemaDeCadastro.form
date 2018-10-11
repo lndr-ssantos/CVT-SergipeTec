@@ -1547,7 +1547,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurma2">
+        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurmaAlunos">
           <Properties>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[545, 615]"/>
@@ -1568,7 +1568,7 @@
                           <Component id="scrollPaneAluno2" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
                           <Component id="botaoConsultarTurma" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="consultarTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="consultarConsultarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="ScrollPaneTurma2" alignment="0" pref="500" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="nomeCursoConsulta" min="-2" max="-2" attributes="0"/>
@@ -1579,7 +1579,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="campoCodCurso" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="consultarCurso2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="consultarCursoTA" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="ScrollPaneCurso2" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1595,14 +1595,14 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nomeCursoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoConsultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="consultarCurso2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="consultarCursoTA" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ScrollPaneCurso2" min="-2" pref="141" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="consultarTurma" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultarConsultarCurso" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ScrollPaneTurma2" min="-2" pref="141" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1619,7 +1619,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tableCurso3">
+                <Component class="javax.swing.JTable" name="tableConsultarCursoTA">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="2" rowCount="12">
@@ -1635,7 +1635,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tableTurma2">
+                <Component class="javax.swing.JTable" name="tableCTurma">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="12">
@@ -1655,7 +1655,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tableCAluno2">
+                <Component class="javax.swing.JTable" name="tableCTAluno">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="12">
@@ -1669,12 +1669,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="consultarCurso2">
+            <Component class="javax.swing.JButton" name="consultarCursoTA">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCurso2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCursoTAActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="nomeCursoConsulta">
@@ -1682,7 +1682,7 @@
                 <Property name="text" type="java.lang.String" value="Curso"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="consultarTurma">
+            <Component class="javax.swing.JButton" name="consultarConsultarCurso">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
