@@ -1547,7 +1547,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurma">
+        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurma2">
           <Properties>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[545, 615]"/>
@@ -1564,19 +1564,27 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="consultarTurma" min="-2" max="-2" attributes="0"/>
-                          <Component id="ScrollPaneTurma" pref="500" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="nomeCursoConsulta" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="campoConsultarCurso" min="-2" pref="175" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="consultarCurso" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="scrollPaneAluno2" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="botaoConsultarTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="consultarTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ScrollPaneTurma2" alignment="0" pref="500" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="nomeCursoConsulta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="campoConsultarCurso" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="labelCodCurso" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="campoCodCurso" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="consultarCurso2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="ScrollPaneCurso2" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="ScrollPaneCurso" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace pref="182" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1587,25 +1595,31 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nomeCursoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoConsultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="consultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="consultarCurso2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ScrollPaneCurso" min="-2" pref="221" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ScrollPaneCurso2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="consultarTurma" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ScrollPaneTurma" min="-2" pref="220" max="-2" attributes="0"/>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                      <Component id="ScrollPaneTurma2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="botaoConsultarTurma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="scrollPaneAluno2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace pref="56" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="ScrollPaneCurso">
+            <Container class="javax.swing.JScrollPane" name="ScrollPaneCurso2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tableCurso">
+                <Component class="javax.swing.JTable" name="tableCurso3">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="2" rowCount="12">
@@ -1617,11 +1631,11 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="ScrollPaneTurma">
+            <Container class="javax.swing.JScrollPane" name="ScrollPaneTurma2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tableTurma">
+                <Component class="javax.swing.JTable" name="tableTurma2">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="12">
@@ -1637,12 +1651,30 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="consultarCurso">
+            <Container class="javax.swing.JScrollPane" name="scrollPaneAluno2">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableCAluno2">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="12">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="consultarCurso2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCursoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCurso2ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="nomeCursoConsulta">
@@ -1656,6 +1688,18 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoConsultarCurso">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelCodCurso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoCodCurso">
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="botaoConsultarTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consultar"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
