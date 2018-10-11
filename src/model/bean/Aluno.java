@@ -2,8 +2,6 @@ package model.bean;
 
 //imports para datas
 import java.time.LocalDate; 
-//imports para imagem
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;//prob tirar depois
 
 //holy moly esse classe é grande
@@ -17,8 +15,6 @@ public class Aluno extends Pessoa{
     private String dadosEscolaridade;
     private String dadosProfissionais;
     
-
-    
     //busca todas as turmas em que o aluno está cadastrado
     public ArrayList<Turma> buscaTurmas(){
         ArrayList<Turma> aux = new ArrayList();
@@ -27,10 +23,8 @@ public class Aluno extends Pessoa{
     }
     
     //instanciando a classe
-
-    
     public Aluno(){
-        //construtor vazio por causa da linha 6696 do SistemaDeCadastro.java
+        
     }
     
     public Aluno(String cpf){

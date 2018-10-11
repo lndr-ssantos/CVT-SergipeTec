@@ -940,7 +940,7 @@
                           </Group>
                           <Component id="botaoCadastroProf" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="389" max="32767" attributes="0"/>
+                      <EmptySpace pref="333" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -969,9 +969,9 @@
                           <Component id="jRadioSexoProfessorF" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jRadioSexoProfessorO" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botaoCadastroProf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="501" max="32767" attributes="0"/>
+                      <EmptySpace pref="471" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
