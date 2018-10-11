@@ -590,19 +590,19 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioEFMC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEFMC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioEFMI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEFMI" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioEMC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEMC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioEMI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEMI" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioNSC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioNSC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioNSI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioNSI" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="406" max="32767" attributes="0"/>
@@ -614,21 +614,21 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoRadioEFMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEFMC" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelEFM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEFMI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEFMI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelEM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEMC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEMI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEMI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelNS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="514" max="32767" attributes="0"/>
                       </Group>
@@ -641,7 +641,7 @@
                     <Property name="text" type="java.lang.String" value="Ensino Fundamental Maior"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEFMC">
+                <Component class="javax.swing.JRadioButton" name="radioEFMC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupEnsinoFM"/>
@@ -649,7 +649,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEFMI">
+                <Component class="javax.swing.JRadioButton" name="radioEFMI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupEnsinoFM"/>
@@ -662,7 +662,7 @@
                     <Property name="text" type="java.lang.String" value="Ensino M&#xe9;dio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEMC">
+                <Component class="javax.swing.JRadioButton" name="radioEMC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupEnsinoM"/>
@@ -670,7 +670,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEMI">
+                <Component class="javax.swing.JRadioButton" name="radioEMI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupEnsinoM"/>
@@ -683,7 +683,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xed;vel Superior"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioNSC">
+                <Component class="javax.swing.JRadioButton" name="radioNSC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupNivelS"/>
@@ -691,7 +691,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioNSI">
+                <Component class="javax.swing.JRadioButton" name="radioNSI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupNivelS"/>
@@ -716,13 +716,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="botaoRadioDP7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP11" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP5" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioDP12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioDP6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
                               </Group>
@@ -735,18 +735,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP7" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP8" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP9" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP10" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP11" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoRadioDP12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="450" max="32767" attributes="0"/>
@@ -755,7 +755,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP7">
+                <Component class="javax.swing.JRadioButton" name="radioDP1">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
@@ -763,7 +763,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xe3;o encontrei emprego ou atividade remunerada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP8">
+                <Component class="javax.swing.JRadioButton" name="radioDP2">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
@@ -771,7 +771,7 @@
                     <Property name="text" type="java.lang.String" value="Somente estudo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP9">
+                <Component class="javax.swing.JRadioButton" name="radioDP3">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
@@ -779,7 +779,7 @@
                     <Property name="text" type="java.lang.String" value="Empregado com carteira assinada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP10">
+                <Component class="javax.swing.JRadioButton" name="radioDP4">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
@@ -787,7 +787,7 @@
                     <Property name="text" type="java.lang.String" value="Empregado sem carteira assinada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP11">
+                <Component class="javax.swing.JRadioButton" name="radioDP5">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
@@ -795,7 +795,7 @@
                     <Property name="text" type="java.lang.String" value="Profissional liberal ou tem pr&#xf3;prio neg&#xf3;cio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP12">
+                <Component class="javax.swing.JRadioButton" name="radioDP6">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroupDProfissionais"/>
