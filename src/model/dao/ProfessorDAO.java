@@ -23,13 +23,18 @@ public class ProfessorDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Professor(nome, CPF, RG, sexo, codProf)\n" +
-            "values (?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("insert into Professor(nome, CPF, RG, sexo, fone1, dataNasc, CEP, numResidencia, complemento, codProf)\n" +
+            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, professor.getNome());
             stmt.setString(2, professor.getCPF());
             stmt.setString(3, professor.getRG());
             stmt.setString(4, professor.getSexo());
-            stmt.setString(5, Integer.toString(professor.getCodProf()));
+            stmt.setString(5, professor.getFone1());
+            stmt.setString(6, professor.getDatNasc().toString());
+            stmt.setString(7, professor.getCEP());
+            stmt.setInt(8, professor.getNumResidencia());
+            stmt.setString(9, professor.getComplemento());
+            stmt.setString(10, Integer.toString(professor.getCodProf()));
             
             stmt.executeUpdate();
 

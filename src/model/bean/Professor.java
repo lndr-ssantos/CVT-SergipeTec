@@ -5,6 +5,8 @@ import java.time.LocalDate;
 public class Professor extends Pessoa{
     
     private int codProf;
+    private String CPF;
+    
     
     public Professor(){
         super();

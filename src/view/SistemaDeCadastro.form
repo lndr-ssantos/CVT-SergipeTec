@@ -160,7 +160,7 @@
                                   <Component id="labelEstado" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoEstado" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" pref="324" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" pref="390" max="32767" attributes="0"/>
                                   <Component id="labelCidade" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoCidade" min="-2" pref="138" max="-2" attributes="0"/>
@@ -184,7 +184,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="labelNome" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoNome" pref="635" max="32767" attributes="0"/>
+                                  <Component id="campoNome" pref="709" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -513,6 +513,9 @@
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="SistemaDeCadastro_CampoRua"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelN">
                   <Properties>
@@ -608,7 +611,7 @@
                                   <Component id="radioNSI" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="406" max="32767" attributes="0"/>
+                          <EmptySpace pref="421" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -917,31 +920,96 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="labelNomeProf" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labemCPFProf" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="labelRGProf" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelNome1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoNomeProf" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelSexo1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="radioProfMasc" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="radioProfFem" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="radioProfOutro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="campoNomeProf" pref="322" max="32767" attributes="0"/>
-                                  <Component id="campoCPFProf" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="campoRGProf" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioSexoProfessorM" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelBairro1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioSexoProfessorF" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoBairro1" min="-2" pref="150" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioSexoProfessorO" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelRua1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="CampoRua1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Component id="botaoCadastroProf" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labelN1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoNumProf" min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="labelComplemento1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="campoComplementoProf" pref="611" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelEstado1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoEstado1" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="labelCidade1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoCidade1" min="-2" pref="138" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="botaoCadastroProf" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
+                                          <Component id="labelRG1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoRGProf" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelCPF1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoCPFProf" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelDataNascimento1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoDataNascProf" min="-2" pref="132" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelCEP1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoCepProf" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="labelTelefone1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoTelefone1Prof" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+                                      <Component id="campoTelefone2Prof" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="labelEndereco1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="389" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -950,80 +1018,198 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelNome1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoNomeProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelNomeProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labemCPFProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoCPFProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelRGProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoRGProf" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioSexoProfessorM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioSexoProfessorF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioSexoProfessorO" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelSexo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioProfMasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioProfFem" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioProfOutro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelDataNascimento1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoDataNascProf" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelCPF1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelRG1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCPFProf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoRGProf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="labelTelefone1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="campoTelefone2Prof" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoTelefone1Prof" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="labelEndereco1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="campoCepProf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCEP1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelEstado1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoEstado1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCidade1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCidade1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelBairro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoBairro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelRua1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CampoRua1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelN1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoNumProf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelComplemento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoComplementoProf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="botaoCadastroProf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="548" max="32767" attributes="0"/>
+                      <EmptySpace pref="239" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="labelNomeProf">
+            <Component class="javax.swing.JLabel" name="labelTelefone1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nome"/>
+                <Property name="text" type="java.lang.String" value="Telefone(s) para Contato"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoNomeProf">
+            <Component class="javax.swing.JTextField" name="campoTelefone1Prof">
             </Component>
-            <Component class="javax.swing.JLabel" name="labemCPFProf">
+            <Component class="javax.swing.JTextField" name="campoTelefone2Prof">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelEndereco1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelRua1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Av./Rua"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="CampoRua1">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="SistemaDeCadastro_CampoRua"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelN1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xba;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="radioProfOutro">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSexoProfessor"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Outro"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoNumProf">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelComplemento1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Complemento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoComplementoProf">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelBairro1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bairro"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelDataNascimento1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Data de Nascimento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoBairro1">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoDataNascProf">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="0" type="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelEstado1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Estado"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelCPF1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CPF"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="campoEstado1">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JTextField" name="campoCPFProf">
             </Component>
-            <Component class="javax.swing.JLabel" name="labelRGProf">
+            <Component class="javax.swing.JLabel" name="labelCidade1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cidade"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelRG1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="RG"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoRGProf">
-            </Component>
-            <Component class="javax.swing.JButton" name="botaoCadastroProf">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar"/>
-              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastroProfActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoRGProfActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="labelNome1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nome"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoNomeProf">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeProfActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelSexo1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sexo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioSexoProfessorM">
+            <Component class="javax.swing.JRadioButton" name="radioProfMasc">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupSexoProfessor"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Masculino"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioSexoProfessorMActionPerformed"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioSexoProfessorF">
+            <Component class="javax.swing.JRadioButton" name="radioProfFem">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupSexoProfessor"/>
@@ -1031,15 +1217,28 @@
                 <Property name="text" type="java.lang.String" value="Feminino"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioSexoProfessorO">
+            <Component class="javax.swing.JTextField" name="campoCidade1">
               <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="buttonGroupSexoProfessor"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Outro"/>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelCEP1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CEP"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoCepProf">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCepProfFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCepProfActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="botaoCadastroProf">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastrar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioSexoProfessorOActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastroProfActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1254,6 +1453,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="botaoCurso1">
               <Properties>
