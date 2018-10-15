@@ -217,11 +217,11 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="labelSexo" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="radioMasc" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="radioFem" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="radioOutro" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="labelNaturalidade" min="-2" max="-2" attributes="0"/>
@@ -267,9 +267,9 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelSexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioMasc" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioFem" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -357,7 +357,7 @@
                     <Property name="text" type="java.lang.String" value="Sexo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+                <Component class="javax.swing.JRadioButton" name="radioMasc">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
@@ -365,7 +365,7 @@
                     <Property name="text" type="java.lang.String" value="Masculino"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+                <Component class="javax.swing.JRadioButton" name="radioFem">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
@@ -373,7 +373,7 @@
                     <Property name="text" type="java.lang.String" value="Feminino"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+                <Component class="javax.swing.JRadioButton" name="radioOutro">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup1"/>
@@ -593,19 +593,19 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioEFMC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEFMC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioEFMI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEFMI" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioEMC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEMC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioEMI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioEMI" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioNSC" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioNSC" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoRadioNSI" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioNSI" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="406" max="32767" attributes="0"/>
@@ -617,21 +617,21 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoRadioEFMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEFMC" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelEFM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEFMI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEFMI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelEM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEMC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioEMI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioEMI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelNS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="514" max="32767" attributes="0"/>
                       </Group>
@@ -644,7 +644,7 @@
                     <Property name="text" type="java.lang.String" value="Ensino Fundamental Maior"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEFMC">
+                <Component class="javax.swing.JRadioButton" name="radioEFMC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup2"/>
@@ -652,7 +652,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEFMI">
+                <Component class="javax.swing.JRadioButton" name="radioEFMI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup2"/>
@@ -665,7 +665,7 @@
                     <Property name="text" type="java.lang.String" value="Ensino M&#xe9;dio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEMC">
+                <Component class="javax.swing.JRadioButton" name="radioEMC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup3"/>
@@ -673,7 +673,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioEMI">
+                <Component class="javax.swing.JRadioButton" name="radioEMI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup3"/>
@@ -686,7 +686,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xed;vel Superior"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioNSC">
+                <Component class="javax.swing.JRadioButton" name="radioNSC">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup4"/>
@@ -694,7 +694,7 @@
                     <Property name="text" type="java.lang.String" value="Completo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioNSI">
+                <Component class="javax.swing.JRadioButton" name="radioNSI">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup4"/>
@@ -719,13 +719,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="botaoRadioDP7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP8" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="botaoRadioDP11" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP5" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botaoRadioDP12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="radioDP6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
                               </Group>
@@ -738,18 +738,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP7" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP8" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP9" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP10" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botaoRadioDP11" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoRadioDP12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="450" max="32767" attributes="0"/>
@@ -758,7 +758,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP7">
+                <Component class="javax.swing.JRadioButton" name="radioDP1">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -766,7 +766,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xe3;o encontrei emprego ou atividade remunerada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP8">
+                <Component class="javax.swing.JRadioButton" name="radioDP2">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -774,7 +774,7 @@
                     <Property name="text" type="java.lang.String" value="Somente estudo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP9">
+                <Component class="javax.swing.JRadioButton" name="radioDP3">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -782,7 +782,7 @@
                     <Property name="text" type="java.lang.String" value="Empregado com carteira assinada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP10">
+                <Component class="javax.swing.JRadioButton" name="radioDP4">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -790,7 +790,7 @@
                     <Property name="text" type="java.lang.String" value="Empregado sem carteira assinada"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP11">
+                <Component class="javax.swing.JRadioButton" name="radioDP5">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -798,7 +798,7 @@
                     <Property name="text" type="java.lang.String" value="Profissional liberal ou tem pr&#xf3;prio neg&#xf3;cio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="botaoRadioDP12">
+                <Component class="javax.swing.JRadioButton" name="radioDP6">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
@@ -1420,6 +1420,162 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurmaAlunos">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[545, 615]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="painelConsultaCursoTurma"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="scrollPaneAluno2" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="botaoConsultarTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="consultarConsultarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ScrollPaneTurma2" alignment="0" pref="500" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="nomeCursoConsulta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="campoConsultarCurso" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="labelCodCurso" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="campoCodCurso" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="consultarCursoTA" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="ScrollPaneCurso2" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="182" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nomeCursoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoConsultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="consultarCursoTA" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCodCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ScrollPaneCurso2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="consultarConsultarCurso" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ScrollPaneTurma2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="botaoConsultarTurma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="scrollPaneAluno2" min="-2" pref="141" max="-2" attributes="0"/>
+                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="ScrollPaneCurso2">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableConsultarCursoTA">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="12">
+                        <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
+                        <Column editable="false" title="Nome" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="ScrollPaneTurma2">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableCTurma">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="6" rowCount="12">
+                        <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
+                        <Column editable="false" title="Total de vagas" type="java.lang.Object"/>
+                        <Column editable="false" title="Hor&#xe1;rio de in&#xed;cio" type="java.lang.Object"/>
+                        <Column editable="false" title="Hor&#xe1;rio de termino" type="java.lang.Object"/>
+                        <Column editable="false" title="Ano" type="java.lang.Object"/>
+                        <Column editable="false" title="Semestre" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="scrollPaneAluno2">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableCTAluno">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="12">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="consultarCursoTA">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consultar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCursoTAActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="nomeCursoConsulta">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Curso"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="consultarConsultarCurso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consultar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoConsultarCurso">
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelCodCurso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoCodCurso">
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="botaoConsultarTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Consultar"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="painelConsultaProfessor">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -1562,118 +1718,6 @@
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatProfessorFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatProfessorFocusLost"/>
               </Events>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="painelConsultaCursoTurma">
-          <Properties>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[545, 615]"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="painelConsultaCursoTurma"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="consultarTurma" min="-2" max="-2" attributes="0"/>
-                          <Component id="ScrollPaneTurma" pref="500" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="nomeCursoConsulta" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="campoConsultarCurso" min="-2" pref="175" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="consultarCurso" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="ScrollPaneCurso" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nomeCursoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoConsultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="consultarCurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ScrollPaneCurso" min="-2" pref="221" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="consultarTurma" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ScrollPaneTurma" min="-2" pref="220" max="-2" attributes="0"/>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="ScrollPaneCurso">
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="tableCurso">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="12">
-                        <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
-                        <Column editable="false" title="Nome" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="ScrollPaneTurma">
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="tableTurma">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="12">
-                        <Column editable="false" title="C&#xf3;digo" type="java.lang.Object"/>
-                        <Column editable="false" title="Total de vagas" type="java.lang.Object"/>
-                        <Column editable="false" title="Hor&#xe1;rio de in&#xed;cio" type="java.lang.Object"/>
-                        <Column editable="false" title="Hor&#xe1;rio de termino" type="java.lang.Object"/>
-                        <Column editable="false" title="Ano" type="java.lang.Object"/>
-                        <Column editable="false" title="Semestre" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="consultarCurso">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarCursoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="nomeCursoConsulta">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Curso"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="consultarTurma">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="campoConsultarCurso">
             </Component>
           </SubComponents>
         </Container>

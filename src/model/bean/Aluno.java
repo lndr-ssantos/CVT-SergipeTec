@@ -17,7 +17,7 @@ public class Aluno extends Pessoa{
     
     //busca todas as turmas em que o aluno está cadastrado
     public ArrayList<Turma> buscaTurmas(){
-        ArrayList<Turma> aux = new ArrayList();
+        ArrayList<Turma> aux = new ArrayList<>();
         //TODO
         return aux;
     }
@@ -25,11 +25,6 @@ public class Aluno extends Pessoa{
     //instanciando a classe
     public Aluno(){
         
-    }
-    
-    public Aluno(String cpf){
-        super();
-        super.setCPF(cpf);
     }
     
     public Aluno(String nome, String sexo, String CPF, String RG, String CEP, String fone1, 
