@@ -1396,6 +1396,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoConsultaNomeAluno">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaNomeAlunoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaNomeAlunoFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaCPFAluno">
               <Properties>
@@ -1403,6 +1407,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoConsultaCPFAluno">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaCPFAlunoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaCPFAlunoFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaRGAluno">
               <Properties>
@@ -1410,6 +1418,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoConsultaRGAluno">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaRGAlunoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaRGAlunoFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelConsultaMatAluno">
               <Properties>
@@ -1417,6 +1429,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoConsultaMatAluno">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatAlunoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoConsultaMatAlunoFocusLost"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

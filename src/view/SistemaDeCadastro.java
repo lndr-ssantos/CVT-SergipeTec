@@ -943,11 +943,47 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         botaoConsultaAluno.setText("Consultar");
 
+        campoConsultaNomeAluno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaNomeAlunoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaNomeAlunoFocusLost(evt);
+            }
+        });
+
         labelConsultaCPFAluno.setText("CPF");
+
+        campoConsultaCPFAluno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaCPFAlunoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaCPFAlunoFocusLost(evt);
+            }
+        });
 
         labelConsultaRGAluno.setText("RG");
 
+        campoConsultaRGAluno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaRGAlunoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaRGAlunoFocusLost(evt);
+            }
+        });
+
         labelConsultaMatAluno.setText("Matrícula");
+
+        campoConsultaMatAluno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoConsultaMatAlunoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoConsultaMatAlunoFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelConsultaAlunoLayout = new javax.swing.GroupLayout(painelConsultaAluno);
         painelConsultaAluno.setLayout(painelConsultaAlunoLayout);
@@ -1726,10 +1762,67 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoConsultaMatProfessorFocusLost
 
+
     private void consultarCursoTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarCursoTAActionPerformed
 
         readTable(campoConsultarCurso.getText().trim());
     }//GEN-LAST:event_consultarCursoTAActionPerformed
+
+    private void campoConsultaNomeAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeAlunoFocusGained
+        if(campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+            campoConsultaNomeAluno.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaNomeAlunoFocusGained
+
+    private void campoConsultaNomeAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeAlunoFocusLost
+        if(!campoConsultaNomeAluno.getText().equals("")) {
+            campoConsultaCPFAluno.setEditable(false);
+            campoConsultaRGAluno.setEditable(false);
+            campoConsultaMatAluno.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaNomeAlunoFocusLost
+
+    private void campoConsultaCPFAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFAlunoFocusGained
+        if(campoConsultaCPFAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+            campoConsultaCPFAluno.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaCPFAlunoFocusGained
+
+    private void campoConsultaCPFAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFAlunoFocusLost
+        if(!campoConsultaCPFAluno.getText().equals("")) {
+            campoConsultaNomeAluno.setEditable(false);
+            campoConsultaRGAluno.setEditable(false);
+            campoConsultaMatAluno.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaCPFAlunoFocusLost
+
+    private void campoConsultaRGAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGAlunoFocusGained
+        if(campoConsultaRGAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+            campoConsultaRGAluno.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaRGAlunoFocusGained
+
+    private void campoConsultaRGAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGAlunoFocusLost
+        if(!campoConsultaRGAluno.getText().equals("")) {
+            campoConsultaNomeAluno.setEditable(false);
+            campoConsultaCPFAluno.setEditable(false);
+            campoConsultaMatAluno.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaRGAlunoFocusLost
+
+    private void campoConsultaMatAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatAlunoFocusGained
+        if(campoConsultaMatAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("")) {
+            campoConsultaMatAluno.setEditable(true);
+        }
+    }//GEN-LAST:event_campoConsultaMatAlunoFocusGained
+
+    private void campoConsultaMatAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatAlunoFocusLost
+        if(!campoConsultaMatAluno.getText().equals("")) {
+            campoConsultaNomeAluno.setEditable(false);
+            campoConsultaCPFAluno.setEditable(false);
+            campoConsultaRGAluno.setEditable(false);
+        }
+    }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
     /**
      * @param args the command line arguments
