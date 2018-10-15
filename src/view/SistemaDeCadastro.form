@@ -112,7 +112,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="698" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="762" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="painelPrincipal" alignment="1" max="32767" attributes="0"/>
           </Group>
@@ -120,7 +120,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="635" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="740" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Component id="painelPrincipal" alignment="0" max="32767" attributes="0"/>
           </Group>
@@ -336,7 +336,7 @@
                               <Component id="labelCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                          <EmptySpace pref="166" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -633,7 +633,7 @@
                               <Component id="radioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="radioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="514" max="32767" attributes="0"/>
+                          <EmptySpace pref="600" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -730,7 +730,7 @@
                                   <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="366" max="32767" attributes="0"/>
+                          <EmptySpace pref="414" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -752,7 +752,7 @@
                               <Component id="radioDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="450" max="32767" attributes="0"/>
+                          <EmptySpace pref="510" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -844,7 +844,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="330" max="32767" attributes="0"/>
+                          <EmptySpace pref="389" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -865,7 +865,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="botaoProximo" max="-2" attributes="0"/>
-                          <EmptySpace pref="482" max="32767" attributes="0"/>
+                          <EmptySpace pref="576" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -941,7 +941,7 @@
                           </Group>
                           <Component id="botaoCadastroProf" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="333" max="32767" attributes="0"/>
+                      <EmptySpace pref="389" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -972,7 +972,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botaoCadastroProf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="471" max="32767" attributes="0"/>
+                      <EmptySpace pref="548" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1054,65 +1054,93 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelNomeCurso" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoNomeCurso" min="-2" pref="408" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="botaoCurso1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="labelNomeCurso" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="botaoCurso" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="campoNomeCurso" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="labelTurmaTermino" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="labelTurmaInicio" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="labelQntVagas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="campoInicioTurma" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                                      <Component id="campoFimTurma" alignment="1" min="-2" pref="64" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="campoInicioTurma2" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                                      <Component id="campoFimTurma2" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="campoQntVagas" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
+                                      <Component id="botaoCurso" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane1" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="checkboxTerCursoTurma" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="checkboxQuaCursoTurma" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="checkboxQuiCursoTurma" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="checkboxSexCursoTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="checkboxSabCursoTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="checkboxSegCursoTurma" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="campoHoraInicioSabCursoTurma" max="32767" attributes="0"/>
+                                          <Component id="campoHoraInicioSexCursoTurma" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="campoHoraInicioQuiCursoTurma" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="campoHoraInicioQuaCursoTurma" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="campoHoraInicioTerCursoTurma" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="campoHoraInicioSegCursoTurma" alignment="1" min="-2" pref="49" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="campoHoraFimTerCursoTurma" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="campoHoraFimQuaCursoTurma" min="-2" pref="49" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="campoHoraFimQuiCursoTurma" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="campoHoraFimSegCursoTurma" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="campoHoraFimSexCursoTurma" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="campoHoraFimSabCursoTurma" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelDiaTurma" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="labelQntVagas" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="campoQntVagas" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace pref="170" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="botaoCurso1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="labelDiaTurma" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="comboDia1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="comboDia2" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace min="128" pref="192" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextField1" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1126,37 +1154,66 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botaoCurso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="botaoCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="220" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="labelDiaTurma" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="checkboxSegCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraInicioSegCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraFimSegCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="checkboxTerCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraInicioTerCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraFimTerCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="checkboxQuaCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraInicioQuaCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraFimQuaCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="checkboxQuiCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoHoraInicioQuiCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="campoHoraFimQuiCursoTurma" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="checkboxSexCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoHoraInicioSexCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoHoraFimSexCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="checkboxSabCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoHoraInicioSabCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoHoraFimSabCursoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="220" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelDiaTurma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboDia1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="comboDia2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelTurmaInicio" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoInicioTurma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoInicioTurma2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelTurmaTermino" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoFimTurma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoFimTurma2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelQntVagas" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="campoQntVagas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="botaoCurso1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="135" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1193,30 +1250,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCursoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="labelTurmaInicio">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Informe o hor&#xe1;rio de in&#xed;cio da aula da turma"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JFormattedTextField" name="campoInicioTurma">
-              <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                  <Format subtype="1" type="2"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="labelTurmaTermino">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Informe o hor&#xe1;rio de t&#xe9;rmino da aula da turma"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JFormattedTextField" name="campoFimTurma">
-              <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                  <Format subtype="1" type="2"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
@@ -1242,53 +1275,81 @@
                 <Property name="text" type="java.lang.String" value="Informe o(s) dia(s) da aula da turma"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="comboDia1">
+            <Component class="javax.swing.JCheckBox" name="checkboxSegCursoTurma">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="8">
-                    <StringItem index="0" value="Selecione um dia"/>
-                    <StringItem index="1" value="Domingo"/>
-                    <StringItem index="2" value="Segunda"/>
-                    <StringItem index="3" value="Ter&#xe7;a"/>
-                    <StringItem index="4" value="Quarta"/>
-                    <StringItem index="5" value="Quinta"/>
-                    <StringItem index="6" value="Sexta"/>
-                    <StringItem index="7" value="S&#xe1;bado"/>
-                  </StringArray>
+                <Property name="text" type="java.lang.String" value="Segunda"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxTerCursoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ter&#xe7;a"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxQuaCursoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quarta"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxSexCursoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexta"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxQuiCursoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quinta"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="checkboxSabCursoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="S&#xe1;bado"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSegCursoTurma">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="2"/>
                 </Property>
               </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="comboDia2">
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSegCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioTerCursoTurma">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="8">
-                    <StringItem index="0" value="Selecione um dia"/>
-                    <StringItem index="1" value="Domingo"/>
-                    <StringItem index="2" value="Segunda"/>
-                    <StringItem index="3" value="Ter&#xe7;a"/>
-                    <StringItem index="4" value="Quarta"/>
-                    <StringItem index="5" value="Quinta"/>
-                    <StringItem index="6" value="Sexta"/>
-                    <StringItem index="7" value="S&#xe1;bado"/>
-                  </StringArray>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="2"/>
                 </Property>
               </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoInicioTurma2">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoInicioTurma2ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimTerCursoTurma">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="2"/>
+                </Property>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campoFimTurma2">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoFimTurma2ActionPerformed"/>
-              </Events>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioQuaCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimQuaCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioQuiCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimQuiCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSexCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSexCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSabCursoTurma">
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSabCursoTurma">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Carga Hor&#xe1;ria"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField1">
             </Component>
           </SubComponents>
         </Container>
@@ -1328,7 +1389,7 @@
                                   </Group>
                                   <Component id="scrollPaneTAluno" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="192" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="256" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1361,7 +1422,7 @@
                       <Component id="botaoConsultaAluno" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="scrollPaneTAluno" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace pref="124" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1628,7 +1689,7 @@
                                   </Group>
                                   <Component id="scrollPaneTAluno1" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="192" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="256" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1661,7 +1722,7 @@
                       <Component id="botaoConsultaAluno1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="scrollPaneTAluno1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
+                      <EmptySpace pref="124" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
