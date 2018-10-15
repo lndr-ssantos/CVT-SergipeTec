@@ -12,6 +12,7 @@ import model.dao.AlunoDAO;
 import java.awt.CardLayout;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,10 +22,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import model.bean.Curso;
+import model.bean.Professor;
 import model.bean.Responsavel;
+import model.bean.Turma;
 import model.dao.CursoDAO;
+import model.dao.ProfessorDAO;
+import model.dao.TurmaDAO;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -1422,7 +1426,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 municipios.forEach((municipio) -> {
                     cidadeBox.addItem(municipio.toString());
                 });
-            } catch (IOException | JSONException e) {
+            } catch (IOException e) {
             }
         }
     }//GEN-LAST:event_estadoBoxItemStateChanged
@@ -1525,7 +1529,21 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarProfessorActionPerformed
 
     private void botaoCadastroProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroProfActionPerformed
-        // TODO add your handling code here:
+        Professor professor = new Professor();
+        ProfessorDAO professorDAO = new ProfessorDAO();
+        if (campoNomeProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
+        } else if (campoCPFProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
+        } else if (campoRGProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo RG");
+        } else {
+            professor.setNome(campoNome.getText());
+            professor.setCPF(campoCPFProf.getText());
+            professor.setNome(campoRGProf.getText());
+
+            professorDAO.save(professor);
+        }
     }//GEN-LAST:event_botaoCadastroProfActionPerformed
 
     private void jRadioSexoProfessorMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioSexoProfessorMActionPerformed
@@ -1552,7 +1570,33 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCursoActionPerformed
 
     private void botaoCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCurso1ActionPerformed
-        // TODO add your handling code here:
+        Turma turma = new Turma();
+        TurmaDAO cursoDAO = new TurmaDAO();
+        if (comboDia1.getSelectedItem().toString().trim().equals("Selecione um dia")) {
+            JOptionPane.showMessageDialog(null, "Selecione um dia");
+        }else if(campoInicioTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início do Dia 1");
+        }else if(campoFimTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término do Dia 1");
+        }else if(campoQntVagas.getText().trim().equals("")){
+            
+        } else {
+            
+            turma.addDia(comboDia1.getSelectedItem().toString());
+            try {
+                turma.setHoraInicio1(campoInicioTurma.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                turma.setHoraFim1(campoFimTurma.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
+            
+            cursoDAO.save(turma);
+        }
     }//GEN-LAST:event_botaoCurso1ActionPerformed
 
     private void campoInicioTurma2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoInicioTurma2ActionPerformed

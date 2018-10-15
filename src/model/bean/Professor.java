@@ -5,7 +5,11 @@ import java.time.LocalDate;
 public class Professor extends Pessoa{
     
     private int codProf;
-
+    
+    public Professor(){
+        super();
+    }
+    
     public Professor(String nome, String sexo, String CPF, String RG, LocalDate datNasc, int codProf) {
         super(nome, sexo, CPF, RG, datNasc);
         this.codProf = codProf;
