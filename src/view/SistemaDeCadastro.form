@@ -1089,8 +1089,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoTelefone1Prof">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Telefone 1"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoTelefone2Prof">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Telefone 2"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="labelEndereco1">
               <Properties>
@@ -1170,6 +1176,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campoCPFProf">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="labelCidade1">
               <Properties>

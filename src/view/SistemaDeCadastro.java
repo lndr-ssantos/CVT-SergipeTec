@@ -367,7 +367,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addComponent(labelEstado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 324, Short.MAX_VALUE)
+                        .addGap(18, 390, Short.MAX_VALUE)
                         .addComponent(labelCidade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -386,7 +386,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                         .addComponent(labelNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE))
+                        .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE))
                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                         .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
@@ -623,7 +623,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addComponent(radioDP6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         painelDadosProfissionaisLayout.setVerticalGroup(
             painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -681,7 +681,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
         painelDadosResponsavelLayout.setVerticalGroup(
             painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -706,6 +706,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         painelPrincipal.add(painelGuiasAluno, "painelGuiasAluno");
 
         labelTelefone1.setText("Telefone(s) para Contato");
+
+        campoTelefone1Prof.setToolTipText("Telefone 1");
+
+        campoTelefone2Prof.setToolTipText("Telefone 2");
 
         labelEndereco1.setText("Endereço");
 
@@ -733,6 +737,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelCPF1.setText("CPF");
 
         campoEstado1.setEditable(false);
+
+        campoCPFProf.setToolTipText("");
 
         labelCidade1.setText("Cidade");
 
@@ -959,7 +965,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 botaoCursoActionPerformed(evt);
             }
         });
-
+		
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1217,7 +1223,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(campoConsultaCPFAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoConsultaNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(scrollPaneTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 256, Short.MAX_VALUE))))
+                        .addGap(0, 271, Short.MAX_VALUE))))
         );
         painelConsultaAlunoLayout.setVerticalGroup(
             painelConsultaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1482,7 +1488,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(campoConsultaNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoConsultaMatProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(scrollPaneTAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 256, Short.MAX_VALUE))))
+                        .addGap(0, 271, Short.MAX_VALUE))))
         );
         painelConsultaProfessorLayout.setVerticalGroup(
             painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1575,7 +1581,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 762, Short.MAX_VALUE)
+            .addGap(0, 777, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
