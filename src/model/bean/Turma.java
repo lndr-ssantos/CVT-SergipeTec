@@ -13,30 +13,25 @@ public class Turma{
     private int codCurso;
     private Professor professor;
     private String turno;
-    private LocalDate horaInicio1;
-    private LocalDate horaFim1;
-    private LocalDate horaInicio2;
-    private LocalDate horaFim2;
+    
     private int ano;
     private int semestre;
     private int totVagas;
     //totVagas - count(Alunos)
-    private ArrayList<Aluno> alunos = new ArrayList();
-    private ArrayList<String> dias = new ArrayList(2);
-    
+    private ArrayList<Aluno> alunos = new ArrayList<>();
+    private ArrayList<String> dias = new ArrayList<>(6);
+    private ArrayList<LocalDate> horaInicio = new ArrayList<>();
+    private ArrayList<LocalDate> horaFim = new ArrayList<>();
     public Turma(){
         
     }
     
     public Turma(Curso curso, Professor professor, int codCurso, String turno, 
-            LocalDate horaInicio, LocalDate horaFim, LocalDate horaInicio2, LocalDate horaFim2, 
+            ArrayList<LocalDate> horaInicio, ArrayList<LocalDate> horaFim,
             int ano, int semestre, int totVagas, ArrayList<String> dias) {
         this.curso = curso;
         this.codCurso = codCurso;
-        this.horaInicio1 = horaInicio;
-        this.horaFim1 = horaFim;
-        this.horaInicio2 = horaInicio2;
-        this.horaFim2 = horaFim2;
+        this.horaInicio = horaInicio;
         this.ano = ano;
         this.semestre = semestre;
         this.totVagas = totVagas;
@@ -138,48 +133,34 @@ public class Turma{
         this.professor.setCodProf(codProf);
     }
 
-    public LocalDate getHoraInicio1() {
-        return horaInicio1;
+    public ArrayList<LocalDate> getHoraInicioArray() {
+        return horaInicio;
+    }
+    
+    public String getHoraInicio(){
+        return horaInicio.toString();
     }
 
-    public void setHoraInicio1(String time) throws ParseException {
+    public void setHoraInicio(String time) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         formatter = formatter.withLocale( Locale.ROOT );  
         // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaInicio1 = LocalDate.parse(time, formatter);
+        horaInicio.add(LocalDate.parse(time, formatter));
     }
 
-    public LocalDate getHoraFim1() {
-        return horaFim1;
+    public ArrayList<LocalDate> getHoraFimArray() {
+        return horaFim;
+    }
+    
+    public String getHoraFim() {
+        return horaFim.toString();
     }
 
-    public void setHoraFim1(String time) throws ParseException{
+    public void setHoraFim(String time) throws ParseException{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         formatter = formatter.withLocale( Locale.ROOT );  
         // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaFim1 = LocalDate.parse(time, formatter);
-    }
-
-    public LocalDate getHoraInicio2() {
-        return horaInicio2;
-    }
-
-    public void setHoraInicio2(String time) throws ParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        formatter = formatter.withLocale( Locale.ROOT );  
-        // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaInicio2 = LocalDate.parse(time, formatter);
-    }
-
-    public LocalDate getHoraFim2() {
-        return horaFim2;
-    }
-
-    public void setHoraFim2(String time) throws ParseException{
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        formatter = formatter.withLocale( Locale.ROOT );  
-        // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaFim2 = LocalDate.parse(time, formatter);
+        horaFim.add(LocalDate.parse(time, formatter));
     }
     
     public String getTurno() {
@@ -249,7 +230,7 @@ public class Turma{
     }
 
     public void addDia(String dia) {
-        if(dias.size() < 2){
+        if(dias.size() < 6){
             this.dias.add(dia);
         } else {
             
@@ -259,5 +240,18 @@ public class Turma{
     public void removeDias(int int_){
         this.dias.remove(int_);
     }
+    
+    public String getHorario(){
+        String aux = "";
+        for(int i = 0; i < dias.size(); i++){
+            if(dias.get(i) != null && horaInicio.get(i) != null && horaFim != null){
+                aux = aux + dias.get(i) + ":\n" +
+                    "-> Início: " + horaInicio.get(i) + "\n" +
+                    "-> Fim: " + horaFim.get(i) + "\n\n";
+            }
+        }
+        return aux;
+    }
+    
     
 }
