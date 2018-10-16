@@ -22,6 +22,7 @@ public class Turma{
     private ArrayList<String> dias = new ArrayList<>(6);
     private ArrayList<LocalDate> horaInicio = new ArrayList<>();
     private ArrayList<LocalDate> horaFim = new ArrayList<>();
+    
     public Turma(){
         
     }
@@ -137,8 +138,8 @@ public class Turma{
         return horaInicio;
     }
     
-    public String getHoraInicio(){
-        return horaInicio.toString();
+    public LocalDate getHoraInicio(int i){
+        return horaInicio.get(i);
     }
 
     public void setHoraInicio(String time) throws ParseException {
@@ -152,8 +153,8 @@ public class Turma{
         return horaFim;
     }
     
-    public String getHoraFim() {
-        return horaFim.toString();
+    public LocalDate getHoraFim(int i){
+        return horaFim.get(i);
     }
 
     public void setHoraFim(String time) throws ParseException{
@@ -221,7 +222,11 @@ public class Turma{
         }
     }*/
 
-    public String getDias(int i) {
+    public ArrayList<String> getDias(){
+        return dias;
+    }
+    
+    public String getDia(int i) {
         return dias.get(i);
     }
 

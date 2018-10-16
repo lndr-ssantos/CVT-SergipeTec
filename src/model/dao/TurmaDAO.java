@@ -20,12 +20,20 @@ public class TurmaDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Turma(diaAula1, horaInicio1, horaFim1, vagas)\n" + 
-            "values (?, ?, ?, ?)");
-            stmt.setString(1, turma.getDias(1));
-            stmt.setDate(2, Date.valueOf(turma.getHoraInicio1()));
-            stmt.setDate(3, Date.valueOf(turma.getHoraFim1()));
-            stmt.setInt(4, turma.getTotVagas());
+            stmt = con.prepareStatement("insert into Turma(codCurso, diaAula, horaInicio, horaFim, vagas, codProf)\n" + 
+            "values (?, ?, ?, ?, ?, ?)");
+            stmt.setInt(1, turma.getCodCurso());
+            for(int i = 0; i < turma.getDias().size(); i++){
+                stmt.setString(2, turma.getDia(i));
+            }
+            for(int i = 0; i < turma.getHoraInicioArray().size(); i++){
+                stmt.setDate(3, Date.valueOf(turma.getHoraInicio(i)));
+            }
+            for(int i = 0; i < turma.getHoraFimArray().size(); i++){
+                stmt.setDate(4, Date.valueOf(turma.getHoraFim(i)));
+            }
+            stmt.setInt(5, turma.getTotVagas());
+            stmt.setInt(6, turma.getProfessor().getCodProf());
             
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso!");
