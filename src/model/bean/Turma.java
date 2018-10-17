@@ -142,6 +142,14 @@ public class Turma{
         return horaInicio.get(i);
     }
 
+    public String getHoraInicioString(){
+        String aux = "";
+        for(int i = 0; i < horaInicio.size(); i++){
+            aux = aux + horaInicio.get(i) + ", ";
+        }
+        return aux;
+    }
+    
     public void setHoraInicio(String time) throws ParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         formatter = formatter.withLocale( Locale.ROOT );  
@@ -155,6 +163,14 @@ public class Turma{
     
     public LocalDate getHoraFim(int i){
         return horaFim.get(i);
+    }
+    
+    public String getHoraFimString(){
+        String aux = "";
+        for(int i = 0; i < horaFim.size(); i++){
+            aux = aux + horaFim.get(i) + ", ";
+        }
+        return aux;
     }
 
     public void setHoraFim(String time) throws ParseException{
@@ -224,6 +240,14 @@ public class Turma{
 
     public ArrayList<String> getDias(){
         return dias;
+    }
+    
+    public String getDiasString(){
+        String aux = "";
+        for(int i = 0; i < dias.size(); i++){
+            aux = aux + dias.get(i) + ", ";
+        }
+        return aux;
     }
     
     public String getDia(int i) {

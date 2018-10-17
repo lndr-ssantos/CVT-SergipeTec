@@ -25,8 +25,8 @@ public class ResponsavelDAO {
         try {
             stmt = con.prepareStatement("insert into Responsavel(nomeResponsavel, CPFResponsavel, RGResponsavel)\n" + "values (?, ?, ?)");
             stmt.setString(1, responsavel.getNome());
-            stmt.setString(1, responsavel.getCPF());
-            stmt.setString(1, responsavel.getRG());
+            stmt.setString(2, responsavel.getCPF());
+            stmt.setString(3, responsavel.getRG());
             
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Responsavel cadastrado com sucesso!");

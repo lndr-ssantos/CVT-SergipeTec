@@ -36,15 +36,12 @@ public class Aluno extends Pessoa{
         this.matricula = matricula;
         this.nomePai = nomePai;
         this.nomeMae = nomeMae;
-        //dados de escolaridade
-        //dados profissionais
         this.dadosEscolaridade = dadosEscolaridade;
         this.dadosProfissionais = dadosProfissionais;  
         this.curso = curso;
     }
 
     /*Gets e Sets do Aluno*/
-    
     public Curso getCurso() {
         return curso;
     }

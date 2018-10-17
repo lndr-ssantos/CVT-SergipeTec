@@ -179,9 +179,7 @@ public abstract class Pessoa {
         this.foto = foto;
     }
     
-    
     /*DEPRECATED
-    termina gets e sets dos responsaveis*/
     
     /*public String getEstado() {
         return estado;

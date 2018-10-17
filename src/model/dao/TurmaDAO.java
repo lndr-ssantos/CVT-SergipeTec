@@ -23,15 +23,10 @@ public class TurmaDAO {
             stmt = con.prepareStatement("insert into Turma(codCurso, diaAula, horaInicio, horaFim, vagas, codProf)\n" + 
             "values (?, ?, ?, ?, ?, ?)");
             stmt.setInt(1, turma.getCodCurso());
-            for(int i = 0; i < turma.getDias().size(); i++){
-                stmt.setString(2, turma.getDia(i));
-            }
-            for(int i = 0; i < turma.getHoraInicioArray().size(); i++){
-                stmt.setDate(3, Date.valueOf(turma.getHoraInicio(i)));
-            }
-            for(int i = 0; i < turma.getHoraFimArray().size(); i++){
-                stmt.setDate(4, Date.valueOf(turma.getHoraFim(i)));
-            }
+            stmt.setString(2, turma.getDiasString());
+            //stmt.setDate(3, Date.valueOf(turma.getHoraInicioString()));
+            stmt.setString(3, turma.getHoraInicioString());
+            stmt.setString(4, turma.getHoraFimString());
             stmt.setInt(5, turma.getTotVagas());
             stmt.setInt(6, turma.getProfessor().getCodProf());
             
