@@ -996,25 +996,76 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         labelQntVagas.setText("Quantidade de vagas disponíveis para a turma");
 
-        labelDiaTurma.setText("Informe o(s) dia(s) da aula da turma");
+        labelDiaTurma.setText("Informe o(s) dia(s) de aula da turma");
 
         checkboxSegCursoTurma.setText("Segunda");
+        checkboxSegCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxSegCursoTurmaItemStateChanged(evt);
+            }
+        });
 
         checkboxTerCursoTurma.setText("Terça");
+        checkboxTerCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxTerCursoTurmaItemStateChanged(evt);
+            }
+        });
 
         checkboxQuaCursoTurma.setText("Quarta");
+        checkboxQuaCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxQuaCursoTurmaItemStateChanged(evt);
+            }
+        });
 
         checkboxSexCursoTurma.setText("Sexta");
+        checkboxSexCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxSexCursoTurmaItemStateChanged(evt);
+            }
+        });
 
         checkboxQuiCursoTurma.setText("Quinta");
+        checkboxQuiCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxQuiCursoTurmaItemStateChanged(evt);
+            }
+        });
 
         checkboxSabCursoTurma.setText("Sábado");
+        checkboxSabCursoTurma.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkboxSabCursoTurmaItemStateChanged(evt);
+            }
+        });
 
+        campoHoraInicioSegCursoTurma.setEditable(false);
         campoHoraInicioSegCursoTurma.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
+        campoHoraFimSegCursoTurma.setEditable(false);
+
+        campoHoraInicioTerCursoTurma.setEditable(false);
         campoHoraInicioTerCursoTurma.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
 
+        campoHoraFimTerCursoTurma.setEditable(false);
         campoHoraFimTerCursoTurma.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+
+        campoHoraInicioQuaCursoTurma.setEditable(false);
+
+        campoHoraFimQuaCursoTurma.setEditable(false);
+
+        campoHoraInicioQuiCursoTurma.setEditable(false);
+
+        campoHoraFimQuiCursoTurma.setEditable(false);
+
+        campoHoraInicioSexCursoTurma.setEditable(false);
+
+        campoHoraFimSexCursoTurma.setEditable(false);
+
+        campoHoraInicioSabCursoTurma.setEditable(false);
+
+        campoHoraFimSabCursoTurma.setEditable(false);
 
         jLabel2.setText("Carga Horária");
 
@@ -1023,69 +1074,72 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         painelCursoTurmaLayout.setHorizontalGroup(
             painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(labelNomeCurso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNomeCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(botaoCurso1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(labelNomeCurso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoNomeCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addComponent(botaoCurso)
-                                .addGap(139, 139, 139)
-                                .addComponent(jButton1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(checkboxTerCursoTurma)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
                                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                        .addComponent(checkboxTerCursoTurma)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(checkboxQuaCursoTurma)
-                                            .addComponent(checkboxQuiCursoTurma)
-                                            .addComponent(checkboxSexCursoTurma)
-                                            .addComponent(checkboxSabCursoTurma))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(checkboxSegCursoTurma))
-                                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(campoHoraInicioSabCursoTurma)
-                                    .addComponent(campoHoraInicioSexCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(campoHoraInicioQuiCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(campoHoraInicioQuaCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(campoHoraInicioTerCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(campoHoraInicioSegCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(checkboxQuaCursoTurma)
+                                    .addComponent(checkboxQuiCursoTurma)
+                                    .addComponent(checkboxSexCursoTurma)
+                                    .addComponent(checkboxSabCursoTurma))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(checkboxSegCursoTurma))
+                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                .addComponent(campoHoraInicioSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoHoraFimSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(campoHoraInicioSabCursoTurma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                                    .addComponent(campoHoraInicioSexCursoTurma)
+                                    .addComponent(campoHoraInicioQuiCursoTurma, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoHoraInicioQuaCursoTurma, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoHoraInicioTerCursoTurma))
+                                .addGap(18, 18, 18)
                                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(campoHoraFimTerCursoTurma, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(campoHoraFimQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(campoHoraFimTerCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoHoraFimQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoHoraFimQuiCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoHoraFimSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoHoraFimSexCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(campoHoraFimSabCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(labelDiaTurma)
+                                    .addComponent(campoHoraFimSabCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(389, 389, 389))
+                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                        .addComponent(labelDiaTurma)
+                        .addGap(339, 339, 339))
+                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
+                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addComponent(labelQntVagas)
                                 .addGap(18, 18, 18)
-                                .addComponent(campoQntVagas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                                .addComponent(campoQntVagas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(botaoCurso1))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(105, 105, 105)
+                .addComponent(botaoCurso)
+                .addGap(139, 139, 139)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         painelCursoTurmaLayout.setVerticalGroup(
             painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1094,39 +1148,38 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeCurso)
                     .addComponent(campoNomeCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(painelCursoTurmaLayout.createSequentialGroup()
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoCurso)
-                            .addComponent(jButton1))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(labelDiaTurma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkboxSegCursoTurma)
-                            .addComponent(campoHoraInicioSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoHoraFimSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkboxTerCursoTurma)
-                            .addComponent(campoHoraInicioTerCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoHoraFimTerCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkboxQuaCursoTurma)
-                            .addComponent(campoHoraInicioQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoHoraFimQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(checkboxQuiCursoTurma)
-                            .addComponent(campoHoraInicioQuiCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoCurso)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelDiaTurma)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoHoraInicioSegCursoTurma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(checkboxSegCursoTurma)
+                        .addComponent(campoHoraFimSegCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkboxTerCursoTurma)
+                    .addComponent(campoHoraInicioTerCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoHoraFimTerCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkboxQuaCursoTurma)
+                    .addComponent(campoHoraInicioQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoHoraFimQuaCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkboxQuiCursoTurma)
+                    .addComponent(campoHoraInicioQuiCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoHoraFimQuiCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1142,9 +1195,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelQntVagas)
                     .addComponent(campoQntVagas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                .addGap(18, 18, 18)
                 .addComponent(botaoCurso1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelCursoTurma, "painelCursoTurma");
@@ -2085,6 +2138,66 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void checkboxSegCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSegCursoTurmaItemStateChanged
+        if(checkboxSegCursoTurma.isSelected()){
+            campoHoraInicioSegCursoTurma.setEditable(true);
+            campoHoraFimSegCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioSegCursoTurma.setEditable(false);
+            campoHoraFimSegCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxSegCursoTurmaItemStateChanged
+
+    private void checkboxTerCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxTerCursoTurmaItemStateChanged
+        if(checkboxTerCursoTurma.isSelected()){
+            campoHoraInicioTerCursoTurma.setEditable(true);
+            campoHoraFimTerCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioTerCursoTurma.setEditable(false);
+            campoHoraFimTerCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxTerCursoTurmaItemStateChanged
+
+    private void checkboxQuaCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxQuaCursoTurmaItemStateChanged
+        if(checkboxQuaCursoTurma.isSelected()){
+            campoHoraInicioQuaCursoTurma.setEditable(true);
+            campoHoraFimQuaCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioQuaCursoTurma.setEditable(false);
+            campoHoraFimQuaCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxQuaCursoTurmaItemStateChanged
+
+    private void checkboxQuiCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxQuiCursoTurmaItemStateChanged
+        if(checkboxQuiCursoTurma.isSelected()){
+            campoHoraInicioQuiCursoTurma.setEditable(true);
+            campoHoraFimQuiCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioQuiCursoTurma.setEditable(false);
+            campoHoraFimQuiCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxQuiCursoTurmaItemStateChanged
+
+    private void checkboxSexCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSexCursoTurmaItemStateChanged
+        if(checkboxSexCursoTurma.isSelected()){
+            campoHoraInicioSexCursoTurma.setEditable(true);
+            campoHoraFimSexCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioSexCursoTurma.setEditable(false);
+            campoHoraFimSexCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxSexCursoTurmaItemStateChanged
+
+    private void checkboxSabCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSabCursoTurmaItemStateChanged
+        if(checkboxSabCursoTurma.isSelected()){
+            campoHoraInicioSabCursoTurma.setEditable(true);
+            campoHoraFimSabCursoTurma.setEditable(true);
+        }else{
+            campoHoraInicioSabCursoTurma.setEditable(false);
+            campoHoraFimSabCursoTurma.setEditable(false);
+        }
+    }//GEN-LAST:event_checkboxSabCursoTurmaItemStateChanged
 
     /**
      * @param args the command line arguments
