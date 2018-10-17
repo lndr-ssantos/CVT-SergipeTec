@@ -728,7 +728,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="radioDP1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -741,8 +741,9 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="414" max="32767" attributes="0"/>
+                          <EmptySpace pref="429" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -760,11 +761,13 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="radioDP5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="radioDP6" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="510" max="32767" attributes="0"/>
+                          <EmptySpace pref="478" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -819,6 +822,14 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="campoOutro">
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="buttonGroup5"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nunca trabalhei"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

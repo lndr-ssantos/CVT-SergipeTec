@@ -136,6 +136,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         radioDP5 = new javax.swing.JRadioButton();
         radioDP6 = new javax.swing.JRadioButton();
         campoOutro = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
         painelDadosResponsavel = new javax.swing.JPanel();
         labelNomeResponsavel = new javax.swing.JLabel();
         campoNomeResponsavel = new javax.swing.JTextField();
@@ -613,6 +614,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         buttonGroup5.add(radioDP6);
         radioDP6.setText("Outro");
 
+        buttonGroup5.add(jRadioButton1);
+        jRadioButton1.setText("Nunca trabalhei");
+
         javax.swing.GroupLayout painelDadosProfissionaisLayout = new javax.swing.GroupLayout(painelDadosProfissionais);
         painelDadosProfissionais.setLayout(painelDadosProfissionaisLayout);
         painelDadosProfissionaisLayout.setHorizontalGroup(
@@ -628,8 +632,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosProfissionaisLayout.createSequentialGroup()
                         .addComponent(radioDP6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(414, Short.MAX_VALUE))
+                        .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jRadioButton1))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         painelDadosProfissionaisLayout.setVerticalGroup(
             painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,10 +650,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioDP5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioDP6)
                     .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(510, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
 
         painelGuiasAluno.addTab("D. Profissionais", painelDadosProfissionais);
@@ -2203,6 +2210,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> estadoBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelBairro;
