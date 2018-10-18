@@ -1802,6 +1802,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe o número da residência");
         } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
+        } else if (buttonGroup5.getSelection().getSelectedObjects() == null){
+            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
+        } else if(buttonGroup5.getSelection().getActionCommand().equals("Outro") && campoOutro.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
         }else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
@@ -1836,8 +1840,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 aluno.setDadosProfissionais(radioDP7.toString());
             } else 
                 aluno.setDadosProfissionais(radioDP7.toString() + " - " + campoOutro.getText());
-            
-                        
+			
             if(radioMasc.isSelected()){
                 aluno.setSexo("M");
             }else if(radioFem.isSelected()){
@@ -1848,7 +1851,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             responsavel.setNome(campoNomeResponsavel.getText());
             responsavel.setCPF(campoCPFResponsavel.getText());
             responsavel.setRG(campoRGResponsavel.getText());
-
+            
             aluno.setResponsavel(responsavel);
 
             alunoDAO.save(aluno);
@@ -2044,34 +2047,128 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
     private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTurmaActionPerformed
-        //        Turma turma = new Turma();
-        //        TurmaDAO cursoDAO = new TurmaDAO();
-        //        if (comboDia1.getSelectedItem().toString().trim().equals("Selecione um dia")) {
-            //            JOptionPane.showMessageDialog(null, "Selecione um dia");
-            //        }else if(campoInicioTurma.getText().trim().equals("")){
-            //            JOptionPane.showMessageDialog(null, "Defina horário de início do Dia 1");
-            //        }else if(campoFimTurma.getText().trim().equals("")){
-            //            JOptionPane.showMessageDialog(null, "Defina horário de término do Dia 1");
-            //        }else if(campoQntVagas.getText().trim().equals("")){
-            //
-            //        } else {
-            //
-            //            turma.addDia(comboDia1.getSelectedItem().toString());
-            //            try {
-                //                turma.setHoraInicio1(campoInicioTurma.getText());
-                //            } catch (ParseException ex) {
-                //                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
-                //            }
-            //            try {
-                //                turma.setHoraFim1(campoFimTurma.getText());
-                //            } catch (ParseException ex) {
-                //                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
-                //            }
-            //            turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
-            //
-            //            cursoDAO.save(turma);
-            //        }
-    }//GEN-LAST:event_botaoCadastrarTurmaActionPerformed
+        Turma turma = new Turma();
+        TurmaDAO cursoDAO = new TurmaDAO();
+        //if (comboDia1.getSelectedItem().toString().trim().equals("Selecione um dia")) {
+        //Checa se tem algum dia selecionado
+        if(!checkboxSegCursoTurma.isSelected() && !checkboxTerCursoTurma.isSelected()
+                && !checkboxQuaCursoTurma.isSelected() && !checkboxQuiCursoTurma.isSelected()
+                && !checkboxSexCursoTurma.isSelected() && !checkboxSabCursoTurma.isSelected()){
+            JOptionPane.showMessageDialog(null, "Selecione um dia!");
+        //checa se tem algum dia selecionado sem horário de inicio definido
+        }else if(checkboxSegCursoTurma.isSelected() && campoHoraInicioSegCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início da Segunda!");
+        }else if(checkboxTerCursoTurma.isSelected() && campoHoraInicioTerCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início da Terça!");
+        }else if(checkboxQuaCursoTurma.isSelected() && campoHoraInicioQuaCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início da Quarta!");
+        }else if(checkboxQuiCursoTurma.isSelected() && campoHoraInicioQuiCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início da Quinta!");
+        }else if(checkboxSexCursoTurma.isSelected() && campoHoraInicioSexCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início da Sexta!");
+        }else if(checkboxSabCursoTurma.isSelected() && campoHoraInicioSabCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de início do Sábado!");
+        //checa se tem algum dia selecionado sem horario de término definido
+        }else if(checkboxSegCursoTurma.isSelected() && campoHoraFimSegCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término da Segunda!");
+        }else if(checkboxTerCursoTurma.isSelected() && campoHoraFimTerCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término da Terça!");
+        }else if(checkboxQuaCursoTurma.isSelected() && campoHoraFimQuaCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término da Quarta!");
+        }else if(checkboxQuiCursoTurma.isSelected() && campoHoraFimQuiCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término da Quinta!");
+        }else if(checkboxSexCursoTurma.isSelected() && campoHoraFimSexCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término da Sexta!");
+        }else if(checkboxSabCursoTurma.isSelected() && campoHoraFimSabCursoTurma.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina horário de término do Sábado!");
+        }else if(campoQntVagas.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Defina o total de vagas da turma!");
+        } else {
+            //adiciona os dias no ArrayList dias
+            if(checkboxSegCursoTurma.isSelected()){
+                turma.addDia(checkboxSegCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioSegCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimSegCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(checkboxTerCursoTurma.isSelected()){
+                turma.addDia(checkboxTerCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioTerCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimTerCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(checkboxQuaCursoTurma.isSelected()){
+                turma.addDia(checkboxQuaCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioQuaCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimQuaCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(checkboxQuiCursoTurma.isSelected()){
+                turma.addDia(checkboxQuiCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioQuiCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimQuiCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(checkboxSexCursoTurma.isSelected()){
+                turma.addDia(checkboxSexCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioSexCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimSexCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(checkboxSabCursoTurma.isSelected()){
+                turma.addDia(checkboxSabCursoTurma.getText());
+                try {
+                    turma.setHoraInicio(campoHoraInicioSabCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    turma.setHoraFim(campoHoraFimSabCursoTurma.getText());
+                } catch (ParseException ex) {
+                    Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            //turma.addDia(comboDia1.getSelectedItem().toString());
+            turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
+
+            cursoDAO.save(turma);
+        }
+    }//GEN-LAST:event_botaoCurso1ActionPerformed
 
     private void botaoCadastrarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCursoActionPerformed
         Curso curso = new Curso();
