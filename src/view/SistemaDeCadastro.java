@@ -2049,7 +2049,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTurmaActionPerformed
         Turma turma = new Turma();
         TurmaDAO cursoDAO = new TurmaDAO();
-        //if (comboDia1.getSelectedItem().toString().trim().equals("Selecione um dia")) {
         //Checa se tem algum dia selecionado
         if(!checkboxSegCursoTurma.isSelected() && !checkboxTerCursoTurma.isSelected()
                 && !checkboxQuaCursoTurma.isSelected() && !checkboxQuiCursoTurma.isSelected()
@@ -2084,7 +2083,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }else if(campoQntVagas.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina o total de vagas da turma!");
         } else {
-            //adiciona os dias no ArrayList dias
+            //adiciona os dias no ArrayList dias, horaInicio e horaFim
             if(checkboxSegCursoTurma.isSelected()){
                 turma.addDia(checkboxSegCursoTurma.getText());
                 try {
