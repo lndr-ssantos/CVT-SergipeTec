@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Locale;
 
 public class Turma{
@@ -20,15 +21,15 @@ public class Turma{
     //totVagas - count(Alunos)
     private ArrayList<Aluno> alunos = new ArrayList<>();
     private ArrayList<String> dias = new ArrayList<>(6);
-    private ArrayList<LocalDate> horaInicio = new ArrayList<>();
-    private ArrayList<LocalDate> horaFim = new ArrayList<>();
+    private ArrayList<LocalTime> horaInicio = new ArrayList<>();
+    private ArrayList<LocalTime> horaFim = new ArrayList<>();
     
     public Turma(){
         
     }
     
     public Turma(Curso curso, Professor professor, int codCurso, String turno, 
-            ArrayList<LocalDate> horaInicio, ArrayList<LocalDate> horaFim,
+            ArrayList<LocalTime> horaInicio, ArrayList<LocalTime> horaFim,
             int ano, int semestre, int totVagas, ArrayList<String> dias) {
         this.curso = curso;
         this.codCurso = codCurso;
@@ -134,11 +135,11 @@ public class Turma{
         this.professor.setCodProf(codProf);
     }
 
-    public ArrayList<LocalDate> getHoraInicioArray() {
+    public ArrayList<LocalTime> getHoraInicioArray() {
         return horaInicio;
     }
     
-    public LocalDate getHoraInicio(int i){
+    public LocalTime getHoraInicio(int i){
         return horaInicio.get(i);
     }
 
@@ -151,17 +152,19 @@ public class Turma{
     }
     
     public void setHoraInicio(String time) throws ParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         formatter = formatter.withLocale( Locale.ROOT );  
         // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaInicio.add(LocalDate.parse(time, formatter));
+        horaInicio.add(LocalTime.parse(time, formatter));
+        
+        
     }
 
-    public ArrayList<LocalDate> getHoraFimArray() {
+    public ArrayList<LocalTime> getHoraFimArray() {
         return horaFim;
     }
     
-    public LocalDate getHoraFim(int i){
+    public LocalTime getHoraFim(int i){
         return horaFim.get(i);
     }
     
@@ -174,10 +177,10 @@ public class Turma{
     }
 
     public void setHoraFim(String time) throws ParseException{
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H:mm");
         formatter = formatter.withLocale( Locale.ROOT );  
         // Locale specifies human language for translating, and cultural norms for lowercase/uppercase and abbreviations and such. Example: Locale.US or Locale.CANADA_FRENCH
-        horaFim.add(LocalDate.parse(time, formatter));
+        horaFim.add(LocalTime.parse(time, formatter));
     }
     
     public String getTurno() {
@@ -260,9 +263,13 @@ public class Turma{
 
     public void addDia(String dia) {
         if(dias.size() < 6){
-            this.dias.add(dia);
+            if(!dias.contains(dia)){
+                this.dias.add(dia);
+            } else {
+                //dia ja adicionado
+            }
         } else {
-            
+            //mais dias cadastrados do que o permitido
         }
     }
     

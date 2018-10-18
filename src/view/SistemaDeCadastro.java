@@ -2175,10 +2175,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            //turma.addDia(comboDia1.getSelectedItem().toString());
             turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
 
             turmaDAO.save(turma);
+            JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso.");
         }
     }//GEN-LAST:event_botaoCurso1ActionPerformed
 
