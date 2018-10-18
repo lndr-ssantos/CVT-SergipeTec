@@ -2048,38 +2048,51 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
     private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTurmaActionPerformed
         Turma turma = new Turma();
-        TurmaDAO cursoDAO = new TurmaDAO();
+        TurmaDAO turmaDAO = new TurmaDAO();
         //Checa se tem algum dia selecionado
         if(!checkboxSegCursoTurma.isSelected() && !checkboxTerCursoTurma.isSelected()
                 && !checkboxQuaCursoTurma.isSelected() && !checkboxQuiCursoTurma.isSelected()
                 && !checkboxSexCursoTurma.isSelected() && !checkboxSabCursoTurma.isSelected()){
             JOptionPane.showMessageDialog(null, "Selecione um dia!");
         //checa se tem algum dia selecionado sem horário de inicio definido
+        //seg
         }else if(checkboxSegCursoTurma.isSelected() && campoHoraInicioSegCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início da Segunda!");
+        //ter
         }else if(checkboxTerCursoTurma.isSelected() && campoHoraInicioTerCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início da Terça!");
+        //qua
         }else if(checkboxQuaCursoTurma.isSelected() && campoHoraInicioQuaCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início da Quarta!");
+        //qui
         }else if(checkboxQuiCursoTurma.isSelected() && campoHoraInicioQuiCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início da Quinta!");
+        //sex
         }else if(checkboxSexCursoTurma.isSelected() && campoHoraInicioSexCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início da Sexta!");
+        //sab
         }else if(checkboxSabCursoTurma.isSelected() && campoHoraInicioSabCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de início do Sábado!");
         //checa se tem algum dia selecionado sem horario de término definido
+        //seg
         }else if(checkboxSegCursoTurma.isSelected() && campoHoraFimSegCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término da Segunda!");
+        //ter
         }else if(checkboxTerCursoTurma.isSelected() && campoHoraFimTerCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término da Terça!");
+        //qua
         }else if(checkboxQuaCursoTurma.isSelected() && campoHoraFimQuaCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término da Quarta!");
+        //qui
         }else if(checkboxQuiCursoTurma.isSelected() && campoHoraFimQuiCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término da Quinta!");
+        //sex
         }else if(checkboxSexCursoTurma.isSelected() && campoHoraFimSexCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término da Sexta!");
+        //sab
         }else if(checkboxSabCursoTurma.isSelected() && campoHoraFimSabCursoTurma.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina horário de término do Sábado!");
+        //checa se o total de vagas foi definido
         }else if(campoQntVagas.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Defina o total de vagas da turma!");
         } else {
@@ -2165,7 +2178,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             //turma.addDia(comboDia1.getSelectedItem().toString());
             turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
 
-            cursoDAO.save(turma);
+            turmaDAO.save(turma);
         }
     }//GEN-LAST:event_botaoCurso1ActionPerformed
 
