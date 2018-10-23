@@ -2180,7 +2180,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             turmaDAO.save(turma);
             JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso.");
         }
-    }//GEN-LAST:event_botaoCurso1ActionPerformed
+    }                                       
 
     private void botaoCadastrarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCursoActionPerformed
         Curso curso = new Curso();
