@@ -34,7 +34,9 @@ public class AlunoDAO {
             stmt.setString(8, aluno.getNomeMae());
             stmt.setString(9, aluno.getNomePai());
             stmt.setString(10, aluno.getFone1());
-            stmt.setString(11, aluno.getFone2());
+            if(!aluno.getFone2().isEmpty()){
+                stmt.setString(11, aluno.getFone2());
+            }
             stmt.setString(12, aluno.getCEP());
             stmt.setString(13, Integer.toString(aluno.getNumResidencia()));
             stmt.setString(14, aluno.getComplemento());

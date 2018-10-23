@@ -31,7 +31,9 @@ public class ProfessorDAO {
             stmt.setString(4, professor.getRGUF());
             stmt.setString(5, professor.getSexo());
             stmt.setString(6, professor.getFone1());
-            stmt.setString(7, professor.getFone2());
+            if(!professor.getFone2().isEmpty()){
+                stmt.setString(7, professor.getFone2());
+            }
             stmt.setString(8, professor.getDatNasc().toString());
             stmt.setString(9, professor.getCEP());
             stmt.setInt(10, professor.getNumResidencia());

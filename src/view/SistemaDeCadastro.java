@@ -2256,24 +2256,21 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             professor.setRG(campoRGProf.getText());
             professor.setRGUF(campoRGUFProf.getText());
             professor.setFone1(campoTelefone1Prof.getText());
+		if (radioProfMasc.isSelected()) {
+            professor.setSexo("M");
+		} else if (radioProfFem.isSelected()) {
+			professor.setSexo("F");
+		} else {
+			professor.setSexo("O");
+		}
+        professor.setDatNasc(campoDataNascProf.getText());
+        professor.setCEP(campoCepProf.getText());
+        professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
+        professor.setComplemento(campoComplementoProf.getText());
             
-            if (radioProfMasc.isSelected()) {
-                professor.setSexo("M");
-            } else if (radioProfFem.isSelected()) {
-                professor.setSexo("F");
-            } else {
-                professor.setSexo("O");
-            }
-            
-            professor.setDatNasc(campoDataNascProf.getText());
-            professor.setCEP(campoCepProf.getText());
-            professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
-            professor.setComplemento(campoComplementoProf.getText());
-            
-            if(!campoTelefone2Prof.getText().isEmpty()){
+		if(!campoTelefone2Prof.getText().isEmpty()){
                 professor.setFone2(campoTelefone2Prof.getText());
             }
-            
             boolean profCadastrado = professorDAO.save(professor);
             if (profCadastrado) {
                 JOptionPane.showMessageDialog(null, "Professor cadastrado");

@@ -61,6 +61,7 @@ public class CursoDAO {
         try {
             stmt = con.prepareStatement("delete from Cursos where id = ?");
             //stmt.setInt(2, curso.getID());
+            //primeiro executa um delete cascade em Turmas?
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Curso excluído com sucesso!");
         } catch (SQLException ex) {
