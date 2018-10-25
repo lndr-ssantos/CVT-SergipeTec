@@ -1,9 +1,7 @@
 package model.bean;
 
 //imports para datas
-import java.time.LocalDate; 
-import java.util.ArrayList;//prob tirar depois
-import javax.swing.JTextField;
+import java.time.LocalDate;
 
 //holy moly esse classe é grande
 public class Aluno extends Pessoa{
@@ -15,13 +13,6 @@ public class Aluno extends Pessoa{
     /*os dados do responsável só são necessário se o aluno for menor de idade*/
     private String dadosEscolaridade;
     private String dadosProfissionais;
-    
-    //busca todas as turmas em que o aluno está cadastrado
-    public ArrayList<Turma> buscaTurmas(){
-        ArrayList<Turma> aux = new ArrayList<>();
-        //TODO
-        return aux;
-    }
     
     //instanciando a classe
     public Aluno(){
