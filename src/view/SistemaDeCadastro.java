@@ -2159,10 +2159,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         ProfessorDAO professorDAO = new ProfessorDAO();
         if (campoNomeProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
-        } else if (campoCPFProf.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
         } else if (buttonGroupSexoProfessor.getSelection() == null){
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
+        } else if (campoDataNascProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha a data de nascimento");
+        } else if (campoCPFProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
         } else if (campoRGProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
         } else if (campoRGUFProf.getText().trim().equals("")) {
@@ -2171,22 +2173,33 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe um telefone para contato");
         } else if (campoCepProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
+        } else if (campoNumProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o número da residência");
         } else {
             professor.setNome(campoNome.getText());
             professor.setCPF(campoCPFProf.getText());
             professor.setRG(campoRGProf.getText());
             professor.setRGUF(campoRGUFProf.getText());
             professor.setFone1(campoTelefone1Prof.getText());
-            professor.setSexo(buttonGroupSexoProfessor.getSelection().getActionCommand());
+            
+            if (radioProfMasc.isSelected()) {
+                professor.setSexo("M");
+            } else if (radioProfFem.isSelected()) {
+                professor.setSexo("F");
+            } else {
+                professor.setSexo("O");
+            }
+            
             professor.setDatNasc(campoDataNascProf.getText());
             professor.setCEP(campoCepProf.getText());
             professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
             professor.setComplemento(campoComplementoProf.getText());
+            
             if(!campoTelefone2Prof.getText().isEmpty()){
                 professor.setFone2(campoTelefone2Prof.getText());
             }
-            boolean profCadastrado = professorDAO.save(professor);
             
+            boolean profCadastrado = professorDAO.save(professor);
             if (profCadastrado) {
                 JOptionPane.showMessageDialog(null, "Professor cadastrado");
             } else {
