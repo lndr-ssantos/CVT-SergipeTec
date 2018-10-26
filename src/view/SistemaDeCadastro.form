@@ -347,7 +347,7 @@
                                   <Component id="campoNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="168" max="32767" attributes="0"/>
+                          <EmptySpace pref="218" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -391,6 +391,11 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Outro"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="radioOutroItemStateChanged"/>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="radioOutroStateChanged"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioOutroActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="labelNaturalidade">
                   <Properties>
@@ -1545,9 +1550,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSegCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1556,9 +1558,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSegCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1567,9 +1566,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioTerCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1578,9 +1574,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimTerCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1589,9 +1582,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioQuaCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1600,9 +1590,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimQuaCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1611,9 +1598,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioQuiCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1622,9 +1606,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimQuiCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1633,9 +1614,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSexCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1644,9 +1622,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSexCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1655,9 +1630,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraInicioSabCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>
@@ -1666,9 +1638,6 @@
             <Component class="javax.swing.JFormattedTextField" name="campoHoraFimSabCursoTurma">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-                <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                   <Format subtype="1" type="2"/>
                 </Property>

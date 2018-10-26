@@ -3,6 +3,7 @@ package model.bean;
 //imports para datas
 import java.time.LocalDate; 
 import java.util.ArrayList;//prob tirar depois
+import javax.swing.JTextField;
 
 //holy moly esse classe é grande
 public class Aluno extends Pessoa{
@@ -14,6 +15,10 @@ public class Aluno extends Pessoa{
     /*os dados do responsável só são necessário se o aluno for menor de idade*/
     private String dadosEscolaridade;
     private String dadosProfissionais;
+    private String rua;
+    private String bairro;
+    private String estado;
+    private String cidade;
     
     //busca todas as turmas em que o aluno está cadastrado
     public ArrayList<Turma> buscaTurmas(){
@@ -108,4 +113,31 @@ public class Aluno extends Pessoa{
     public void setCPFResp(String CPF){
         this.responsavel.setCPF(CPF);
     }
+    
+    public String getNomeResponsavel(){
+        String NomeResponsavel = responsavel.getNome();
+        return NomeResponsavel;
+    }
+    
+    public String getRGResponsavel(){
+        String RGResponsavel = responsavel.getRG();
+        return RGResponsavel;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+    
+    public String getEstado() {
+        return estado;
+    }
+    
+    public String getCidade() {
+        return cidade;
+    }
+
 }

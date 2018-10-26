@@ -15,7 +15,7 @@ public abstract class Pessoa {
     private String estadoNasc;
     private LocalDate datNasc;
     private int numResidencia;
-    //private String estado, cidade, bairro, rua; //pegos pelo CEP
+    private String estado, cidade, bairro, rua;
     private String complemento;
     private BufferedImage foto;
     
@@ -179,9 +179,9 @@ public abstract class Pessoa {
         this.foto = foto;
     }
     
-    /*DEPRECATED
+    //DEPRECATED
     
-    /*public String getEstado() {
+    public String getEstado() {
         return estado;
     }
 
@@ -211,5 +211,5 @@ public abstract class Pessoa {
 
     public void setRua(String rua){
         this.rua = rua;
-    }*/
+    }
 }

@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.Aluno;
+import model.bean.Responsavel;
 import view.SistemaDeCadastro;
 /**
  *
@@ -21,7 +22,7 @@ public class AlunoDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, nomeMae, nomePai, telefone1, telefone2, CEP, numRes, complemento, rua, bairro, cidade, estado, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
+            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, nomeMae, nomePai, telefone1, telefone2, CEP, estado, cidade, bairro, rua, numResidencia, complemento, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
             "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, aluno.getNome());
             stmt.setString(2, aluno.getSexo());
@@ -37,10 +38,10 @@ public class AlunoDAO {
             stmt.setString(12, aluno.getCEP());
             stmt.setString(13, Integer.toString(aluno.getNumResidencia()));
             stmt.setString(14, aluno.getComplemento());
-//            stmt.setString(15, aluno.getRua());
-//            stmt.setString(16, aluno.getBairro());
-//            stmt.setString(17, aluno.getEstado());
-//            stmt.setString(18, aluno.getCidade());
+            stmt.setString(15, aluno.getRua());
+            stmt.setString(16, aluno.getBairro());
+            stmt.setString(17, aluno.getEstado());
+            stmt.setString(18, aluno.getCidade());
             stmt.setString(19, aluno.getDadosEscolaridade());
             stmt.setString(20, aluno.getDadosProfissionais());
             stmt.setString(21, aluno.getCPFResponsavel());
@@ -48,7 +49,8 @@ public class AlunoDAO {
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
-            System.err.println("Erro: "+ex);
+            System.err.println("Erro ao cadastrar aluno: "+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -56,35 +58,35 @@ public class AlunoDAO {
     
 
     
-    public void update (Aluno aluno){
-        con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("update Alunos set nomeAluno = ? where cpf = ?");
-            //stmt.setString(1, curso.getNovoNomeCurso());
-            //stmt.setInt(2, curso.getID());
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Curso atualizado com sucesso!");
-        } catch (SQLException ex) {
-            System.err.println("Erro ao atualizar: "+ex);
-        }finally{
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
+//    public void update (Aluno aluno){
+//        con = ConnectionFactory.getConnection();
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = con.prepareStatement("update Alunos set nomeAluno = ? where cpf = ?");
+//            //stmt.setString(1, curso.getNovoNomeCurso());
+//            //stmt.setInt(2, curso.getID());
+//            stmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null, "Curso atualizado com sucesso!");
+//        } catch (SQLException ex) {
+//            System.err.println("Erro ao atualizar: "+ex);
+//        }finally{
+//            ConnectionFactory.closeConnection(con, stmt);
+//        }
+//    }
     
-    public void delete (Aluno aluno){
-        con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("delete from Alunos where cpf = ?");
-            //stmt.setInt(2, curso.getcpf());
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Curso excluído com sucesso!");
-        } catch (SQLException ex) {
-            System.err.println("Erro ao excluir: "+ex);
-        }finally{
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
+//    public void delete (Aluno aluno){
+//        con = ConnectionFactory.getConnection();
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = con.prepareStatement("delete from Alunos where cpf = ?");
+//            //stmt.setInt(2, curso.getcpf());
+//            stmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null, "Curso excluído com sucesso!");
+//        } catch (SQLException ex) {
+//            System.err.println("Erro ao excluir: "+ex);
+//        }finally{
+//            ConnectionFactory.closeConnection(con, stmt);
+//        }
+//    }
     
 }

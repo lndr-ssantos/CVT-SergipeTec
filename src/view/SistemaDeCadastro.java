@@ -28,6 +28,7 @@ import model.bean.Turma;
 import model.dao.CursoDAO;
 import model.dao.ProfessorDAO;
 import model.dao.TurmaDAO;
+import model.dao.ResponsavelDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -44,7 +45,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) tableCTurma.getModel();
         tableCTurma.setRowSorter(new TableRowSorter(modelo));
-
+        
     }
 
     public void readTable(String nomeConsulta) {
@@ -284,6 +285,21 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroup1.add(radioOutro);
         radioOutro.setText("Outro");
+        radioOutro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                radioOutroItemStateChanged(evt);
+            }
+        });
+        radioOutro.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                radioOutroStateChanged(evt);
+            }
+        });
+        radioOutro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioOutroActionPerformed(evt);
+            }
+        });
 
         labelNaturalidade.setText("Naturalidade");
 
@@ -524,7 +540,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelN)
                         .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
@@ -1793,9 +1809,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoBoxItemStateChanged
 
     private void botaoProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoProximoActionPerformed
+        
         Aluno aluno = new Aluno();
         Responsavel responsavel = new Responsavel();
         AlunoDAO alunoDAO = new AlunoDAO();
+        ResponsavelDAO responsavelDAO = new ResponsavelDAO();
+        
         if (campoNome.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
         } else if (!radioMasc.isSelected() & !radioFem.isSelected() & !radioOutro.isSelected()){
@@ -1816,9 +1835,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Telefone");
         } else if (campoCEP.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
-        } else if (!radioEFMC.isSelected() & !radioEFMI.isSelected()){
-            JOptionPane.showMessageDialog(null, "Informe os dados escolares");
+        } else if (campoNumero.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Informe o número da residência");
         } else if (!radioEMC.isSelected() & !radioEMI.isSelected()){
+            JOptionPane.showMessageDialog(null, "Informe os dados escolares");
+        }else if (!radioEMC.isSelected() & !radioEMI.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
         } else if (!radioNSC.isSelected() & !radioNSI.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
@@ -1829,12 +1850,24 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setDatNasc(campoDataNascimento.getText());
             aluno.setCPF(campoCPF.getText());
             aluno.setRG(campoRG.getText());
+            aluno.setNomeMae(campoMae.getText());
+            aluno.setNomePai(campoPai.getText());
             aluno.setCEP(campoCEP.getText());
+            aluno.setEstado(campoEstado.getText());
+            aluno.setCidade(campoCidade.getText());
+            aluno.setBairro(campoBairro.getText());
+            aluno.setRua(CampoRua.getText());
             aluno.setFone1(campoTel1.getText());
             aluno.setCidadeNasc(cidadeBox.getSelectedItem().toString());
             aluno.setEstadoNasc(estadoBox.getSelectedItem().toString());
             aluno.setNumResidencia(Integer.parseInt(campoNumero.getText()));
-            aluno.setSexo(buttonGroup1.getSelection().getActionCommand());
+            if(radioMasc.isSelected()){
+                aluno.setSexo("M");
+            }else if(radioFem.isSelected()){
+                aluno.setSexo("F");
+            }else
+                aluno.setSexo("O");
+            
             responsavel.setNome(campoNomeResponsavel.getText());
             responsavel.setCPF(campoCPFResponsavel.getText());
             responsavel.setRG(campoRGResponsavel.getText());
@@ -1842,6 +1875,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setResponsavel(responsavel);
 
             alunoDAO.save(aluno);
+            responsavelDAO.save(responsavel);
         }
     }//GEN-LAST:event_botaoProximoActionPerformed
 
@@ -2200,6 +2234,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             campoHoraFimSabCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxSabCursoTurmaItemStateChanged
+
+    private void radioOutroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radioOutroItemStateChanged
+
+    }//GEN-LAST:event_radioOutroItemStateChanged
+
+    private void radioOutroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOutroActionPerformed
+        
+    }//GEN-LAST:event_radioOutroActionPerformed
+
+    private void radioOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_radioOutroStateChanged
+
+    }//GEN-LAST:event_radioOutroStateChanged
 
     /**
      * @param args the command line arguments

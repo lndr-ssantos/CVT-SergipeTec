@@ -17,27 +17,29 @@ import model.bean.Responsavel;
  * @author rodrygo.matos
  */
 public class ResponsavelDAO {
+
     private Connection con = null;
-    
-    public void save (Responsavel responsavel){
+
+    public void save(Responsavel responsavel) {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Responsavel(nomeResponsavel, CPFResponsavel, RGResponsavel)\n" + "values (?, ?, ?)");
+            stmt = con.prepareStatement("insert into Responsaveis(nome, CPF, RG)\n" + "values (?, ?, ?)");
             stmt.setString(1, responsavel.getNome());
             stmt.setString(2, responsavel.getCPF());
             stmt.setString(3, responsavel.getRG());
-            
+
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Responsavel cadastrado com sucesso!");
         } catch (SQLException ex) {
-            System.err.println("Erro ao cadastrar o responsavel: "+ex);
-        }finally{
+            System.err.println("Erro ao cadastrar o responsavel: " + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsavel: "+ex);
+        } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-    
-    public void update (Responsavel responsavel){
+
+    public void update(Responsavel responsavel) {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
@@ -47,13 +49,13 @@ public class ResponsavelDAO {
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Responsavel atualizado com sucesso!");
         } catch (SQLException ex) {
-            System.err.println("Erro ao atualizar: "+ex);
-        }finally{
+            System.err.println("Erro ao atualizar: " + ex);
+        } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-    
-    public void delete (Responsavel responsavel){
+
+    public void delete(Responsavel responsavel) {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
@@ -62,8 +64,8 @@ public class ResponsavelDAO {
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Responsavel excluído com sucesso!");
         } catch (SQLException ex) {
-            System.err.println("Erro ao excluir: "+ex);
-        }finally{
+            System.err.println("Erro ao excluir: " + ex);
+        } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
