@@ -8,6 +8,7 @@ public abstract class Pessoa {
     private String sexo; //M, F, O
     private String CPF;
     private String RG; 
+    private String RGUF;
     private String CEP;
     private String fone1;//obrigatório
     private String fone2;
@@ -101,6 +102,14 @@ public abstract class Pessoa {
 
     public void setRG(String RG) {
         this.RG = RG;
+    }
+
+    public String getRGUF() {
+        return RGUF;
+    }
+
+    public void setRGUF(String RGUF) {
+        this.RGUF = RGUF;
     }
 
     public String getCEP() {

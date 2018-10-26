@@ -178,6 +178,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelCEP1 = new javax.swing.JLabel();
         campoCepProf = new javax.swing.JTextField();
         botaoCadastroProf = new javax.swing.JButton();
+        labelRGUFProf = new javax.swing.JLabel();
+        campoRGUFProf = new javax.swing.JTextField();
         painelCursoTurma = new javax.swing.JPanel();
         labelNomeCurso = new javax.swing.JLabel();
         campoNomeCurso = new javax.swing.JTextField();
@@ -823,6 +825,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
+        labelRGUFProf.setText("UF");
+
         javax.swing.GroupLayout painelCadastroProfessorLayout = new javax.swing.GroupLayout(painelCadastroProfessor);
         painelCadastroProfessor.setLayout(painelCadastroProfessorLayout);
         painelCadastroProfessorLayout.setHorizontalGroup(
@@ -877,16 +881,21 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
                         .addGroup(painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCadastroProfessorLayout.createSequentialGroup()
-                                    .addGap(205, 205, 205)
-                                    .addComponent(labelRG1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoRGProf, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
-                                    .addComponent(labelCPF1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoCPFProf, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
+                                .addGroup(painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCadastroProfessorLayout.createSequentialGroup()
+                                        .addGap(205, 205, 205)
+                                        .addComponent(labelRG1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoRGProf, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
+                                        .addComponent(labelCPF1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoCPFProf, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelRGUFProf)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoRGUFProf, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
                                 .addComponent(labelDataNascimento1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -901,7 +910,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addGap(207, 207, 207)
                                 .addComponent(campoTelefone2Prof, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(labelEndereco1))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(360, Short.MAX_VALUE))))
         );
         painelCadastroProfessorLayout.setVerticalGroup(
             painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -925,7 +934,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(labelCPF1)
                     .addComponent(labelRG1)
                     .addComponent(campoCPFProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoRGProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoRGProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelRGUFProf)
+                    .addComponent(campoRGUFProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelTelefone1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -958,7 +969,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(campoComplementoProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoCadastroProf)
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelCadastroProfessor, "painelCadastroProfessor");
@@ -2154,14 +2165,17 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
         } else if (campoRGProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
-        } else if (campoDataNascProf.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo Data de nascimento");
+        } else if (campoRGUFProf.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo UF");
+        } else if (campoTelefone1Prof.getText().trim().equals("") && campoTelefone2Prof.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Informe um telefone para contato");
         } else if (campoCepProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
         } else {
             professor.setNome(campoNome.getText());
             professor.setCPF(campoCPFProf.getText());
             professor.setRG(campoRGProf.getText());
+            professor.setRGUF(campoRGUFProf.getText());
             professor.setFone1(campoTelefone1Prof.getText());
             professor.setSexo(buttonGroupSexoProfessor.getSelection().getActionCommand());
             professor.setDatNasc(campoDataNascProf.getText());
@@ -2171,7 +2185,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             if(!campoTelefone2Prof.getText().isEmpty()){
                 professor.setFone2(campoTelefone2Prof.getText());
             }
-            professorDAO.save(professor);        // TODO add your handling code here:
+            boolean profCadastrado = professorDAO.save(professor);
+            
+            if (profCadastrado) {
+                JOptionPane.showMessageDialog(null, "Professor cadastrado");
+            } else {
+                JOptionPane.showMessageDialog(null, "Professor não cadastrado. Ocorreu um erro");
+            }
         }
     }//GEN-LAST:event_botaoCadastroProfActionPerformed
 
@@ -2357,6 +2377,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoRG;
     private javax.swing.JTextField campoRGProf;
     private javax.swing.JTextField campoRGResponsavel;
+    private javax.swing.JTextField campoRGUFProf;
     private javax.swing.JTextField campoTel1;
     private javax.swing.JTextField campoTel2;
     private javax.swing.JTextField campoTelefone1Prof;
@@ -2425,6 +2446,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelRG;
     private javax.swing.JLabel labelRG1;
     private javax.swing.JLabel labelRGResponsavel;
+    private javax.swing.JLabel labelRGUFProf;
     private javax.swing.JLabel labelRua;
     private javax.swing.JLabel labelRua1;
     private javax.swing.JLabel labelSexo;

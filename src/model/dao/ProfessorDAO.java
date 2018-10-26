@@ -19,30 +19,32 @@ public class ProfessorDAO {
     
     private Connection con = null;
     
-    public void save (Professor professor){
+    public boolean save (Professor professor){
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Professor(nome, CPF, RG, sexo, fone1, fone2, dataNasc, CEP, numResidencia, complemento)\n" +
-            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("insert into Professores(nome, CPF, RG, RGUF, sexo, fone1, fone2, dataNasc, CEP, numResidencia, complemento)\n" +
+            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, professor.getNome());
             stmt.setString(2, professor.getCPF());
             stmt.setString(3, professor.getRG());
-            stmt.setString(4, professor.getSexo());
-            stmt.setString(5, professor.getFone1());
-            stmt.setString(6, professor.getFone2());
-            stmt.setString(7, professor.getDatNasc().toString());
-            stmt.setString(8, professor.getCEP());
-            stmt.setInt(9, professor.getNumResidencia());
-            stmt.setString(10, professor.getComplemento());
-            //stmt.setString(10, Integer.toString(professor.getCodProf()));
+            stmt.setString(4, professor.getRGUF());
+            stmt.setString(5, professor.getSexo());
+            stmt.setString(6, professor.getFone1());
+            stmt.setString(7, professor.getFone2());
+            stmt.setString(8, professor.getDatNasc().toString());
+            stmt.setString(9, professor.getCEP());
+            stmt.setInt(10, professor.getNumResidencia());
+            stmt.setString(11, professor.getComplemento());
             
             stmt.executeUpdate();
 
         } catch (SQLException ex) {
             System.err.println("Erro: "+ex);
-        }finally{
+            return false;
+        } finally {
             ConnectionFactory.closeConnection(con, stmt);
+            return true;
         }
     }
     
