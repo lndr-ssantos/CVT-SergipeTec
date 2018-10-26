@@ -28,8 +28,10 @@ public class CursoDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Cursos(nomeCurso)\n" + "values (?)");
+            stmt = con.prepareStatement("insert into Cursos(nomeCurso, cargaHoraria)\n" + 
+                    "values (?, ?)");
             stmt.setString(1, curso.getNomeCurso());
+            stmt.setInt(2, curso.getCargaHoraria());
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Curso cadastrado com sucesso!");
         } catch (SQLException ex) {

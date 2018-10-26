@@ -375,6 +375,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Masculino"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioMascActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radioFem">
                   <Properties>
@@ -1609,6 +1612,7 @@
                 </Property>
               </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Professores&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codProf&quot;) + &quot;) &quot; + rs.getString(&quot;nome&quot;);&#xa;                boxProfessor.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -1623,7 +1627,11 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+              </Events>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Cursos&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codCurso&quot;) + &quot;) &quot; + rs.getString(&quot;nomeCurso&quot;);&#xa;                jComboBox1.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>

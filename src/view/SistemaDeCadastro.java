@@ -12,6 +12,7 @@ import model.dao.AlunoDAO;
 import java.awt.CardLayout;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,9 @@ import model.dao.TurmaDAO;
 import model.dao.ResponsavelDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -205,8 +209,46 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         labelProfessorTurma = new javax.swing.JLabel();
         boxProfessor = new javax.swing.JComboBox<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Professores";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String st = "(" + rs.getInt("codProf") + ") " + rs.getString("nome");
+                boxProfessor.addItem(st);
+            }//end while
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Cursos";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String st = "(" + rs.getInt("codCurso") + ") " + rs.getString("nomeCurso");
+                jComboBox1.addItem(st);
+            }//end while
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         painelConsultaAluno = new javax.swing.JPanel();
@@ -274,6 +316,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroup1.add(radioMasc);
         radioMasc.setText("Masculino");
+        radioMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMascActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(radioFem);
         radioFem.setText("Feminino");
@@ -1035,6 +1082,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelProfessorTurma.setText("Professor da turma");
 
         jLabel4.setText("Informe o curso");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Início");
@@ -1840,13 +1893,22 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 aluno.setDadosProfissionais(radioDP7.toString());
             } else 
                 aluno.setDadosProfissionais(radioDP7.toString() + " - " + campoOutro.getText());
-			
+
             if(radioMasc.isSelected()){
                 aluno.setSexo("M");
-            }else if(radioFem.isSelected()){
+            }
+            if(radioFem.isSelected()){
                 aluno.setSexo("F");
-            }else
+            }
+            if(radioOutro.isSelected()){
                 aluno.setSexo("O");
+            }
+            
+            if(buttonGroup5.getSelection().toString().equals("Outro")){
+                aluno.setDadosProfissionais(campoOutro.getText());
+            } else {
+                aluno.setDadosProfissionais(buttonGroup5.getSelection().getActionCommand());
+            }
             
             responsavel.setNome(campoNomeResponsavel.getText());
             responsavel.setCPF(campoCPFResponsavel.getText());
@@ -2176,6 +2238,16 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 }
             }
             turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
+            
+            String s = boxProfessor.getSelectedItem().toString();
+            int i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
+            
+            turma.setCodProf(i);
+            
+            s = jComboBox1.getSelectedItem().toString();
+            i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
+            
+            turma.setCodCurso(i);
 
             turmaDAO.save(turma);
             JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso.");
@@ -2189,8 +2261,31 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
         }else{
             curso.setNomeCurso(campoNomeCurso.getText());
+            curso.setCargaHoraria(Integer.parseInt(jTextField1.getText()));
             cursoDAO.save(curso);
         }
+        
+        try {
+            jComboBox1.removeAllItems();
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Cursos";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String st = rs.getString("nomeCurso");
+                jComboBox1.addItem(st);
+            }//end while
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }//GEN-LAST:event_botaoCadastrarCursoActionPerformed
 
     private void campoRGProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRGProfActionPerformed
@@ -2277,6 +2372,26 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Professor não cadastrado. Ocorreu um erro");
             }
+        }
+        
+        try { 
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Professores";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                String st = rs.getString("nome");
+                boxProfessor.addItem(st);
+            }//end while
+
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_botaoCadastroProfActionPerformed
 

@@ -3,9 +3,11 @@ package model.bean;
 import java.util.ArrayList;
 
 public class Curso {
-    public int codCurso;
-    public String nomeCurso;
-    public String nomeCursoConsulta;
+    private int codCurso;
+    private String nomeCurso;
+    private String nomeCursoConsulta;
+    private int cargaHoraria;
+    
     private ArrayList<Turma> turmas = new ArrayList();
             
     public Curso(int codCurso, String nomeCurso, ArrayList<Turma> turmas) {
@@ -73,6 +75,14 @@ public class Curso {
 
     public void setNomeCursoConsulta(String nomeCursoConsulta) {
         this.nomeCursoConsulta = nomeCursoConsulta;
+    }
+
+    public int getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 
 }

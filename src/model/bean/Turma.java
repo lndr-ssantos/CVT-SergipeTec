@@ -11,7 +11,7 @@ import java.util.Locale;
 public class Turma{
     private Curso curso;
     private int codCurso;
-    private Professor professor;
+    private int codProf;
     private String turno;
     
     private int ano;
@@ -27,7 +27,7 @@ public class Turma{
         
     }
     
-    public Turma(Curso curso, Professor professor, int codCurso, String turno, 
+    public Turma(Curso curso, int codProf, int codCurso, String turno, 
             ArrayList<LocalTime> horaInicio, ArrayList<LocalTime> horaFim,
             int ano, int semestre, int totVagas, ArrayList<String> dias) {
         this.curso = curso;
@@ -37,7 +37,7 @@ public class Turma{
         this.semestre = semestre;
         this.totVagas = totVagas;
         this.turno = turno;
-        this.professor = professor;
+        this.codProf = codProf;
         this.dias = dias;
     }
     
@@ -114,24 +114,16 @@ public class Turma{
         return codCurso;
     }
 
-    public void setCodCurso(Curso curso) {
-        this.codCurso = curso.getCodCurso();
+    public void setCodCurso(int curso) {
+        this.codCurso = curso;
     }
 
-    public Professor getProfessor() {
-        return professor;
-    }
-
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
-    }
-    
     public int getCodProf() {
-        return this.professor.getCodProf();
+        return codProf;
     }
 
     public void setCodProf(int codProf) {
-        this.professor.setCodProf(codProf);
+        this.codProf = codProf;
     }
 
     public ArrayList<LocalTime> getHoraInicioArray() {

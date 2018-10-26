@@ -4,6 +4,7 @@ import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import model.bean.Turma;
 
@@ -14,20 +15,27 @@ import model.bean.Turma;
 public class TurmaDAO {
     
     private Connection con = null;
+    private Calendar cal = Calendar.getInstance();
     
     public void save (Turma turma){
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Turma(codCurso, diaAula, horaInicio, horaFim, vagas, codProf)\n" + 
-            "values (?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("insert into Turmas(Cursos_codCurso, dias, horaInicio, horaFim, totVagas, Professor_codProf, ano, semestre)\n" + 
+            "values (?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setInt(1, turma.getCodCurso());
             stmt.setString(2, turma.getDiasString());
             //stmt.setDate(3, Date.valueOf(turma.getHoraInicioString()));
             stmt.setString(3, turma.getHoraInicioString());
             stmt.setString(4, turma.getHoraFimString());
             stmt.setInt(5, turma.getTotVagas());
-            stmt.setInt(6, turma.getProfessor().getCodProf());
+            stmt.setInt(6, turma.getCodProf());
+            stmt.setInt(7, cal.get(Calendar.YEAR));
+            if((cal.get(Calendar.MONTH) + 1) < 7){
+                stmt.setInt(8, 1);
+            } else {
+                stmt.setInt(8, 2);
+            }
             
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso!");
