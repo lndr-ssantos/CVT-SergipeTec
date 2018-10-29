@@ -34,16 +34,14 @@ public class AlunoDAO {
             stmt.setString(8, aluno.getNomeMae());
             stmt.setString(9, aluno.getNomePai());
             stmt.setString(10, aluno.getFone1());
-            if(!aluno.getFone2().isEmpty()){
-                stmt.setString(11, aluno.getFone2());
-            }
+            stmt.setString(11, aluno.getFone2());
             stmt.setString(12, aluno.getCEP());
-            stmt.setString(13, Integer.toString(aluno.getNumResidencia()));
-            stmt.setString(14, aluno.getComplemento());
-            stmt.setString(15, aluno.getRua());
-            stmt.setString(16, aluno.getBairro());
-            stmt.setString(17, aluno.getEstado());
-            stmt.setString(18, aluno.getCidade());
+            stmt.setString(13, aluno.getEstado());
+            stmt.setString(14, aluno.getCidade());
+            stmt.setString(15, aluno.getBairro());
+            stmt.setString(16, aluno.getRua());
+            stmt.setString(17, Integer.toString(aluno.getNumResidencia()));
+            stmt.setString(18, aluno.getComplemento());
             stmt.setString(19, aluno.getDadosEscolaridade());
             stmt.setString(20, aluno.getDadosProfissionais());
             stmt.setString(21, aluno.getCPFResponsavel());

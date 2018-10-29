@@ -10,6 +10,7 @@ import br.com.parg.viacep.ViaCEPException;
 import model.bean.Aluno;
 import model.dao.AlunoDAO;
 import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -229,7 +230,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxCursos = new javax.swing.JComboBox<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -242,7 +243,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             while (rs.next()){
                 String st = "(" + rs.getInt("codCurso") + ") " + rs.getString("nomeCurso");
-                jComboBox1.addItem(st);
+                jComboBoxCursos.addItem(st);
             }//end while
 
             connection.close();
@@ -316,11 +317,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroup1.add(radioMasc);
         radioMasc.setText("Masculino");
-        radioMasc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioMascActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(radioFem);
         radioFem.setText("Feminino");
@@ -798,7 +794,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroupSexoProfessor.add(radioProfMasc);
         radioProfMasc.setText("Masculino");
-        
+
         buttonGroupSexoProfessor.add(radioProfFem);
         radioProfFem.setText("Feminino");
 
@@ -1083,12 +1079,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         jLabel4.setText("Informe o curso");
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Início");
 
@@ -1130,7 +1120,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jComboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1188,7 +1178,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelDiaTurma)
                 .addGap(12, 12, 12)
@@ -1855,10 +1845,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe o número da residência");
         } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        } else if (buttonGroup5.getSelection().getSelectedObjects() == null){
-            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
-        } else if(buttonGroup5.getSelection().getActionCommand().equals("Outro") && campoOutro.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
         }else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
@@ -1878,21 +1864,24 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setDadosEscolaridade(boxDadosEscolares.getSelectedItem().toString());
             
             if(radioDP1.isSelected()){
-                aluno.setDadosProfissionais(radioDP1.toString());
+                aluno.setDadosProfissionais(radioDP1.getText());
             } else if(radioDP2.isSelected()){
-                aluno.setDadosProfissionais(radioDP2.toString());
+                aluno.setDadosProfissionais(radioDP2.getText());
             } else if(radioDP3.isSelected()){
-                aluno.setDadosProfissionais(radioDP3.toString());
+                aluno.setDadosProfissionais(radioDP3.getText());
             } else if(radioDP4.isSelected()){
-                aluno.setDadosProfissionais(radioDP4.toString());
+                aluno.setDadosProfissionais(radioDP4.getText());
             } else if(radioDP5.isSelected()){
-                aluno.setDadosProfissionais(radioDP5.toString());
+                aluno.setDadosProfissionais(radioDP5.getText());
             } else if(radioDP6.isSelected()){
-                aluno.setDadosProfissionais(radioDP6.toString());
+                aluno.setDadosProfissionais(radioDP6.getText());
             } else if(radioDP7.isSelected() && campoOutro.getText().trim().equals("")){
-                aluno.setDadosProfissionais(radioDP7.toString());
-            } else 
-                aluno.setDadosProfissionais(radioDP7.toString() + " - " + campoOutro.getText());
+                aluno.setDadosProfissionais(radioDP7.getText());
+            } else if (radioDP7.isSelected() && !campoOutro.getText().trim().equals("")) {
+                aluno.setDadosProfissionais(radioDP7.getText() + " - " + campoOutro.getText());               
+            } else {
+                JOptionPane.showMessageDialog(null, "Informe dados profissionais");
+            }
 
             if(radioMasc.isSelected()){
                 aluno.setSexo("M");
@@ -1903,21 +1892,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             if(radioOutro.isSelected()){
                 aluno.setSexo("O");
             }
-            
-            if(buttonGroup5.getSelection().toString().equals("Outro")){
-                aluno.setDadosProfissionais(campoOutro.getText());
-            } else {
-                aluno.setDadosProfissionais(buttonGroup5.getSelection().getActionCommand());
-            }
-            
+                        
             responsavel.setNome(campoNomeResponsavel.getText());
             responsavel.setCPF(campoCPFResponsavel.getText());
             responsavel.setRG(campoRGResponsavel.getText());
             
             aluno.setResponsavel(responsavel);
 
-            alunoDAO.save(aluno);
             responsavelDAO.save(responsavel);
+            alunoDAO.save(aluno);
         }
     }//GEN-LAST:event_botaoProximoActionPerformed
 
@@ -2108,7 +2091,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
-    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTurmaActionPerformed
+    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         Turma turma = new Turma();
         TurmaDAO turmaDAO = new TurmaDAO();
         //Checa se tem algum dia selecionado
@@ -2244,7 +2227,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             
             turma.setCodProf(i);
             
-            s = jComboBox1.getSelectedItem().toString();
+            s = jComboBoxCursos.getSelectedItem().toString();
             i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
             
             turma.setCodCurso(i);
@@ -2266,7 +2249,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
         
         try {
-            jComboBox1.removeAllItems();
+            jComboBoxCursos.removeAllItems();
             Class.forName("com.mysql.jdbc.Driver");
              
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
@@ -2278,7 +2261,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             while (rs.next()){
                 String st = rs.getString("nomeCurso");
-                jComboBox1.addItem(st);
+                jComboBoxCursos.addItem(st);
             }//end while
 
             connection.close();
@@ -2604,7 +2587,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JButton consultarConsultarCurso;
     private javax.swing.JButton consultarCursoTA;
     private javax.swing.JComboBox<String> estadoBox;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBoxCursos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

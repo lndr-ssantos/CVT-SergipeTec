@@ -375,9 +375,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Masculino"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioMascActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radioFem">
                   <Properties>
@@ -1172,9 +1169,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Masculino"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioProfMascActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="radioProfFem">
               <Properties>
@@ -1263,7 +1257,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBoxCursos" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
@@ -1339,7 +1333,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBoxCursos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="labelDiaTurma" min="-2" max="-2" attributes="0"/>
@@ -1621,17 +1615,14 @@
                 <Property name="text" type="java.lang.String" value="Informe o curso"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="jComboBoxCursos">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-              </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Cursos&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codCurso&quot;) + &quot;) &quot; + rs.getString(&quot;nomeCurso&quot;);&#xa;                jComboBox1.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Cursos&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codCurso&quot;) + &quot;) &quot; + rs.getString(&quot;nomeCurso&quot;);&#xa;                jComboBoxCursos.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
