@@ -119,25 +119,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         campoCidade = new javax.swing.JTextField();
         labelCEP = new javax.swing.JLabel();
         campoCEP = new javax.swing.JTextField();
-        painelDadosEscolares = new javax.swing.JPanel();
-        labelEFM = new javax.swing.JLabel();
-        radioEFMC = new javax.swing.JRadioButton();
-        radioEFMI = new javax.swing.JRadioButton();
-        labelEM = new javax.swing.JLabel();
-        radioEMC = new javax.swing.JRadioButton();
-        radioEMI = new javax.swing.JRadioButton();
-        labelNS = new javax.swing.JLabel();
-        radioNSC = new javax.swing.JRadioButton();
-        radioNSI = new javax.swing.JRadioButton();
         painelDadosProfissionais = new javax.swing.JPanel();
         radioDP1 = new javax.swing.JRadioButton();
         radioDP2 = new javax.swing.JRadioButton();
         radioDP3 = new javax.swing.JRadioButton();
         radioDP4 = new javax.swing.JRadioButton();
         radioDP5 = new javax.swing.JRadioButton();
-        radioDP6 = new javax.swing.JRadioButton();
+        radioDP7 = new javax.swing.JRadioButton();
         campoOutro = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        radioDP6 = new javax.swing.JRadioButton();
+        labelDadosEscolares = new javax.swing.JLabel();
+        labelDadosProfissionais = new javax.swing.JLabel();
+        boxDadosEscolares = new javax.swing.JComboBox<>();
         painelDadosResponsavel = new javax.swing.JPanel();
         labelNomeResponsavel = new javax.swing.JLabel();
         campoNomeResponsavel = new javax.swing.JTextField();
@@ -547,79 +540,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
 
-        labelEFM.setText("Ensino Fundamental Maior");
-
-        buttonGroup2.add(radioEFMC);
-        radioEFMC.setText("Completo");
-
-        buttonGroup2.add(radioEFMI);
-        radioEFMI.setText("Incompleto");
-
-        labelEM.setText("Ensino Médio");
-
-        buttonGroup3.add(radioEMC);
-        radioEMC.setText("Completo");
-
-        buttonGroup3.add(radioEMI);
-        radioEMI.setText("Incompleto");
-
-        labelNS.setText("Nível Superior");
-
-        buttonGroup4.add(radioNSC);
-        radioNSC.setText("Completo");
-
-        buttonGroup4.add(radioNSI);
-        radioNSI.setText("Incompleto");
-
-        javax.swing.GroupLayout painelDadosEscolaresLayout = new javax.swing.GroupLayout(painelDadosEscolares);
-        painelDadosEscolares.setLayout(painelDadosEscolaresLayout);
-        painelDadosEscolaresLayout.setHorizontalGroup(
-            painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDadosEscolaresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelEFM)
-                    .addComponent(labelEM)
-                    .addComponent(labelNS))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDadosEscolaresLayout.createSequentialGroup()
-                        .addComponent(radioEFMC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioEFMI))
-                    .addGroup(painelDadosEscolaresLayout.createSequentialGroup()
-                        .addComponent(radioEMC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioEMI))
-                    .addGroup(painelDadosEscolaresLayout.createSequentialGroup()
-                        .addComponent(radioNSC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radioNSI)))
-                .addContainerGap(421, Short.MAX_VALUE))
-        );
-        painelDadosEscolaresLayout.setVerticalGroup(
-            painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosEscolaresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioEFMC)
-                    .addComponent(labelEFM)
-                    .addComponent(radioEFMI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelEM)
-                    .addComponent(radioEMC)
-                    .addComponent(radioEMI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelDadosEscolaresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNS)
-                    .addComponent(radioNSC)
-                    .addComponent(radioNSI))
-                .addContainerGap(600, Short.MAX_VALUE))
-        );
-
-        painelGuiasAluno.addTab("D. Escolares", painelDadosEscolares);
-
         buttonGroup5.add(radioDP1);
         radioDP1.setText("Não encontrei emprego ou atividade remunerada");
 
@@ -635,11 +555,31 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         buttonGroup5.add(radioDP5);
         radioDP5.setText("Profissional liberal ou tem próprio negócio");
 
-        buttonGroup5.add(radioDP6);
-        radioDP6.setText("Outro");
+        buttonGroup5.add(radioDP7);
+        radioDP7.setText("Outro");
+        radioDP7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                radioDP7ItemStateChanged(evt);
+            }
+        });
+        radioDP7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioDP7ActionPerformed(evt);
+            }
+        });
 
-        buttonGroup5.add(jRadioButton1);
-        jRadioButton1.setText("Nunca trabalhei");
+        campoOutro.setEditable(false);
+
+        buttonGroup5.add(radioDP6);
+        radioDP6.setText("Nunca trabalhei");
+
+        labelDadosEscolares.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDadosEscolares.setText("Dados escolares");
+
+        labelDadosProfissionais.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDadosProfissionais.setText("Dados Profissionais");
+
+        boxDadosEscolares.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ensino fundamental maior completo", "Ensino fundamental maior incompleto", "Ensino médio completo", "Ensino médio incompleto", "Nível superior completo", "Nível superior incompleto" }));
 
         javax.swing.GroupLayout painelDadosProfissionaisLayout = new javax.swing.GroupLayout(painelDadosProfissionais);
         painelDadosProfissionais.setLayout(painelDadosProfissionaisLayout);
@@ -648,22 +588,34 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             .addGroup(painelDadosProfissionaisLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(radioDP1)
-                    .addComponent(radioDP2)
-                    .addComponent(radioDP3)
-                    .addComponent(radioDP4)
-                    .addComponent(radioDP5)
+                    .addComponent(labelDadosEscolares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelDadosProfissionais, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(painelDadosProfissionaisLayout.createSequentialGroup()
-                        .addComponent(radioDP6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jRadioButton1))
-                .addContainerGap(429, Short.MAX_VALUE))
+                        .addGroup(painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boxDadosEscolares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioDP1)
+                            .addComponent(radioDP2)
+                            .addComponent(radioDP3)
+                            .addComponent(radioDP4)
+                            .addComponent(radioDP5)
+                            .addGroup(painelDadosProfissionaisLayout.createSequentialGroup()
+                                .addComponent(radioDP7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(radioDP6))
+                        .addGap(0, 434, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         painelDadosProfissionaisLayout.setVerticalGroup(
             painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDadosProfissionaisLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(labelDadosEscolares)
+                .addGap(18, 18, 18)
+                .addComponent(boxDadosEscolares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelDadosProfissionais)
+                .addGap(18, 18, 18)
                 .addComponent(radioDP1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioDP2)
@@ -674,15 +626,15 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioDP5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(radioDP6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosProfissionaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioDP6)
+                    .addComponent(radioDP7)
                     .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(478, Short.MAX_VALUE))
+                .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        painelGuiasAluno.addTab("D. Profissionais", painelDadosProfissionais);
+        painelGuiasAluno.addTab("D. Escolares e Profissionais", painelDadosProfissionais);
 
         labelNomeResponsavel.setText("Nome");
 
@@ -799,7 +751,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroupSexoProfessor.add(radioProfMasc);
         radioProfMasc.setText("Masculino");
-
+        
         buttonGroupSexoProfessor.add(radioProfFem);
         radioProfFem.setText("Feminino");
 
@@ -1848,13 +1800,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
         } else if (campoNumero.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Informe o número da residência");
-        } else if (!radioEMC.isSelected() & !radioEMI.isSelected()){
-            JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        }else if (!radioEMC.isSelected() & !radioEMI.isSelected()){
-            JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        } else if (!radioNSC.isSelected() & !radioNSI.isSelected()){
-            JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP6.isSelected()){
+        } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
         }else {
             aluno.setNome(campoNome.getText());
@@ -1872,6 +1818,26 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setCidadeNasc(cidadeBox.getSelectedItem().toString());
             aluno.setEstadoNasc(estadoBox.getSelectedItem().toString());
             aluno.setNumResidencia(Integer.parseInt(campoNumero.getText()));
+            aluno.setDadosEscolaridade(boxDadosEscolares.getSelectedItem().toString());
+            
+            if(radioDP1.isSelected()){
+                aluno.setDadosProfissionais(radioDP1.toString());
+            } else if(radioDP2.isSelected()){
+                aluno.setDadosProfissionais(radioDP2.toString());
+            } else if(radioDP3.isSelected()){
+                aluno.setDadosProfissionais(radioDP3.toString());
+            } else if(radioDP4.isSelected()){
+                aluno.setDadosProfissionais(radioDP4.toString());
+            } else if(radioDP5.isSelected()){
+                aluno.setDadosProfissionais(radioDP5.toString());
+            } else if(radioDP6.isSelected()){
+                aluno.setDadosProfissionais(radioDP6.toString());
+            } else if(radioDP7.isSelected() && campoOutro.getText().trim().equals("")){
+                aluno.setDadosProfissionais(radioDP7.toString());
+            } else 
+                aluno.setDadosProfissionais(radioDP7.toString() + " - " + campoOutro.getText());
+            
+                        
             if(radioMasc.isSelected()){
                 aluno.setSexo("M");
             }else if(radioFem.isSelected()){
@@ -2277,8 +2243,19 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_radioOutroActionPerformed
 
     private void radioOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_radioOutroStateChanged
-
+        
     }//GEN-LAST:event_radioOutroStateChanged
+
+    private void radioDP7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioDP7ActionPerformed
+               
+    }//GEN-LAST:event_radioDP7ActionPerformed
+
+    private void radioDP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radioDP7ItemStateChanged
+        if(radioDP7.isSelected()){
+            campoOutro.setEditable(true);
+        }else
+            campoOutro.setEditable(false); 
+    }//GEN-LAST:event_radioDP7ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -2329,6 +2306,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JButton botaoConsultaAluno1;
     private javax.swing.JToggleButton botaoConsultarTurma;
     private javax.swing.JButton botaoProximo;
+    private javax.swing.JComboBox<String> boxDadosEscolares;
     private javax.swing.JComboBox<String> boxProfessor;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -2412,7 +2390,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelBairro;
     private javax.swing.JLabel labelBairro1;
@@ -2434,11 +2411,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelConsultaNomeAluno1;
     private javax.swing.JLabel labelConsultaRGAluno;
     private javax.swing.JLabel labelConsultaRGAluno1;
+    private javax.swing.JLabel labelDadosEscolares;
+    private javax.swing.JLabel labelDadosProfissionais;
     private javax.swing.JLabel labelDataNascimento;
     private javax.swing.JLabel labelDataNascimento1;
     private javax.swing.JLabel labelDiaTurma;
-    private javax.swing.JLabel labelEFM;
-    private javax.swing.JLabel labelEM;
     private javax.swing.JLabel labelEndereco;
     private javax.swing.JLabel labelEndereco1;
     private javax.swing.JLabel labelEstado;
@@ -2447,7 +2424,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelMae;
     private javax.swing.JLabel labelN;
     private javax.swing.JLabel labelN1;
-    private javax.swing.JLabel labelNS;
     private javax.swing.JLabel labelNaturalidade;
     private javax.swing.JLabel labelNome;
     private javax.swing.JLabel labelNome1;
@@ -2477,7 +2453,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel painelConsultaCursoTurmaAlunos;
     private javax.swing.JPanel painelConsultaProfessor;
     private javax.swing.JPanel painelCursoTurma;
-    private javax.swing.JPanel painelDadosEscolares;
     private javax.swing.JPanel painelDadosPessoais;
     private javax.swing.JPanel painelDadosProfissionais;
     private javax.swing.JPanel painelDadosResponsavel;
@@ -2489,14 +2464,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioDP4;
     private javax.swing.JRadioButton radioDP5;
     private javax.swing.JRadioButton radioDP6;
-    private javax.swing.JRadioButton radioEFMC;
-    private javax.swing.JRadioButton radioEFMI;
-    private javax.swing.JRadioButton radioEMC;
-    private javax.swing.JRadioButton radioEMI;
+    private javax.swing.JRadioButton radioDP7;
     private javax.swing.JRadioButton radioFem;
     private javax.swing.JRadioButton radioMasc;
-    private javax.swing.JRadioButton radioNSC;
-    private javax.swing.JRadioButton radioNSI;
     private javax.swing.JRadioButton radioOutro;
     private javax.swing.JRadioButton radioProfFem;
     private javax.swing.JRadioButton radioProfMasc;

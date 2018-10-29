@@ -590,144 +590,11 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="painelDadosEscolares">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="D. Escolares">
-                    <Property name="tabTitle" type="java.lang.String" value="D. Escolares"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelEFM" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelEM" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelNS" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="radioEFMC" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="radioEFMI" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="radioEMC" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="radioEMI" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="radioNSC" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="radioNSI" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace pref="421" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radioEFMC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelEFM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioEFMI" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="labelEM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioEMC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioEMI" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="labelNS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioNSC" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioNSI" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="600" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="labelEFM">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ensino Fundamental Maior"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioEFMC">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup2"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Completo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioEFMI">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup2"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Incompleto"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="labelEM">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Ensino M&#xe9;dio"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioEMC">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup3"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Completo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioEMI">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup3"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Incompleto"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="labelNS">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="N&#xed;vel Superior"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioNSC">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup4"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Completo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="radioNSI">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup4"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Incompleto"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JPanel" name="painelDadosProfissionais">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="D. Profissionais">
-                    <Property name="tabTitle" type="java.lang.String" value="D. Profissionais"/>
+                  <JTabbedPaneConstraints tabName="D. Escolares e Profissionais">
+                    <Property name="tabTitle" type="java.lang.String" value="D. Escolares e Profissionais"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -738,19 +605,27 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="radioDP1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioDP2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioDP3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioDP4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="radioDP5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="radioDP6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
+                              <Component id="labelDadosEscolares" max="32767" attributes="0"/>
+                              <Component id="labelDadosProfissionais" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="boxDadosEscolares" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioDP1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioDP2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioDP3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioDP4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="radioDP5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="radioDP7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoOutro" min="-2" pref="270" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="radioDP6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="434" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="429" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -758,6 +633,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="labelDadosEscolares" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="boxDadosEscolares" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="labelDadosProfissionais" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="radioDP1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="radioDP2" min="-2" max="-2" attributes="0"/>
@@ -768,13 +649,13 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="radioDP5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="radioDP6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radioDP6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radioDP7" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoOutro" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="478" max="32767" attributes="0"/>
+                          <EmptySpace pref="464" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -820,23 +701,59 @@
                     <Property name="text" type="java.lang.String" value="Profissional liberal ou tem pr&#xf3;prio neg&#xf3;cio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="radioDP6">
+                <Component class="javax.swing.JRadioButton" name="radioDP7">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Outro"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="radioDP7ItemStateChanged"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioDP7ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="campoOutro">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                <Component class="javax.swing.JRadioButton" name="radioDP6">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="buttonGroup5"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nunca trabalhei"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labelDadosEscolares">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Dados escolares"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labelDadosProfissionais">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="Dados Profissionais"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="boxDadosEscolares">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="Ensino fundamental maior completo"/>
+                        <StringItem index="1" value="Ensino fundamental maior incompleto"/>
+                        <StringItem index="2" value="Ensino m&#xe9;dio completo"/>
+                        <StringItem index="3" value="Ensino m&#xe9;dio incompleto"/>
+                        <StringItem index="4" value="N&#xed;vel superior completo"/>
+                        <StringItem index="5" value="N&#xed;vel superior incompleto"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
