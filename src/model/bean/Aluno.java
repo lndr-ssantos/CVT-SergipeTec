@@ -15,10 +15,6 @@ public class Aluno extends Pessoa{
     /*os dados do responsável só são necessário se o aluno for menor de idade*/
     private String dadosEscolaridade;
     private String dadosProfissionais;
-    private String rua;
-    private String bairro;
-    private String estado;
-    private String cidade;
     
     //busca todas as turmas em que o aluno está cadastrado
     public ArrayList<Turma> buscaTurmas(){
@@ -123,21 +119,4 @@ public class Aluno extends Pessoa{
         String RGResponsavel = responsavel.getRG();
         return RGResponsavel;
     }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-    
-    public String getEstado() {
-        return estado;
-    }
-    
-    public String getCidade() {
-        return cidade;
-    }
-
 }

@@ -194,8 +194,8 @@ public abstract class Pessoa {
         return estado;
     }
 
-    public void setEstado(String CEP){
-        this.CEP = CEP;
+    public void setEstado(String estado){
+        this.estado = estado;
     }
 
     public String getCidade() {
