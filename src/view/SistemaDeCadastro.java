@@ -284,7 +284,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         botaoConsultarTurma = new javax.swing.JToggleButton();
         painelConsultaProfessor = new javax.swing.JPanel();
         scrollPaneTAluno1 = new javax.swing.JScrollPane();
-        tableAluno1 = new javax.swing.JTable();
+        tableProfessor = new javax.swing.JTable();
         labelConsultaNomeAluno1 = new javax.swing.JLabel();
         botaoConsultaAluno1 = new javax.swing.JButton();
         campoConsultaNomeProfessor = new javax.swing.JTextField();
@@ -440,7 +440,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelNome)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE))
+                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelFiliacao)
@@ -582,7 +582,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelN)
                         .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
         painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
@@ -1317,7 +1317,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         painelConsultaAlunoLayout.setHorizontalGroup(
             painelConsultaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConsultaAlunoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelConsultaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConsultaAlunoLayout.createSequentialGroup()
                         .addComponent(labelConsultaNomeAluno)
@@ -1360,9 +1360,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(campoConsultaMatAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoConsultaAluno)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(scrollPaneTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelConsultaAluno, "painelConsultaAluno");
@@ -1513,7 +1513,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         painelPrincipal.add(painelConsultaCursoTurmaAlunos, "painelConsultaCursoTurma");
 
-        tableAluno1.setModel(new javax.swing.table.DefaultTableModel(
+        tableProfessor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1521,14 +1521,27 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "CPF", "RG", "Código"
             }
-        ));
-        scrollPaneTAluno1.setViewportView(tableAluno1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneTAluno1.setViewportView(tableProfessor);
 
         labelConsultaNomeAluno1.setText("Nome");
 
         botaoConsultaAluno1.setText("Consultar");
+        botaoConsultaAluno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConsultaAluno1ActionPerformed(evt);
+            }
+        });
 
         campoConsultaNomeProfessor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1627,7 +1640,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addComponent(botaoConsultaAluno1)
                 .addGap(18, 18, 18)
                 .addComponent(scrollPaneTAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelConsultaProfessor, "painelConsultaProfessor");
@@ -2602,6 +2615,76 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoConsultaAlunoActionPerformed
 
+    private void botaoConsultaAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultaAluno1ActionPerformed
+        DefaultTableModel table = (DefaultTableModel)tableProfessor.getModel();
+        Object[] row = new Object[4];
+        ArrayList<Professor> profLista = new ArrayList<>();
+        table.setRowCount(0);
+        boolean hasWhere = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Professores \n";
+            
+            if(!campoConsultaNomeProfessor.getText().trim().equals("")){
+                query += "WHERE nome like '%" + campoConsultaNomeProfessor.getText()+"%'\n";
+                hasWhere = true;
+            }
+            if(!campoConsultaCPFProfessor.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND CPF = " + campoConsultaCPFProfessor.getText();
+                } else {
+                    query += "WHERE CPF = " + campoConsultaCPFProfessor.getText();
+                    hasWhere = true;
+                }
+            }
+            if(!campoConsultaRGProfessor.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND RG = " + campoConsultaRGProfessor.getText();
+                } else {
+                    query += "WHERE RG = " + campoConsultaRGProfessor.getText();
+                    hasWhere = true;
+                }
+            }
+            if(!campoConsultaMatProfessor.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND codProf = " + campoConsultaMatProfessor.getText();
+                } else {
+                    query += "WHERE codProf = " + campoConsultaMatProfessor.getText();
+                    hasWhere = true;
+                }
+            }
+            
+            ResultSet rs = statement.executeQuery(query);
+            Professor prof;
+            
+            while (rs.next()){
+                prof = new Professor();
+                prof.setNome(rs.getString("nome"));
+                prof.setCPF(rs.getString("CPF"));
+                prof.setRG(rs.getString("RG"));
+                prof.setCodProf(rs.getInt("codProf"));
+                profLista.add(prof);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+        
+        for(int i = 0; i < profLista.size(); i++){
+            row[0] = profLista.get(i).getNome();
+            row[1] = profLista.get(i).getCPF();
+            row[2] = profLista.get(i).getRG();
+            row[3] = profLista.get(i).getCodProf();
+            table.addRow(row);
+        }
+    }//GEN-LAST:event_botaoConsultaAluno1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2821,10 +2904,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollPaneTAluno;
     private javax.swing.JScrollPane scrollPaneTAluno1;
     private javax.swing.JTable tableAluno;
-    private javax.swing.JTable tableAluno1;
     private javax.swing.JTable tableCTAluno;
     private javax.swing.JTable tableCTurma;
     private javax.swing.JTable tableConsultarCursoTA;
+    private javax.swing.JTable tableProfessor;
     // End of variables declaration//GEN-END:variables
     // </editor-fold>
 }

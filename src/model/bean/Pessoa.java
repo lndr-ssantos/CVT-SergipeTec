@@ -206,8 +206,6 @@ public abstract class Pessoa {
         this.cidade = cidade;
     }
     
-    //DEPRECATED
-    
     public String getBairro() {
         return bairro;
     }
