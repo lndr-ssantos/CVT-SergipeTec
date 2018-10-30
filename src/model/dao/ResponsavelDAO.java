@@ -28,9 +28,11 @@ public class ResponsavelDAO {
             stmt.setString(1, responsavel.getNome());
             stmt.setString(2, responsavel.getCPF());
             stmt.setString(3, responsavel.getRG());
-
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Responsavel cadastrado com sucesso!");
+            if(responsavel.getCPF() != null){
+               stmt.executeUpdate(); 
+               JOptionPane.showMessageDialog(null, "Responsavel cadastrado com sucesso!");
+            }
+            
         } catch (SQLException ex) {
             System.err.println("Erro ao cadastrar o responsavel: " + ex);
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar responsavel: "+ex);
