@@ -22,8 +22,8 @@ public class AlunoDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, nomeMae, nomePai, telefone1, telefone2, CEP, estado, cidade, bairro, rua, numResidencia, complemento, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
-            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, RGUF ,nomeMae, nomePai, telefone1, telefone2, CEP, estado, cidade, bairro, rua, numResidencia, complemento, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
+            "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, aluno.getNome());
             stmt.setString(2, aluno.getSexo());
             stmt.setString(3, aluno.getEstadoNasc());

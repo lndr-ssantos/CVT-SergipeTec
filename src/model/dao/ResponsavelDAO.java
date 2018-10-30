@@ -41,34 +41,34 @@ public class ResponsavelDAO {
         }
     }
 
-    public void update(Responsavel responsavel) {
-        con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("update Responsavel set nomeResponsavel = ? where cpf = ?");
-            //stmt.setString(1, curso.getNovoNomeCurso());
-            //stmt.setInt(2, curso.getID());
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Responsavel atualizado com sucesso!");
-        } catch (SQLException ex) {
-            System.err.println("Erro ao atualizar: " + ex);
-        } finally {
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
-
-    public void delete(Responsavel responsavel) {
-        con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try {
-            stmt = con.prepareStatement("delete from Responsavel where cpf = ?");
-            //stmt.setInt(2, curso.getID());
-            stmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Responsavel excluído com sucesso!");
-        } catch (SQLException ex) {
-            System.err.println("Erro ao excluir: " + ex);
-        } finally {
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
+//    public void update(Responsavel responsavel) {
+//        con = ConnectionFactory.getConnection();
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = con.prepareStatement("update Responsavel set nomeResponsavel = ? where cpf = ?");
+//            //stmt.setString(1, curso.getNovoNomeCurso());
+//            //stmt.setInt(2, curso.getID());
+//            stmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null, "Responsavel atualizado com sucesso!");
+//        } catch (SQLException ex) {
+//            System.err.println("Erro ao atualizar: " + ex);
+//        } finally {
+//            ConnectionFactory.closeConnection(con, stmt);
+//        }
+//    }
+//
+//    public void delete(Responsavel responsavel) {
+//        con = ConnectionFactory.getConnection();
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = con.prepareStatement("delete from Responsavel where cpf = ?");
+//            //stmt.setInt(2, curso.getID());
+//            stmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null, "Responsavel excluído com sucesso!");
+//        } catch (SQLException ex) {
+//            System.err.println("Erro ao excluir: " + ex);
+//        } finally {
+//            ConnectionFactory.closeConnection(con, stmt);
+//        }
+//    }
 }

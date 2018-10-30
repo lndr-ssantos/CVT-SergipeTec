@@ -52,8 +52,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) tableCTurma.getModel();
         tableCTurma.setRowSorter(new TableRowSorter(modelo));
-
-
     }
 
     public void readTable(String nomeConsulta) {
@@ -127,6 +125,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         campoCidade = new javax.swing.JTextField();
         labelCEP = new javax.swing.JLabel();
         campoCEP = new javax.swing.JTextField();
+        labelRGUF = new javax.swing.JLabel();
+        campoRGUF = new javax.swing.JTextField();
         painelDadosProfissionais = new javax.swing.JPanel();
         radioDP1 = new javax.swing.JRadioButton();
         radioDP2 = new javax.swing.JRadioButton();
@@ -209,7 +209,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         campoHoraInicioSabCursoTurma = new javax.swing.JFormattedTextField();
         campoHoraFimSabCursoTurma = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        campoCargaHoraria = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         labelProfessorTurma = new javax.swing.JLabel();
@@ -234,7 +234,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jLabel4 = new javax.swing.JLabel();
-        jComboBoxCursos = new javax.swing.JComboBox<>();
+        boxCursos = new javax.swing.JComboBox<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
 
@@ -247,7 +247,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             while (rs.next()){
                 String st = "(" + rs.getInt("codCurso") + ") " + rs.getString("nomeCurso");
-                jComboBoxCursos.addItem(st);
+                boxCursos.addItem(st);
             }//end while
 
             connection.close();
@@ -420,6 +420,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
+        labelRGUF.setText("UF");
+
         javax.swing.GroupLayout painelDadosPessoaisLayout = new javax.swing.GroupLayout(painelDadosPessoais);
         painelDadosPessoais.setLayout(painelDadosPessoaisLayout);
         painelDadosPessoaisLayout.setHorizontalGroup(
@@ -472,17 +474,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                         .addComponent(labelCEP)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(campoCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 421, Short.MAX_VALUE)))
                         .addGap(21, 21, 21))
-                    .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                        .addComponent(labelEstado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelCidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                         .addComponent(labelBairro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -503,16 +496,30 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addGap(128, 128, 128))
                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                         .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
-                                .addGap(205, 205, 205)
-                                .addComponent(labelRG)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                .addComponent(labelCPF)
+                                .addComponent(labelEstado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(245, 414, Short.MAX_VALUE))))
+                                .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelCidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
+                                        .addGap(205, 205, 205)
+                                        .addComponent(labelRG)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                        .addComponent(labelCPF)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(labelRGUF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         painelDadosPessoaisLayout.setVerticalGroup(
             painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,7 +548,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(labelCPF)
                     .addComponent(labelRG)
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelRGUF)
+                        .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(labelFiliacao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -584,11 +594,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelN)
                         .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-<<<<<<< HEAD
                 .addContainerGap(266, Short.MAX_VALUE))
-=======
-                .addContainerGap(245, Short.MAX_VALUE))
->>>>>>> restrições
         );
 
         painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
@@ -885,7 +891,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(labelComplemento1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoComplementoProf, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE))
+                        .addComponent(campoComplementoProf, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE))
                     .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
                         .addGroup(painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelCadastroProfessorLayout.createSequentialGroup()
@@ -929,7 +935,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addGap(207, 207, 207)
                                 .addComponent(campoTelefone2Prof, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(labelEndereco1))
-                        .addContainerGap(360, Short.MAX_VALUE))))
+                        .addContainerGap(390, Short.MAX_VALUE))))
         );
         painelCadastroProfessorLayout.setVerticalGroup(
             painelCadastroProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1138,13 +1144,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campoCargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(botaoCadastrarCurso)
                             .addComponent(labelDiaTurma)
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(boxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelCursoTurmaLayout.createSequentialGroup()
                                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1180,7 +1186,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(campoHoraFimSexCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoHoraFimSabCursoTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 283, Short.MAX_VALUE))))
+                        .addGap(0, 321, Short.MAX_VALUE))))
         );
         painelCursoTurmaLayout.setVerticalGroup(
             painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1194,7 +1200,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoCargaHoraria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(botaoCadastrarCurso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1202,7 +1208,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(painelCursoTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelDiaTurma)
                 .addGap(12, 12, 12)
@@ -1343,7 +1349,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(campoConsultaCPFAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoConsultaNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(scrollPaneTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 256, Short.MAX_VALUE))))
+                        .addGap(0, 304, Short.MAX_VALUE))))
         );
         painelConsultaAlunoLayout.setVerticalGroup(
             painelConsultaAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1492,7 +1498,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(consultarCursoTA))
                         .addComponent(ScrollPaneCurso2)))
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         painelConsultaCursoTurmaAlunosLayout.setVerticalGroup(
             painelConsultaCursoTurmaAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1621,7 +1627,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                     .addComponent(campoConsultaNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(campoConsultaMatProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(scrollPaneTAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 256, Short.MAX_VALUE))))
+                        .addGap(0, 304, Short.MAX_VALUE))))
         );
         painelConsultaProfessorLayout.setVerticalGroup(
             painelConsultaProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1714,7 +1720,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 762, Short.MAX_VALUE)
+            .addGap(0, 814, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1873,11 +1879,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Data de nascimento");
         } else if (campoCPF.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
-        } else if (campoCPF.getText().length() != 11){
+        } else if (campoCPF.getText().length() != 11) {
             JOptionPane.showMessageDialog(null, "O campo CPF deve conter 11 dígitos");
-        } else if (campoCPFResponsavel.getText().length() != 11){
+        } else if (campoCPFResponsavel.getText().length() != 11) {
             JOptionPane.showMessageDialog(null, "O campo CPF do responsável deve conter 11 dígitos");
-        } else if (buttonGroup1.getSelection() == null){
+        } else if (buttonGroup1.getSelection() == null) {
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
         } else if (campoRG.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
@@ -1911,7 +1917,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setCidadeNasc(cidadeBox.getSelectedItem().toString());
             aluno.setEstadoNasc(estadoBox.getSelectedItem().toString());
             aluno.setNumResidencia(Integer.parseInt(campoNumero.getText()));
-            aluno.setDadosEscolaridade(boxDadosEscolares.getSelectedItem().toString());s
+            aluno.setDadosEscolaridade(boxDadosEscolares.getSelectedItem().toString());
 
             if (radioDP1.isSelected()) {
                 aluno.setDadosProfissionais(radioDP1.getText());
@@ -1957,19 +1963,24 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
 
             aluno.setResponsavel(responsavel);
-            alunoDAO.save(aluno);
-            
+            alunoDAO.save(aluno);            
+
             campoNome.setText("");
             buttonGroup1.clearSelection();
             estadoBox.setSelectedIndex(0);
             campoDataNascimento.setText("");
             campoCPF.setText("");
             campoRG.setText("");
+            campoRGUF.setText("");
             campoMae.setText("");
             campoPai.setText("");
             campoTel1.setText("");
             campoTel2.setText("");
             campoCEP.setText("");
+            campoEstado.setText("");
+            campoCidade.setText("");
+            campoBairro.setText("");
+            CampoRua.setText("");
             campoNumero.setText("");
             campoComplemento.setText("");
             boxDadosEscolares.setSelectedIndex(0);
@@ -2168,7 +2179,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
-
     private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {
         Turma turma = new Turma();
         TurmaDAO turmaDAO = new TurmaDAO();
@@ -2305,13 +2315,30 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             turma.setCodProf(i);
 
-            s = jComboBoxCursos.getSelectedItem().toString();
+            s = boxCursos.getSelectedItem().toString();
             i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
 
             turma.setCodCurso(i);
 
             turmaDAO.save(turma);
-            JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso.");
+            
+            campoNomeCurso.setText("");
+            campoCargaHoraria.setText("");
+            boxCursos.setSelectedIndex(0);
+            campoHoraInicioSegCursoTurma.setText("");
+            campoHoraFimSegCursoTurma.setText("");
+            campoHoraInicioTerCursoTurma.setText("");
+            campoHoraFimTerCursoTurma.setText("");
+            campoHoraInicioQuaCursoTurma.setText("");
+            campoHoraFimQuaCursoTurma.setText("");
+            campoHoraInicioQuiCursoTurma.setText("");
+            campoHoraFimQuiCursoTurma.setText("");
+            campoHoraInicioSexCursoTurma.setText("");
+            campoHoraFimSexCursoTurma.setText("");
+            campoHoraInicioSabCursoTurma.setText("");
+            campoHoraFimSabCursoTurma.setText("");
+            campoQntVagas.setText("");
+            boxProfessor.setSelectedIndex(0);
         }
     }
 
@@ -2322,12 +2349,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
         } else {
             curso.setNomeCurso(campoNomeCurso.getText());
-            curso.setCargaHoraria(Integer.parseInt(jTextField1.getText()));
+            curso.setCargaHoraria(Integer.parseInt(campoCargaHoraria.getText()));
             cursoDAO.save(curso);
         }
 
         try {
-            jComboBoxCursos.removeAllItems();
+            boxCursos.removeAllItems();
             Class.forName("com.mysql.jdbc.Driver");
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
@@ -2339,7 +2366,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             while (rs.next()) {
                 String st = rs.getString("nomeCurso");
-                jComboBoxCursos.addItem(st);
+                boxCursos.addItem(st);
             }//end while
 
             connection.close();
@@ -2431,8 +2458,32 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             if (profCadastrado) {
                 JOptionPane.showMessageDialog(null, "Professor cadastrado");
             } else {
-                JOptionPane.showMessageDialog(null, "Professor não cadastrado. Ocorreu um erro");
+                professor.setSexo("O");
             }
+            professor.setDatNasc(campoDataNascProf.getText());
+            professor.setCEP(campoCepProf.getText());
+            professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
+            professor.setComplemento(campoComplementoProf.getText());
+            professor.setFone2(campoTelefone2Prof.getText());
+            
+            professorDAO.save(professor);
+            
+            campoNomeProf.setText("");
+            buttonGroupSexoProfessor.clearSelection();
+            campoDataNascProf.setText("");
+            campoCPFProf.setText("");
+            campoRGProf.setText("");
+            campoRGUFProf.setText("");
+            campoTelefone1Prof.setText("");
+            campoTelefone2Prof.setText("");
+            campoCepProf.setText("");
+            campoEstado1.setText("");
+            campoCidade1.setText("");
+            campoBairro1.setText("");
+            CampoRua1.setText("");
+            campoNumProf.setText("");
+            campoComplementoProf.setText("");
+            
         }
 
         try {
@@ -2454,6 +2505,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }//GEN-LAST:event_botaoCadastroProfActionPerformed
 
     private void checkboxSegCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSegCursoTurmaItemStateChanged
@@ -2769,6 +2822,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JButton botaoConsultaAluno1;
     private javax.swing.JToggleButton botaoConsultarTurma;
     private javax.swing.JButton botaoProximo;
+    private javax.swing.JComboBox<String> boxCursos;
     private javax.swing.JComboBox<String> boxDadosEscolares;
     private javax.swing.JComboBox<String> boxProfessor;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -2787,6 +2841,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoCPF;
     private javax.swing.JTextField campoCPFProf;
     private javax.swing.JTextField campoCPFResponsavel;
+    private javax.swing.JTextField campoCargaHoraria;
     private javax.swing.JTextField campoCepProf;
     private javax.swing.JTextField campoCidade;
     private javax.swing.JTextField campoCidade1;
@@ -2831,6 +2886,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoRG;
     private javax.swing.JTextField campoRGProf;
     private javax.swing.JTextField campoRGResponsavel;
+    private javax.swing.JTextField campoRGUF;
     private javax.swing.JTextField campoRGUFProf;
     private javax.swing.JTextField campoTel1;
     private javax.swing.JTextField campoTel2;
@@ -2847,14 +2903,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JButton consultarCursoTA;
     private javax.swing.JComboBox<String> estadoBox;
     private javax.swing.JButton jButtonVerificaRespCPF;
-    private javax.swing.JComboBox<String> jComboBoxCursos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelBairro;
     private javax.swing.JLabel labelBairro1;
     private javax.swing.JLabel labelCEP;
@@ -2899,6 +2953,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel labelRG;
     private javax.swing.JLabel labelRG1;
     private javax.swing.JLabel labelRGResponsavel;
+    private javax.swing.JLabel labelRGUF;
     private javax.swing.JLabel labelRGUFProf;
     private javax.swing.JLabel labelRua;
     private javax.swing.JLabel labelRua1;
