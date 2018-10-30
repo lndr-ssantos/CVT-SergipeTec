@@ -184,19 +184,6 @@
                                                   <Component id="campoTel2" min="-2" pref="150" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="labelEndereco" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                                                      <Component id="labelRG" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="campoRG" min="-2" pref="132" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="labelCPF" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="campoCPF" min="-2" pref="132" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="labelSexo" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -258,6 +245,22 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="campoComplemento" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
+                                          <Component id="labelRG" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoRG" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelCPF" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoCPF" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="245" pref="414" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -347,7 +350,7 @@
                                   <Component id="campoNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="218" max="32767" attributes="0"/>
+                          <EmptySpace pref="245" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -375,9 +378,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Masculino"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioMascActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="radioFem">
                   <Properties>
@@ -1172,9 +1172,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Masculino"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="radioProfMascActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="radioProfFem">
               <Properties>
@@ -1627,9 +1624,6 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Cursos&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codCurso&quot;) + &quot;) &quot; + rs.getString(&quot;nomeCurso&quot;);&#xa;                jComboBox1.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

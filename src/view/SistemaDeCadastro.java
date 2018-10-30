@@ -316,11 +316,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroup1.add(radioMasc);
         radioMasc.setText("Masculino");
-        radioMasc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioMascActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(radioFem);
         radioFem.setText("Feminino");
@@ -450,16 +445,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                         .addGap(207, 207, 207)
                                         .addComponent(campoTel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(labelEndereco)
-                                    .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
-                                            .addGap(205, 205, 205)
-                                            .addComponent(labelRG)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                            .addComponent(labelCPF)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                         .addComponent(labelSexo)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -510,7 +495,19 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                         .addComponent(labelComplemento)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campoComplemento)
-                        .addGap(128, 128, 128))))
+                        .addGap(128, 128, 128))
+                    .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                        .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
+                                .addGap(205, 205, 205)
+                                .addComponent(labelRG)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                .addComponent(labelCPF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(245, 414, Short.MAX_VALUE))))
         );
         painelDadosPessoaisLayout.setVerticalGroup(
             painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,7 +579,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(labelN)
                         .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
@@ -798,7 +795,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
         buttonGroupSexoProfessor.add(radioProfMasc);
         radioProfMasc.setText("Masculino");
-        
+
         buttonGroupSexoProfessor.add(radioProfFem);
         radioProfFem.setText("Feminino");
 
@@ -1082,12 +1079,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelProfessorTurma.setText("Professor da turma");
 
         jLabel4.setText("Informe o curso");
-
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Início");
@@ -1841,10 +1832,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Data de nascimento");
         } else if (campoCPF.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
+        } else if (campoCPF.getText().length() != 11){
+            JOptionPane.showMessageDialog(null, "O campo CPF deve conter 11 dígitos");
+        } else if (campoCPFResponsavel.getText().length() != 11){
+            JOptionPane.showMessageDialog(null, "O campo CPF do responsável deve conter 11 dígitos");
         } else if (buttonGroup1.getSelection() == null){
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
         } else if (campoRG.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
+        } else if (campoRG.getText().length() != 9) {
+            JOptionPane.showMessageDialog(null, "O campo RG deve conter 9 dígitos");
+        } else if (campoRGResponsavel.getText().length() != 9) {
+            JOptionPane.showMessageDialog(null, "O campo RG responsável deve conter 9 dígitos");
         } else if (campoMae.getText().trim().equals("") && campoPai.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo com nome da mãe ou do pai");
         } else if (campoTel1.getText().trim().equals("")) {
@@ -1855,11 +1854,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe o número da residência");
         } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()){
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        } else if (buttonGroup5.getSelection().getSelectedObjects() == null){
-            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
-        } else if(buttonGroup5.getSelection().getActionCommand().equals("Outro") && campoOutro.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
-        }else {
+        } else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
             aluno.setCPF(campoCPF.getText());
@@ -1891,9 +1886,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 aluno.setDadosProfissionais(radioDP6.toString());
             } else if(radioDP7.isSelected() && campoOutro.getText().trim().equals("")){
                 aluno.setDadosProfissionais(radioDP7.toString());
-            } else 
+            } else if(radioDP7.isSelected() && !campoOutro.getText().trim().equals("")){
                 aluno.setDadosProfissionais(radioDP7.toString() + " - " + campoOutro.getText());
-
+            } else
+                JOptionPane.showMessageDialog(null, "Informe os dados profissionais");
+        
             if(radioMasc.isSelected()){
                 aluno.setSexo("M");
             }
@@ -1918,6 +1915,26 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
             alunoDAO.save(aluno);
             responsavelDAO.save(responsavel);
+            
+            campoNome.setText("");
+            buttonGroup1.clearSelection();
+            estadoBox.setSelectedIndex(0);
+            campoDataNascimento.setText("");
+            campoCPF.setText("");
+            campoRG.setText("");
+            campoMae.setText("");
+            campoPai.setText("");
+            campoTel1.setText("");
+            campoTel2.setText("");
+            campoCEP.setText("");
+            campoNumero.setText("");
+            campoComplemento.setText("");
+            boxDadosEscolares.setSelectedIndex(0);
+            buttonGroup5.clearSelection();
+            campoOutro.setText("");
+            campoNomeResponsavel.setText("");
+            campoCPFResponsavel.setText("");
+            campoRGResponsavel.setText("");
         }
     }//GEN-LAST:event_botaoProximoActionPerformed
 
@@ -2108,7 +2125,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
-    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTurmaActionPerformed
+    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         Turma turma = new Turma();
         TurmaDAO turmaDAO = new TurmaDAO();
         //Checa se tem algum dia selecionado
