@@ -36,6 +36,7 @@ public class CursoDAO {
             JOptionPane.showMessageDialog(null, "Curso cadastrado com sucesso!");
         } catch (SQLException ex) {
             System.err.println("Erro ao cadastrar o curso: "+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar o curso: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
