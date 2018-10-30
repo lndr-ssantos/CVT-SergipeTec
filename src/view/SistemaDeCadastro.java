@@ -1256,7 +1256,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nome", "CPF", "RG", "Matrícula"
             }
         ));
         scrollPaneTAluno.setViewportView(tableAluno);
@@ -1264,6 +1264,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelConsultaNomeAluno.setText("Nome");
 
         botaoConsultaAluno.setText("Consultar");
+        botaoConsultaAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConsultaAlunoActionPerformed(evt);
+            }
+        });
 
         campoConsultaNomeAluno.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1357,7 +1362,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addComponent(botaoConsultaAluno)
                 .addGap(18, 18, 18)
                 .addComponent(scrollPaneTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelConsultaAluno, "painelConsultaAluno");
@@ -2516,6 +2521,86 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButtonVerificaRespCPFActionPerformed
+
+    private void botaoConsultaAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultaAlunoActionPerformed
+        DefaultTableModel table = (DefaultTableModel)tableAluno.getModel();
+        Object[] row = new Object[4];
+        ArrayList<Aluno> alunoLista = new ArrayList<>();
+        table.setRowCount(0);
+        boolean hasWhere = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Alunos \n";
+            
+            if(!campoConsultaNomeAluno.getText().trim().equals("")){
+                query += "WHERE nome like '%" + campoConsultaNomeAluno.getText()+"%'\n";
+                hasWhere = true;
+            }
+            if(!campoConsultaCPFAluno.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND CPF = " + campoConsultaCPFAluno.getText();
+                } else {
+                    query += "WHERE CPF = " + campoConsultaCPFAluno.getText();
+                    hasWhere = true;
+                }
+            }
+            if(!campoConsultaRGAluno.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND RG = " + campoConsultaRGAluno.getText();
+                } else {
+                    query += "WHERE RG = " + campoConsultaRGAluno.getText();
+                    hasWhere = true;
+                }
+            }
+            if(!campoConsultaMatAluno.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND matricula = " + campoConsultaMatAluno.getText();
+                } else {
+                    query += "WHERE matricula = " + campoConsultaMatAluno.getText();
+                    hasWhere = true;
+                }
+            }
+            
+            if(campoConsultaNomeAluno.getText().trim().equals("")){
+                if(campoConsultaCPFAluno.getText().trim().equals("")){
+                    if(campoConsultaRGAluno.getText().trim().equals("")){
+                        if(campoConsultaMatAluno.getText().trim().equals("")){
+                            //print erro
+                        }   
+                    }
+                }
+            }
+            
+            ResultSet rs = statement.executeQuery(query);
+            Aluno aluno;
+            
+            while (rs.next()){
+                aluno = new Aluno();
+                aluno.setNome(rs.getString("nome"));
+                aluno.setCPF(rs.getString("CPF"));
+                aluno.setRG(rs.getString("RG"));
+                aluno.setMatricula(rs.getInt("matricula"));
+                alunoLista.add(aluno);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+        
+        for(int i = 0; i < alunoLista.size(); i++){
+            row[0] = alunoLista.get(i).getNome();
+            row[1] = alunoLista.get(i).getCPF();
+            row[2] = alunoLista.get(i).getRG();
+            row[3] = alunoLista.get(i).getMatricula();
+            table.addRow(row);
+        }
+    }//GEN-LAST:event_botaoConsultaAlunoActionPerformed
 
     /**
      * @param args the command line arguments
