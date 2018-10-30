@@ -7,6 +7,7 @@ package view;
 
 import br.com.parg.viacep.ViaCEP;
 import br.com.parg.viacep.ViaCEPException;
+import connection.ConnectionFactory;
 import model.bean.Aluno;
 import model.dao.AlunoDAO;
 import java.awt.CardLayout;
@@ -34,6 +35,7 @@ import model.dao.ResponsavelDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
@@ -42,7 +44,7 @@ import java.sql.ResultSet;
  * @author rodrygo.matos
  */
 public class SistemaDeCadastro extends javax.swing.JFrame {
-
+    static Boolean setNovoResponsavel;
     /**
      * Creates new form Tela
      */
@@ -50,7 +52,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) tableCTurma.getModel();
         tableCTurma.setRowSorter(new TableRowSorter(modelo));
-        
+
+
     }
 
     public void readTable(String nomeConsulta) {
@@ -144,6 +147,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelRGResponsavel = new javax.swing.JLabel();
         campoRGResponsavel = new javax.swing.JTextField();
         botaoProximo = new javax.swing.JButton();
+        jButtonVerificaRespCPF = new javax.swing.JButton();
         painelCadastroProfessor = new javax.swing.JPanel();
         labelTelefone1 = new javax.swing.JLabel();
         campoTelefone1Prof = new javax.swing.JTextField();
@@ -646,7 +650,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoOutro, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(radioDP6))
-                        .addGap(0, 434, Short.MAX_VALUE)))
+                        .addGap(0, 435, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         painelDadosProfissionaisLayout.setVerticalGroup(
@@ -692,45 +696,59 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
+        jButtonVerificaRespCPF.setText("Verificar");
+        jButtonVerificaRespCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerificaRespCPFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelDadosResponsavelLayout = new javax.swing.GroupLayout(painelDadosResponsavel);
         painelDadosResponsavel.setLayout(painelDadosResponsavelLayout);
         painelDadosResponsavelLayout.setHorizontalGroup(
             painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoProximo)
                     .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
-                        .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNomeResponsavel)
-                            .addComponent(labelCPFResponsavel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(14, 14, 14)
                         .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
-                                .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
                                 .addComponent(labelRGResponsavel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(389, Short.MAX_VALUE))
+                            .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
+                                .addComponent(labelNomeResponsavel)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(botaoProximo)))
+                    .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(labelCPFResponsavel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButtonVerificaRespCPF)))
+                .addContainerGap(396, Short.MAX_VALUE))
         );
         painelDadosResponsavelLayout.setVerticalGroup(
             painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(4, 4, 4)
+                .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonVerificaRespCPF)
+                    .addComponent(labelCPFResponsavel))
+                .addGap(18, 18, 18)
+                .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelRGResponsavel)
+                    .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeResponsavel)
                     .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRGResponsavel)
-                    .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelCPFResponsavel))
-                .addGap(40, 40, 40)
                 .addComponent(botaoProximo)
-                .addContainerGap(576, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
         );
 
         painelGuiasAluno.addTab("D. do Responsável", painelDadosResponsavel);
@@ -1815,23 +1833,23 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoBoxItemStateChanged
 
     private void botaoProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoProximoActionPerformed
-        
+
         Aluno aluno = new Aluno();
         Responsavel responsavel = new Responsavel();
         AlunoDAO alunoDAO = new AlunoDAO();
         ResponsavelDAO responsavelDAO = new ResponsavelDAO();
-        
+
         if (campoNome.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
-        } else if (!radioMasc.isSelected() & !radioFem.isSelected() & !radioOutro.isSelected()){
+        } else if (!radioMasc.isSelected() & !radioFem.isSelected() & !radioOutro.isSelected()) {
             JOptionPane.showMessageDialog(null, "Informe o sexo");
-        } else if (estadoBox.getSelectedItem().toString().equals("Selecione um estado")){
+        } else if (estadoBox.getSelectedItem().toString().equals("Selecione um estado")) {
             JOptionPane.showMessageDialog(null, "Selecione um estado");
         } else if (campoDataNascimento.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Data de nascimento");
         } else if (campoCPF.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CPF");
-        } else if (buttonGroup1.getSelection() == null){
+        } else if (buttonGroup1.getSelection() == null) {
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
         } else if (campoRG.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
@@ -1841,11 +1859,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Telefone");
         } else if (campoCEP.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
-        } else if (campoNumero.getText().trim().equals("")){
+        } else if (campoNumero.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Informe o número da residência");
-        } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()){
+        } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()) {
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        }else {
+        } else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
             aluno.setCPF(campoCPF.getText());
@@ -1862,44 +1880,51 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             aluno.setEstadoNasc(estadoBox.getSelectedItem().toString());
             aluno.setNumResidencia(Integer.parseInt(campoNumero.getText()));
             aluno.setDadosEscolaridade(boxDadosEscolares.getSelectedItem().toString());
-            
-            if(radioDP1.isSelected()){
+
+            if (radioDP1.isSelected()) {
                 aluno.setDadosProfissionais(radioDP1.getText());
-            } else if(radioDP2.isSelected()){
+            } else if (radioDP2.isSelected()) {
                 aluno.setDadosProfissionais(radioDP2.getText());
-            } else if(radioDP3.isSelected()){
+            } else if (radioDP3.isSelected()) {
                 aluno.setDadosProfissionais(radioDP3.getText());
-            } else if(radioDP4.isSelected()){
+            } else if (radioDP4.isSelected()) {
                 aluno.setDadosProfissionais(radioDP4.getText());
-            } else if(radioDP5.isSelected()){
+            } else if (radioDP5.isSelected()) {
                 aluno.setDadosProfissionais(radioDP5.getText());
-            } else if(radioDP6.isSelected()){
+            } else if (radioDP6.isSelected()) {
                 aluno.setDadosProfissionais(radioDP6.getText());
-            } else if(radioDP7.isSelected() && campoOutro.getText().trim().equals("")){
+            } else if (radioDP7.isSelected() && campoOutro.getText().trim().equals("")) {
                 aluno.setDadosProfissionais(radioDP7.getText());
             } else if (radioDP7.isSelected() && !campoOutro.getText().trim().equals("")) {
-                aluno.setDadosProfissionais(radioDP7.getText() + " - " + campoOutro.getText());               
+                aluno.setDadosProfissionais(radioDP7.getText() + " - " + campoOutro.getText());
             } else {
                 JOptionPane.showMessageDialog(null, "Informe dados profissionais");
             }
 
-            if(radioMasc.isSelected()){
+            if (radioMasc.isSelected()) {
                 aluno.setSexo("M");
             }
-            if(radioFem.isSelected()){
+            if (radioFem.isSelected()) {
                 aluno.setSexo("F");
             }
-            if(radioOutro.isSelected()){
+            if (radioOutro.isSelected()) {
                 aluno.setSexo("O");
             }
-                        
-            responsavel.setNome(campoNomeResponsavel.getText());
-            responsavel.setCPF(campoCPFResponsavel.getText());
-            responsavel.setRG(campoRGResponsavel.getText());
-            
-            aluno.setResponsavel(responsavel);
 
-            responsavelDAO.save(responsavel);
+            /* labelNovoResponsavel é um texto invisível ao lado do campo de RG.
+            Serve para indicar se será feito o cadastro de um novo responsável */
+            if (setNovoResponsavel) {
+                responsavel.setNome(campoNomeResponsavel.getText());
+                responsavel.setCPF(campoCPFResponsavel.getText());
+                responsavel.setRG(campoRGResponsavel.getText());
+
+                responsavelDAO.save(responsavel);
+                setNovoResponsavel = false;
+            } else {
+                responsavel.setCPF(campoCPFResponsavel.getText());
+            }
+
+            aluno.setResponsavel(responsavel);
             alunoDAO.save(aluno);
         }
     }//GEN-LAST:event_botaoProximoActionPerformed
@@ -1975,27 +2000,27 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCEPActionPerformed
 
     private void campoConsultaNomeProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeProfessorFocusGained
-        if(campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+        if (campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
             campoConsultaNomeProfessor.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaNomeProfessorFocusGained
 
     private void campoConsultaNomeProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeProfessorFocusLost
-        if(!campoConsultaNomeProfessor.getText().equals("")) {
-           campoConsultaCPFProfessor.setEditable(false);
-           campoConsultaRGProfessor.setEditable(false);
-           campoConsultaMatProfessor.setEditable(false);
+        if (!campoConsultaNomeProfessor.getText().equals("")) {
+            campoConsultaCPFProfessor.setEditable(false);
+            campoConsultaRGProfessor.setEditable(false);
+            campoConsultaMatProfessor.setEditable(false);
         }
     }//GEN-LAST:event_campoConsultaNomeProfessorFocusLost
 
     private void campoConsultaCPFProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorFocusGained
-        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+        if (campoConsultaNomeProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
             campoConsultaCPFProfessor.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaCPFProfessorFocusGained
 
     private void campoConsultaCPFProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorFocusLost
-        if(!campoConsultaCPFProfessor.getText().equals("")) {
+        if (!campoConsultaCPFProfessor.getText().equals("")) {
             campoConsultaNomeProfessor.setEditable(false);
             campoConsultaRGProfessor.setEditable(false);
             campoConsultaMatProfessor.setEditable(false);
@@ -2003,13 +2028,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaCPFProfessorFocusLost
 
     private void campoConsultaRGProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGProfessorFocusGained
-        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
+        if (campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
             campoConsultaRGProfessor.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaRGProfessorFocusGained
 
     private void campoConsultaRGProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGProfessorFocusLost
-        if(!campoConsultaRGProfessor.getText().equals("")) {
+        if (!campoConsultaRGProfessor.getText().equals("")) {
             campoConsultaNomeProfessor.setEditable(false);
             campoConsultaCPFProfessor.setEditable(false);
             campoConsultaMatProfessor.setEditable(false);
@@ -2017,13 +2042,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaRGProfessorFocusLost
 
     private void campoConsultaMatProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatProfessorFocusGained
-        if(campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("")) {
+        if (campoConsultaNomeProfessor.getText().equals("") && campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("")) {
             campoConsultaMatProfessor.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaMatProfessorFocusGained
 
     private void campoConsultaMatProfessorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatProfessorFocusLost
-        if(!campoConsultaMatProfessor.getText().equals("")) {
+        if (!campoConsultaMatProfessor.getText().equals("")) {
             campoConsultaNomeProfessor.setEditable(false);
             campoConsultaCPFProfessor.setEditable(false);
             campoConsultaRGProfessor.setEditable(false);
@@ -2036,13 +2061,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_consultarCursoTAActionPerformed
 
     private void campoConsultaNomeAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeAlunoFocusGained
-        if(campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+        if (campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
             campoConsultaNomeAluno.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaNomeAlunoFocusGained
 
     private void campoConsultaNomeAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeAlunoFocusLost
-        if(!campoConsultaNomeAluno.getText().equals("")) {
+        if (!campoConsultaNomeAluno.getText().equals("")) {
             campoConsultaCPFAluno.setEditable(false);
             campoConsultaRGAluno.setEditable(false);
             campoConsultaMatAluno.setEditable(false);
@@ -2050,13 +2075,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaNomeAlunoFocusLost
 
     private void campoConsultaCPFAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFAlunoFocusGained
-        if(campoConsultaCPFAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+        if (campoConsultaCPFAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
             campoConsultaCPFAluno.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaCPFAlunoFocusGained
 
     private void campoConsultaCPFAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaCPFAlunoFocusLost
-        if(!campoConsultaCPFAluno.getText().equals("")) {
+        if (!campoConsultaCPFAluno.getText().equals("")) {
             campoConsultaNomeAluno.setEditable(false);
             campoConsultaRGAluno.setEditable(false);
             campoConsultaMatAluno.setEditable(false);
@@ -2064,13 +2089,13 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaCPFAlunoFocusLost
 
     private void campoConsultaRGAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGAlunoFocusGained
-        if(campoConsultaRGAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
+        if (campoConsultaRGAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaMatAluno.getText().equals("")) {
             campoConsultaRGAluno.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaRGAlunoFocusGained
 
     private void campoConsultaRGAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaRGAlunoFocusLost
-        if(!campoConsultaRGAluno.getText().equals("")) {
+        if (!campoConsultaRGAluno.getText().equals("")) {
             campoConsultaNomeAluno.setEditable(false);
             campoConsultaCPFAluno.setEditable(false);
             campoConsultaMatAluno.setEditable(false);
@@ -2078,71 +2103,71 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaRGAlunoFocusLost
 
     private void campoConsultaMatAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatAlunoFocusGained
-        if(campoConsultaMatAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("")) {
+        if (campoConsultaMatAluno.getText().equals("") && campoConsultaNomeAluno.getText().equals("") && campoConsultaCPFAluno.getText().equals("") && campoConsultaRGAluno.getText().equals("")) {
             campoConsultaMatAluno.setEditable(true);
         }
     }//GEN-LAST:event_campoConsultaMatAlunoFocusGained
 
     private void campoConsultaMatAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaMatAlunoFocusLost
-        if(!campoConsultaMatAluno.getText().equals("")) {
+        if (!campoConsultaMatAluno.getText().equals("")) {
             campoConsultaNomeAluno.setEditable(false);
             campoConsultaCPFAluno.setEditable(false);
             campoConsultaRGAluno.setEditable(false);
         }
     }//GEN-LAST:event_campoConsultaMatAlunoFocusLost
 
-    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void botaoCadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {
         Turma turma = new Turma();
         TurmaDAO turmaDAO = new TurmaDAO();
         //Checa se tem algum dia selecionado
-        if(!checkboxSegCursoTurma.isSelected() && !checkboxTerCursoTurma.isSelected()
+        if (!checkboxSegCursoTurma.isSelected() && !checkboxTerCursoTurma.isSelected()
                 && !checkboxQuaCursoTurma.isSelected() && !checkboxQuiCursoTurma.isSelected()
-                && !checkboxSexCursoTurma.isSelected() && !checkboxSabCursoTurma.isSelected()){
+                && !checkboxSexCursoTurma.isSelected() && !checkboxSabCursoTurma.isSelected()) {
             JOptionPane.showMessageDialog(null, "Selecione um dia!");
-        //checa se tem algum dia selecionado sem horário de inicio definido
-        //seg
-        }else if(checkboxSegCursoTurma.isSelected() && campoHoraInicioSegCursoTurma.getText().trim().equals("")){
+            //checa se tem algum dia selecionado sem horário de inicio definido
+            //seg
+        } else if (checkboxSegCursoTurma.isSelected() && campoHoraInicioSegCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início da Segunda!");
-        //ter
-        }else if(checkboxTerCursoTurma.isSelected() && campoHoraInicioTerCursoTurma.getText().trim().equals("")){
+            //ter
+        } else if (checkboxTerCursoTurma.isSelected() && campoHoraInicioTerCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início da Terça!");
-        //qua
-        }else if(checkboxQuaCursoTurma.isSelected() && campoHoraInicioQuaCursoTurma.getText().trim().equals("")){
+            //qua
+        } else if (checkboxQuaCursoTurma.isSelected() && campoHoraInicioQuaCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início da Quarta!");
-        //qui
-        }else if(checkboxQuiCursoTurma.isSelected() && campoHoraInicioQuiCursoTurma.getText().trim().equals("")){
+            //qui
+        } else if (checkboxQuiCursoTurma.isSelected() && campoHoraInicioQuiCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início da Quinta!");
-        //sex
-        }else if(checkboxSexCursoTurma.isSelected() && campoHoraInicioSexCursoTurma.getText().trim().equals("")){
+            //sex
+        } else if (checkboxSexCursoTurma.isSelected() && campoHoraInicioSexCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início da Sexta!");
-        //sab
-        }else if(checkboxSabCursoTurma.isSelected() && campoHoraInicioSabCursoTurma.getText().trim().equals("")){
+            //sab
+        } else if (checkboxSabCursoTurma.isSelected() && campoHoraInicioSabCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de início do Sábado!");
-        //checa se tem algum dia selecionado sem horario de término definido
-        //seg
-        }else if(checkboxSegCursoTurma.isSelected() && campoHoraFimSegCursoTurma.getText().trim().equals("")){
+            //checa se tem algum dia selecionado sem horario de término definido
+            //seg
+        } else if (checkboxSegCursoTurma.isSelected() && campoHoraFimSegCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término da Segunda!");
-        //ter
-        }else if(checkboxTerCursoTurma.isSelected() && campoHoraFimTerCursoTurma.getText().trim().equals("")){
+            //ter
+        } else if (checkboxTerCursoTurma.isSelected() && campoHoraFimTerCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término da Terça!");
-        //qua
-        }else if(checkboxQuaCursoTurma.isSelected() && campoHoraFimQuaCursoTurma.getText().trim().equals("")){
+            //qua
+        } else if (checkboxQuaCursoTurma.isSelected() && campoHoraFimQuaCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término da Quarta!");
-        //qui
-        }else if(checkboxQuiCursoTurma.isSelected() && campoHoraFimQuiCursoTurma.getText().trim().equals("")){
+            //qui
+        } else if (checkboxQuiCursoTurma.isSelected() && campoHoraFimQuiCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término da Quinta!");
-        //sex
-        }else if(checkboxSexCursoTurma.isSelected() && campoHoraFimSexCursoTurma.getText().trim().equals("")){
+            //sex
+        } else if (checkboxSexCursoTurma.isSelected() && campoHoraFimSexCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término da Sexta!");
-        //sab
-        }else if(checkboxSabCursoTurma.isSelected() && campoHoraFimSabCursoTurma.getText().trim().equals("")){
+            //sab
+        } else if (checkboxSabCursoTurma.isSelected() && campoHoraFimSabCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término do Sábado!");
-        //checa se o total de vagas foi definido
-        }else if(campoQntVagas.getText().trim().equals("")){
+            //checa se o total de vagas foi definido
+        } else if (campoQntVagas.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina o total de vagas da turma!");
         } else {
             //adiciona os dias no ArrayList dias, horaInicio e horaFim
-            if(checkboxSegCursoTurma.isSelected()){
+            if (checkboxSegCursoTurma.isSelected()) {
                 turma.addDia(checkboxSegCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioSegCursoTurma.getText());
@@ -2155,7 +2180,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(checkboxTerCursoTurma.isSelected()){
+            if (checkboxTerCursoTurma.isSelected()) {
                 turma.addDia(checkboxTerCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioTerCursoTurma.getText());
@@ -2168,7 +2193,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(checkboxQuaCursoTurma.isSelected()){
+            if (checkboxQuaCursoTurma.isSelected()) {
                 turma.addDia(checkboxQuaCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioQuaCursoTurma.getText());
@@ -2181,7 +2206,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(checkboxQuiCursoTurma.isSelected()){
+            if (checkboxQuiCursoTurma.isSelected()) {
                 turma.addDia(checkboxQuiCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioQuiCursoTurma.getText());
@@ -2194,7 +2219,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(checkboxSexCursoTurma.isSelected()){
+            if (checkboxSexCursoTurma.isSelected()) {
                 turma.addDia(checkboxSexCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioSexCursoTurma.getText());
@@ -2207,7 +2232,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if(checkboxSabCursoTurma.isSelected()){
+            if (checkboxSabCursoTurma.isSelected()) {
                 turma.addDia(checkboxSabCursoTurma.getText());
                 try {
                     turma.setHoraInicio(campoHoraInicioSabCursoTurma.getText());
@@ -2221,45 +2246,45 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 }
             }
             turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
-            
+
             String s = boxProfessor.getSelectedItem().toString();
             int i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
-            
+
             turma.setCodProf(i);
-            
+
             s = jComboBoxCursos.getSelectedItem().toString();
             i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
-            
+
             turma.setCodCurso(i);
 
             turmaDAO.save(turma);
             JOptionPane.showMessageDialog(null, "Turma cadastrada com sucesso.");
         }
-    }                                       
+    }
 
     private void botaoCadastrarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarCursoActionPerformed
         Curso curso = new Curso();
         CursoDAO cursoDAO = new CursoDAO();
         if (campoNomeCurso.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo com o nome do curso");
-        }else{
+        } else {
             curso.setNomeCurso(campoNomeCurso.getText());
             curso.setCargaHoraria(Integer.parseInt(jTextField1.getText()));
             cursoDAO.save(curso);
         }
-        
+
         try {
             jComboBoxCursos.removeAllItems();
             Class.forName("com.mysql.jdbc.Driver");
-             
+
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
-                     "sergipetec", "Sergipetec@@2010");
+                    "sergipetec", "Sergipetec@@2010");
 
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM Cursos";
             ResultSet rs = statement.executeQuery(query);
 
-            while (rs.next()){
+            while (rs.next()) {
                 String st = rs.getString("nomeCurso");
                 jComboBoxCursos.addItem(st);
             }//end while
@@ -2268,7 +2293,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_botaoCadastrarCursoActionPerformed
 
     private void campoRGProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRGProfActionPerformed
@@ -2312,7 +2337,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         ProfessorDAO professorDAO = new ProfessorDAO();
         if (campoNomeProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Nome");
-        } else if (buttonGroupSexoProfessor.getSelection() == null){
+        } else if (buttonGroupSexoProfessor.getSelection() == null) {
             JOptionPane.showMessageDialog(null, "Selecione o sexo");
         } else if (campoDataNascProf.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha a data de nascimento");
@@ -2334,19 +2359,19 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             professor.setRG(campoRGProf.getText());
             professor.setRGUF(campoRGUFProf.getText());
             professor.setFone1(campoTelefone1Prof.getText());
-		if (radioProfMasc.isSelected()) {
-            professor.setSexo("M");
-		} else if (radioProfFem.isSelected()) {
-			professor.setSexo("F");
-		} else {
-			professor.setSexo("O");
-		}
-        professor.setDatNasc(campoDataNascProf.getText());
-        professor.setCEP(campoCepProf.getText());
-        professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
-        professor.setComplemento(campoComplementoProf.getText());
-            
-		if(!campoTelefone2Prof.getText().isEmpty()){
+            if (radioProfMasc.isSelected()) {
+                professor.setSexo("M");
+            } else if (radioProfFem.isSelected()) {
+                professor.setSexo("F");
+            } else {
+                professor.setSexo("O");
+            }
+            professor.setDatNasc(campoDataNascProf.getText());
+            professor.setCEP(campoCepProf.getText());
+            professor.setNumResidencia(Integer.parseInt(campoNumProf.getText()));
+            professor.setComplemento(campoComplementoProf.getText());
+
+            if (!campoTelefone2Prof.getText().isEmpty()) {
                 professor.setFone2(campoTelefone2Prof.getText());
             }
             boolean profCadastrado = professorDAO.save(professor);
@@ -2356,18 +2381,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Professor não cadastrado. Ocorreu um erro");
             }
         }
-        
-        try { 
+
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-             
+
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
-                     "sergipetec", "Sergipetec@@2010");
+                    "sergipetec", "Sergipetec@@2010");
 
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM Professores";
             ResultSet rs = statement.executeQuery(query);
 
-            while (rs.next()){
+            while (rs.next()) {
                 String st = rs.getString("nome");
                 boxProfessor.addItem(st);
             }//end while
@@ -2379,60 +2404,60 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastroProfActionPerformed
 
     private void checkboxSegCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSegCursoTurmaItemStateChanged
-        if(checkboxSegCursoTurma.isSelected()){
+        if (checkboxSegCursoTurma.isSelected()) {
             campoHoraInicioSegCursoTurma.setEditable(true);
             campoHoraFimSegCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioSegCursoTurma.setEditable(false);
             campoHoraFimSegCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxSegCursoTurmaItemStateChanged
 
     private void checkboxTerCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxTerCursoTurmaItemStateChanged
-        if(checkboxTerCursoTurma.isSelected()){
+        if (checkboxTerCursoTurma.isSelected()) {
             campoHoraInicioTerCursoTurma.setEditable(true);
             campoHoraFimTerCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioTerCursoTurma.setEditable(false);
             campoHoraFimTerCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxTerCursoTurmaItemStateChanged
 
     private void checkboxQuaCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxQuaCursoTurmaItemStateChanged
-        if(checkboxQuaCursoTurma.isSelected()){
+        if (checkboxQuaCursoTurma.isSelected()) {
             campoHoraInicioQuaCursoTurma.setEditable(true);
             campoHoraFimQuaCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioQuaCursoTurma.setEditable(false);
             campoHoraFimQuaCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxQuaCursoTurmaItemStateChanged
 
     private void checkboxQuiCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxQuiCursoTurmaItemStateChanged
-        if(checkboxQuiCursoTurma.isSelected()){
+        if (checkboxQuiCursoTurma.isSelected()) {
             campoHoraInicioQuiCursoTurma.setEditable(true);
             campoHoraFimQuiCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioQuiCursoTurma.setEditable(false);
             campoHoraFimQuiCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxQuiCursoTurmaItemStateChanged
 
     private void checkboxSexCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSexCursoTurmaItemStateChanged
-        if(checkboxSexCursoTurma.isSelected()){
+        if (checkboxSexCursoTurma.isSelected()) {
             campoHoraInicioSexCursoTurma.setEditable(true);
             campoHoraFimSexCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioSexCursoTurma.setEditable(false);
             campoHoraFimSexCursoTurma.setEditable(false);
         }
     }//GEN-LAST:event_checkboxSexCursoTurmaItemStateChanged
 
     private void checkboxSabCursoTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkboxSabCursoTurmaItemStateChanged
-        if(checkboxSabCursoTurma.isSelected()){
+        if (checkboxSabCursoTurma.isSelected()) {
             campoHoraInicioSabCursoTurma.setEditable(true);
             campoHoraFimSabCursoTurma.setEditable(true);
-        }else{
+        } else {
             campoHoraInicioSabCursoTurma.setEditable(false);
             campoHoraFimSabCursoTurma.setEditable(false);
         }
@@ -2443,23 +2468,54 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_radioOutroItemStateChanged
 
     private void radioOutroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOutroActionPerformed
-        
+
     }//GEN-LAST:event_radioOutroActionPerformed
 
     private void radioOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_radioOutroStateChanged
-        
+
     }//GEN-LAST:event_radioOutroStateChanged
 
     private void radioDP7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioDP7ActionPerformed
-               
+
     }//GEN-LAST:event_radioDP7ActionPerformed
 
     private void radioDP7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radioDP7ItemStateChanged
-        if(radioDP7.isSelected()){
+        if (radioDP7.isSelected()) {
             campoOutro.setEditable(true);
-        }else
-            campoOutro.setEditable(false); 
+        } else {
+            campoOutro.setEditable(false);
+        }
     }//GEN-LAST:event_radioDP7ItemStateChanged
+
+    private void jButtonVerificaRespCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificaRespCPFActionPerformed
+        ConnectionFactory connFactory = new ConnectionFactory();
+        Connection conn = connFactory.getConnection();
+
+        try {
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Responsaveis WHERE CPF = ?");
+            stmt.setString(1, campoCPFResponsavel.getText());
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                rs.first();
+                String nomeResponsavel = rs.getString("nome");
+                String rgResponsavel = rs.getString("rg");
+
+                campoNomeResponsavel.setText(nomeResponsavel);
+                campoNomeResponsavel.setEditable(false);
+                campoRGResponsavel.setText(rgResponsavel);
+                campoRGResponsavel.setEditable(false);
+                setNovoResponsavel = false;
+            } else {
+                setNovoResponsavel = true;
+                campoNomeResponsavel.setEditable(true);
+                campoRGResponsavel.setEditable(true);
+                JOptionPane.showMessageDialog(null, "CPF de responsável não cadastrado. Cadastre um novo.");
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButtonVerificaRespCPFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2587,6 +2643,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JButton consultarConsultarCurso;
     private javax.swing.JButton consultarCursoTA;
     private javax.swing.JComboBox<String> estadoBox;
+    private javax.swing.JButton jButtonVerificaRespCPF;
     private javax.swing.JComboBox<String> jComboBoxCursos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

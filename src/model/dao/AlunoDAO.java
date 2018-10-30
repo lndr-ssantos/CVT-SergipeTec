@@ -47,7 +47,7 @@ public class AlunoDAO {
             stmt.setString(21, aluno.getCPFResponsavel());
             
             stmt.executeUpdate();
-
+            JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso!");
         } catch (SQLException ex) {
             System.err.println("Erro ao cadastrar aluno: "+ex);
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno: "+ex);
