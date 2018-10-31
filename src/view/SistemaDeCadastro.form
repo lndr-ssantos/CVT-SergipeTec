@@ -796,11 +796,7 @@
                                   <Component id="jButtonVerificaRespCPF" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-<<<<<<< HEAD
                           <EmptySpace pref="396" max="32767" attributes="0"/>
-=======
-                          <EmptySpace pref="415" max="32767" attributes="0"/>
->>>>>>> Consulta Professor
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -825,11 +821,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="botaoProximo" max="-2" attributes="0"/>
-<<<<<<< HEAD
                           <EmptySpace pref="656" max="32767" attributes="0"/>
-=======
-                          <EmptySpace pref="676" max="32767" attributes="0"/>
->>>>>>> Consulta Professor
                       </Group>
                   </Group>
                 </DimensionLayout>
