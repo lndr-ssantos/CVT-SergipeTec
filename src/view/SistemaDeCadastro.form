@@ -50,6 +50,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarCursoTurmaActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="cadastrarAlunoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastrar Aluno na Turma"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarAlunoTurmaActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuConsultar">
@@ -198,27 +206,6 @@
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="labelSexo" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="radioMasc" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="radioFem" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="radioOutro" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="labelNaturalidade" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="estadoBox" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="cidadeBox" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="labelDataNascimento" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoDataNascimento" min="-2" pref="132" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
                                                   <Component id="labelCEP" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="campoCEP" min="-2" pref="150" max="-2" attributes="0"/>
@@ -282,6 +269,32 @@
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelSexo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="radioMasc" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="radioFem" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="radioOutro" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelNaturalidade" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="estadoBox" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="cidadeBox" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelDataNascimento" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoDataNascimento" min="-2" pref="132" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -313,14 +326,16 @@
                               <Component id="campoDataNascimento" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="labelCPF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="labelRG" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="campoCPF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="campoRG" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="labelRGUF" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="campoRGUF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="labelCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campoRG" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1262,7 +1277,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="painelCursoTurma">
+        <Container class="javax.swing.JPanel" name="painelCadastrarCursoTurma">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="painelCursoTurma"/>
@@ -1657,7 +1672,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Professores&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codProf&quot;) + &quot;) &quot; + rs.getString(&quot;nome&quot;);&#xa;                boxProfessor.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Professores&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codProf&quot;) + &quot;) &quot; + rs.getString(&quot;nome&quot;);&#xa;                boxProfessor.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -1688,6 +1703,88 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="T&#xe9;rmino"/>
               </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="painelCadastrarAlunoTurma">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card8"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="botaoCadastrarAlunoTurma" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labelCadastrarCPFAlunoTurma" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="campoCadastrarCPFAlunoTurma" min="-2" pref="276" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labelCadastrarCodTurma" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="campoCadastrarCodTurma" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="475" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelCadastrarCPFAlunoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCadastrarCPFAlunoTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelCadastrarCodTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoCadastrarCodTurma" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="botaoCadastrarAlunoTurma" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="705" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="labelCadastrarCPFAlunoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CPF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoCadastrarCPFAlunoTurma">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCadastrarCPFAlunoTurmaFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCadastrarCPFAlunoTurmaFocusLost"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="botaoCadastrarAlunoTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarAlunoTurmaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labelCadastrarCodTurma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo da turma"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campoCadastrarCodTurma">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCadastrarCodTurmaFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="campoCadastrarCodTurmaFocusLost"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

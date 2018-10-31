@@ -13,6 +13,7 @@ public class Turma{
     private int codCurso;
     private int codProf;
     private String turno;
+    private int codTurma;
     
     private int ano;
     private int semestre;
@@ -116,6 +117,14 @@ public class Turma{
 
     public void setCodCurso(int curso) {
         this.codCurso = curso;
+    }
+    
+    public int getCodTurma() {
+        return codTurma;
+    }
+
+    public void setCodTurma(int turma) {
+        this.codTurma = turma;
     }
 
     public int getCodProf() {
