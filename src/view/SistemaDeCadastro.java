@@ -39,6 +39,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import model.dao.MatriculaDAO;
+import java.util.Arrays;
 
 /**
  *
@@ -1494,7 +1495,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tableConsultarCursoTA.setColumnSelectionAllowed(true);
+        tableConsultarCursoTA.getTableHeader().setReorderingAllowed(false);
         ScrollPaneCurso2.setViewportView(tableConsultarCursoTA);
+        tableConsultarCursoTA.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         tableCTurma.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1515,15 +1519,25 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 "Código", "Total de vagas", "Horário de início", "Horário de termino", "Ano", "Semestre"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tableCTurma.setColumnSelectionAllowed(true);
+        tableCTurma.getTableHeader().setReorderingAllowed(false);
         ScrollPaneTurma2.setViewportView(tableCTurma);
+        tableCTurma.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         tableCTAluno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1556,6 +1570,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         nomeCursoConsulta.setText("Curso");
 
         consultarConsultarCurso.setText("Consultar");
+        consultarConsultarCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarConsultarCursoActionPerformed(evt);
+            }
+        });
 
         labelCodCurso.setText("Código");
 
@@ -1606,7 +1625,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addComponent(botaoConsultarTurma)
                 .addGap(18, 18, 18)
                 .addComponent(scrollPaneAluno2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         painelPrincipal.add(painelConsultaCursoTurmaAlunos, "painelConsultaCursoTurma");
@@ -2215,8 +2234,55 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_campoConsultaMatProfessorFocusLost
 
     private void consultarCursoTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarCursoTAActionPerformed
+        DefaultTableModel table = (DefaultTableModel)tableConsultarCursoTA.getModel();
+        Object[] row = new Object[2];
+        ArrayList<Curso> cursoLista = new ArrayList<>();
+        table.setRowCount(0);
+        boolean hasWhere = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
 
-        readTable(campoConsultarCurso.getText().trim());
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Cursos \n";
+            
+            if(!campoConsultarCurso.getText().trim().equals("")){
+                query += "WHERE nomeCurso like '%" + campoConsultarCurso.getText()+"%'\n";
+                hasWhere = true;
+            }
+            if(!campoCodCurso.getText().trim().equals("")){
+                if(hasWhere){
+                    query += "AND codCurso = " + campoCodCurso.getText();
+                } else {
+                    query += "WHERE codCurso = " + campoCodCurso.getText();
+                    hasWhere = true;
+                }
+            }
+            
+            ResultSet rs = statement.executeQuery(query);
+            Curso curso;
+            
+            while (rs.next()){
+                curso = new Curso();
+                curso.setNomeCurso(rs.getString("nomeCurso"));
+                curso.setCodCurso(rs.getInt("codCurso"));
+                cursoLista.add(curso);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+        
+        for(int i = 0; i < cursoLista.size(); i++){
+            row[1] = cursoLista.get(i).getNomeCurso();
+            row[0] = cursoLista.get(i).getCodCurso();
+            table.addRow(row);
+        }
+        
+        //readTable(campoConsultarCurso.getText().trim());
     }//GEN-LAST:event_consultarCursoTAActionPerformed
 
     private void campoConsultaNomeAlunoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeAlunoFocusGained
@@ -2890,6 +2956,77 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelCadastrarAlunoTurma");
     }//GEN-LAST:event_cadastrarAlunoTurmaActionPerformed
+	
+    private void consultarConsultarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarConsultarCursoActionPerformed
+        /*INCOMPLETO
+        
+        DefaultTableModel table = (DefaultTableModel)tableCTurma.getModel();
+        Object[] row = new Object[6];
+        ArrayList<Turma> turmaLista = new ArrayList<>();
+        table.setRowCount(0);
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+             
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
+                     "sergipetec", "Sergipetec@@2010");
+
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM Turmas \n";
+            
+            int[] sr = tableConsultarCursoTA.getSelectedRows();
+            int ctr = 0;
+            Curso[] curso = new Curso[sr.length];
+            for(int s : sr){
+                //Object o = tableConsultarCursoTA.getModel().getValueAt(s, 0);
+                JOptionPane.showMessageDialog(null, "" + tableConsultarCursoTA.getValueAt(s, 0) + "\n" + s +"\n"+ Arrays.toString(sr));
+                curso[ctr].setCodCurso((int) tableConsultarCursoTA.getValueAt(s, 0));
+                ctr++;
+            }
+            
+            if(curso.length < 2){
+                query += "WHERE Cursos_codCurso in ( " + curso[0].getCodCurso() + ")";
+            } else {
+                query += "WHERE Cursos_codCurso codCurso in ( " + curso[0].getCodCurso() + ", ";
+                int i = 1;
+                while(i < curso.length-1){
+                    query += "" + curso[i].getCodCurso() + ", ";
+                    i++;
+                }
+                query += "" + curso[i].getCodCurso() +")";
+            }
+            
+            ResultSet rs = statement.executeQuery(query);
+            Turma turma;
+            
+            while (rs.next()){
+                turma = new Turma();
+                
+                turma.setCodCurso(rs.getInt("Cursos_codCurso"));
+                turma.setTotVagas(rs.getInt("totVagas"));
+                turma.setHoraInicio(rs.getString("horaInicio"));
+                turma.setHoraFim(rs.getString("horaFim"));
+                turma.setAno(rs.getInt("ano"));
+                turma.setSemestre(rs.getInt("semestre"));
+                
+                turmaLista.add(turma);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+
+        
+        for(int i = 0; i < turmaLista.size(); i++){
+            row[0] = turmaLista.get(i).getCodCurso();
+            row[1] = turmaLista.get(i).getTotVagas();
+            row[2] = turmaLista.get(i).getHoraInicioString();
+            row[3] = turmaLista.get(i).getHoraFimString();
+            row[4] = turmaLista.get(i).getAno();
+            row[5] = turmaLista.get(i).getSemestre();
+            table.addRow(row);
+        }*/
+    }//GEN-LAST:event_consultarConsultarCursoActionPerformed
 
     /**
      * @param args the command line arguments
