@@ -1980,10 +1980,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo com nome da mãe ou do pai");
         } else if (campoTel1.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo Telefone");
-        } else if (campoCEP.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
-        } else if (campoNumero.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Informe o número da residência");
         } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()) {
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
         } else if (!campoCPFResponsavel.getText().trim().equals("")) {
@@ -2529,10 +2525,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo UF");
         } else if (campoTelefone1Prof.getText().trim().equals("") && campoTelefone2Prof.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Informe um telefone para contato");
-        } else if (campoCepProf.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o campo CEP");
-        } else if (campoNumProf.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Preencha o número da residência");
         } else {
             professor.setNome(campoNome.getText());
             professor.setCPF(campoCPFProf.getText());
