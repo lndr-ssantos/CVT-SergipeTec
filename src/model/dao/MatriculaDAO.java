@@ -34,23 +34,33 @@ public class MatriculaDAO {
             stmt2 = con.prepareStatement("Select * from Alunos where cpf is \n"
                     + "values (Aluno_CPF)");
 
-            if (stmt2.getMaxRows() > 0 && stmt3.getMaxRows() > 0) {
-                stmt = con.prepareStatement("insert into Matricula(Aluno_CPF, Turmas_codTurma)\n"
-                        + "values (?, ?)");
-                stmt.setString(1, Aluno_CPF);
-                stmt.setInt(2, Turmas_codTurma);
+            stmt = con.prepareStatement("insert into Matricula(Alunos_CPF, Turmas_codTurma)\n"
+                    + "values (?, ?)");
+            stmt.setString(1, Aluno_CPF);
+            stmt.setInt(2, Turmas_codTurma);
 
-                stmt.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Aluno cadastrado na turma com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Campo(s) com dado(s) inválido(s)");
-            }
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Aluno cadastrado na turma com sucesso!");
 
         } catch (SQLException ex) {
+            boolean erro = true;
             System.err.println("Erro ao cadastrar aluno na turma: " + ex);
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno na turma: " + ex);
+            if (ex.toString().equals("java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cvt`.`Matricula`, CONSTRAINT `fk_Alunos_has_Turmas_Alunos1` FOREIGN KEY (`Alunos_CPF`) REFERENCES `Alunos` (`cpf`))")) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno na turma: CPF inválido");
+                erro = false;
+            }
+            if (ex.toString().equals("java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`cvt`.`Matricula`, CONSTRAINT `fk_Alunos_has_Turmas_Turmas1` FOREIGN KEY (`Turmas_codTurma`) REFERENCES `Turmas` (`codTurma`))")) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno na turma: Código da turma inválida");
+                erro = false;
+            }
+            if (erro == true) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar aluno na turma: " + ex);
+            }
+
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
+            ConnectionFactory.closeConnection(con, stmt2);
+            ConnectionFactory.closeConnection(con, stmt3);
         }
     }
 }

@@ -140,10 +140,10 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="painelGuiasAluno">
+        <Container class="javax.swing.JTabbedPane" name="painelCadastrarAluno">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="painelGuiasAluno"/>
+              <CardConstraints cardName="painelCadastrarAluno"/>
             </Constraint>
           </Constraints>
 
@@ -233,6 +233,11 @@
                                           <Component id="labelCidade" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="campoCidade" min="-2" pref="138" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="labelRGUF" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campoRGUF" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="labelSexo" min="-2" max="-2" attributes="0"/>
@@ -1644,7 +1649,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Professores&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codProf&quot;) + &quot;) &quot; + rs.getString(&quot;nome&quot;);&#xa;                boxProfessor.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try { &#xa;            boxProfessor.addItem(&quot;Selecione um professor&quot;);&#xa;            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);&#xa;             &#xa;            Connection connection = DriverManager.getConnection(&quot;jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&quot;,&#xa;                     &quot;sergipetec&quot;, &quot;Sergipetec@@2010&quot;);&#xa;&#xa;            Statement statement = connection.createStatement();&#xa;            String query = &quot;SELECT * FROM Professores&quot;;&#xa;            ResultSet rs = statement.executeQuery(query);&#xa;&#xa;            while (rs.next()){&#xa;                String st = &quot;(&quot; + rs.getInt(&quot;codProf&quot;) + &quot;) &quot; + rs.getString(&quot;nome&quot;);&#xa;                boxProfessor.addItem(st);&#xa;            }//end while&#xa;&#xa;            connection.close();&#xa;        } catch (Exception e) {&#xa;            e.printStackTrace();&#xa;        }"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -1681,7 +1686,7 @@
         <Container class="javax.swing.JPanel" name="painelCadastrarAlunoTurma">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card8"/>
+              <CardConstraints cardName="painelCadastrarAlunoTurma"/>
             </Constraint>
           </Constraints>
 

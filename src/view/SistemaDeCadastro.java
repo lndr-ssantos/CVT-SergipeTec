@@ -88,7 +88,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         buttonGroup6 = new javax.swing.ButtonGroup();
         buttonGroupSexoProfessor = new javax.swing.ButtonGroup();
         painelPrincipal = new javax.swing.JPanel();
-        painelGuiasAluno = new javax.swing.JTabbedPane();
+        painelCadastrarAluno = new javax.swing.JTabbedPane();
         painelDadosPessoais = new javax.swing.JPanel();
         labelNome = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
@@ -218,6 +218,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelProfessorTurma = new javax.swing.JLabel();
         boxProfessor = new javax.swing.JComboBox<>();
         try {
+            boxProfessor.addItem("Selecione um professor");
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
@@ -462,6 +463,16 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                         .addGap(207, 207, 207)
                                         .addComponent(campoTel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(labelEndereco)
+                                    .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
+                                            .addGap(205, 205, 205)
+                                            .addComponent(labelRG)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                            .addComponent(labelCPF)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                         .addComponent(labelCEP)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -496,6 +507,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addComponent(labelCidade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                .addComponent(labelRGUF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelSexo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -603,7 +618,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addContainerGap(269, Short.MAX_VALUE))
         );
 
-        painelGuiasAluno.addTab("D. Pessoais", painelDadosPessoais);
+        painelCadastrarAluno.addTab("D. Pessoais", painelDadosPessoais);
 
         buttonGroup5.add(radioDP1);
         radioDP1.setText("Não encontrei emprego ou atividade remunerada");
@@ -699,7 +714,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addContainerGap(464, Short.MAX_VALUE))
         );
 
-        painelGuiasAluno.addTab("D. Escolares e Profissionais", painelDadosProfissionais);
+        painelCadastrarAluno.addTab("D. Escolares e Profissionais", painelDadosProfissionais);
 
         labelNomeResponsavel.setText("Nome");
 
@@ -769,9 +784,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addContainerGap(656, Short.MAX_VALUE))
         );
 
-        painelGuiasAluno.addTab("D. do Responsável", painelDadosResponsavel);
+        painelCadastrarAluno.addTab("D. do Responsável", painelDadosResponsavel);
 
-        painelPrincipal.add(painelGuiasAluno, "painelGuiasAluno");
+        painelPrincipal.add(painelCadastrarAluno, "painelCadastrarAluno");
 
         labelTelefone1.setText("Telefone(s) para Contato");
 
@@ -1329,7 +1344,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addContainerGap(705, Short.MAX_VALUE))
         );
 
-        painelPrincipal.add(painelCadastrarAlunoTurma, "card8");
+        painelPrincipal.add(painelCadastrarAlunoTurma, "painelCadastrarAlunoTurma");
 
         tableAluno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2079,7 +2094,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
 
     private void cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarAlunoActionPerformed
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
-        cl.show(painelPrincipal, "painelGuiasAluno");
+        cl.show(painelPrincipal, "painelCadastrarAluno");
     }//GEN-LAST:event_cadastrarAlunoActionPerformed
 
     private void cadastrarCursoTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarCursoTurmaActionPerformed
@@ -2306,9 +2321,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             //sab
         } else if (checkboxSabCursoTurma.isSelected() && campoHoraFimSabCursoTurma.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Defina horário de término do Sábado!");
-            //checa se o total de vagas foi definido
-        } else if (campoQntVagas.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Defina o total de vagas da turma!");
         } else {
             //adiciona os dias no ArrayList dias, horaInicio e horaFim
             if (checkboxSegCursoTurma.isSelected()) {
@@ -2389,8 +2401,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
 
+            if (!campoQntVagas.getText().trim().equals("")) {
+                turma.setTotVagas(Integer.parseInt(campoQntVagas.getText()));
+            }
+            
             String s;
             int i;
 
@@ -2398,9 +2413,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 s = boxProfessor.getSelectedItem().toString();
                 i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
                 turma.setCodProf(i);
+            } else {
+                s = boxCursos.getSelectedItem().toString();
             }
-
-            s = boxCursos.getSelectedItem().toString();
             i = Integer.parseInt(s.replaceAll("[^\\d.]", ""));
             turma.setCodCurso(i);
 
@@ -2703,63 +2718,63 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVerificaRespCPFActionPerformed
 
     private void botaoConsultaAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultaAlunoActionPerformed
-        DefaultTableModel table = (DefaultTableModel)tableAluno.getModel();
+        DefaultTableModel table = (DefaultTableModel) tableAluno.getModel();
         Object[] row = new Object[4];
         ArrayList<Aluno> alunoLista = new ArrayList<>();
         table.setRowCount(0);
         boolean hasWhere = false;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-             
+
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
-                     "sergipetec", "Sergipetec@@2010");
+                    "sergipetec", "Sergipetec@@2010");
 
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM Alunos \n";
-            
-            if(!campoConsultaNomeAluno.getText().trim().equals("")){
-                query += "WHERE nome like '%" + campoConsultaNomeAluno.getText()+"%'\n";
+
+            if (!campoConsultaNomeAluno.getText().trim().equals("")) {
+                query += "WHERE nome like '%" + campoConsultaNomeAluno.getText() + "%'\n";
                 hasWhere = true;
             }
-            if(!campoConsultaCPFAluno.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaCPFAluno.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND CPF = " + campoConsultaCPFAluno.getText();
                 } else {
                     query += "WHERE CPF = " + campoConsultaCPFAluno.getText();
                     hasWhere = true;
                 }
             }
-            if(!campoConsultaRGAluno.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaRGAluno.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND RG = " + campoConsultaRGAluno.getText();
                 } else {
                     query += "WHERE RG = " + campoConsultaRGAluno.getText();
                     hasWhere = true;
                 }
             }
-            if(!campoConsultaMatAluno.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaMatAluno.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND matricula = " + campoConsultaMatAluno.getText();
                 } else {
                     query += "WHERE matricula = " + campoConsultaMatAluno.getText();
                     hasWhere = true;
                 }
             }
-            
-            if(campoConsultaNomeAluno.getText().trim().equals("")){
-                if(campoConsultaCPFAluno.getText().trim().equals("")){
-                    if(campoConsultaRGAluno.getText().trim().equals("")){
-                        if(campoConsultaMatAluno.getText().trim().equals("")){
+
+            if (campoConsultaNomeAluno.getText().trim().equals("")) {
+                if (campoConsultaCPFAluno.getText().trim().equals("")) {
+                    if (campoConsultaRGAluno.getText().trim().equals("")) {
+                        if (campoConsultaMatAluno.getText().trim().equals("")) {
                             //print erro
-                        }   
+                        }
                     }
                 }
             }
-            
+
             ResultSet rs = statement.executeQuery(query);
             Aluno aluno;
-            
-            while (rs.next()){
+
+            while (rs.next()) {
                 aluno = new Aluno();
                 aluno.setNome(rs.getString("nome"));
                 aluno.setCPF(rs.getString("CPF"));
@@ -2770,10 +2785,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
 
-        
-        for(int i = 0; i < alunoLista.size(); i++){
+        for (int i = 0; i < alunoLista.size(); i++) {
             row[0] = alunoLista.get(i).getNome();
             row[1] = alunoLista.get(i).getCPF();
             row[2] = alunoLista.get(i).getRG();
@@ -2783,53 +2796,53 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoConsultaAlunoActionPerformed
 
     private void botaoConsultaAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultaAluno1ActionPerformed
-        DefaultTableModel table = (DefaultTableModel)tableProfessor.getModel();
+        DefaultTableModel table = (DefaultTableModel) tableProfessor.getModel();
         Object[] row = new Object[4];
         ArrayList<Professor> profLista = new ArrayList<>();
         table.setRowCount(0);
         boolean hasWhere = false;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-             
+
             Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
-                     "sergipetec", "Sergipetec@@2010");
+                    "sergipetec", "Sergipetec@@2010");
 
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM Professores \n";
-            
-            if(!campoConsultaNomeProfessor.getText().trim().equals("")){
-                query += "WHERE nome like '%" + campoConsultaNomeProfessor.getText()+"%'\n";
+
+            if (!campoConsultaNomeProfessor.getText().trim().equals("")) {
+                query += "WHERE nome like '%" + campoConsultaNomeProfessor.getText() + "%'\n";
                 hasWhere = true;
             }
-            if(!campoConsultaCPFProfessor.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaCPFProfessor.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND CPF = " + campoConsultaCPFProfessor.getText();
                 } else {
                     query += "WHERE CPF = " + campoConsultaCPFProfessor.getText();
                     hasWhere = true;
                 }
             }
-            if(!campoConsultaRGProfessor.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaRGProfessor.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND RG = " + campoConsultaRGProfessor.getText();
                 } else {
                     query += "WHERE RG = " + campoConsultaRGProfessor.getText();
                     hasWhere = true;
                 }
             }
-            if(!campoConsultaMatProfessor.getText().trim().equals("")){
-                if(hasWhere){
+            if (!campoConsultaMatProfessor.getText().trim().equals("")) {
+                if (hasWhere) {
                     query += "AND codProf = " + campoConsultaMatProfessor.getText();
                 } else {
                     query += "WHERE codProf = " + campoConsultaMatProfessor.getText();
                     hasWhere = true;
                 }
             }
-            
+
             ResultSet rs = statement.executeQuery(query);
             Professor prof;
-            
-            while (rs.next()){
+
+            while (rs.next()) {
                 prof = new Professor();
                 prof.setNome(rs.getString("nome"));
                 prof.setCPF(rs.getString("CPF"));
@@ -2840,10 +2853,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
 
-        
-        for(int i = 0; i < profLista.size(); i++){
+        for (int i = 0; i < profLista.size(); i++) {
             row[0] = profLista.get(i).getNome();
             row[1] = profLista.get(i).getCPF();
             row[2] = profLista.get(i).getRG();
@@ -3080,6 +3091,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuConsultarCursosTurmas;
     private javax.swing.JMenuItem menuConsultarProfessor;
     private javax.swing.JLabel nomeCursoConsulta;
+    private javax.swing.JTabbedPane painelCadastrarAluno;
     private javax.swing.JPanel painelCadastrarAlunoTurma;
     private javax.swing.JPanel painelCadastrarCursoTurma;
     private javax.swing.JPanel painelCadastroProfessor;
@@ -3089,7 +3101,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel painelDadosPessoais;
     private javax.swing.JPanel painelDadosProfissionais;
     private javax.swing.JPanel painelDadosResponsavel;
-    private javax.swing.JTabbedPane painelGuiasAluno;
     private javax.swing.JPanel painelPrincipal;
     private javax.swing.JRadioButton radioDP1;
     private javax.swing.JRadioButton radioDP2;
