@@ -464,16 +464,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                         .addGap(207, 207, 207)
                                         .addComponent(campoTel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(labelEndereco)
-                                    .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosPessoaisLayout.createSequentialGroup()
-                                            .addGap(205, 205, 205)
-                                            .addComponent(labelRG)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                            .addComponent(labelCPF)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                         .addComponent(labelCEP)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -501,6 +491,18 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                         .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
+                                .addComponent(labelCPF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelRG)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(labelRGUF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelEstado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -508,10 +510,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addComponent(labelCidade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(campoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                .addComponent(labelRGUF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelSexo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -529,19 +527,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelDataNascimento)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                .addComponent(labelCPF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(labelRG)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelRGUF)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(campoDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         painelDadosPessoaisLayout.setVerticalGroup(
@@ -568,12 +554,12 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(campoDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(painelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelCPF)
                     .addComponent(labelRG)
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelRGUF)
-                    .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelCPF))
                 .addGap(18, 18, 18)
                 .addComponent(labelFiliacao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1847,134 +1833,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cidadeBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeBoxActionPerformed
-
-    }//GEN-LAST:event_cidadeBoxActionPerformed
-
-    private void estadoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_estadoBoxActionPerformed
-
-    private void estadoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_estadoBoxItemStateChanged
-        cidadeBox.removeAllItems();
-
-        int idUF = 0;
-
-        switch (estadoBox.getSelectedItem().toString()) {
-            case "AC":
-                idUF = 12;
-                break;
-            case "AL":
-                idUF = 27;
-                break;
-            case "AP":
-                idUF = 16;
-                break;
-            case "AM":
-                idUF = 13;
-                break;
-            case "BA":
-                idUF = 29;
-                break;
-            case "CE":
-                idUF = 23;
-                break;
-            case "DF":
-                idUF = 53;
-                break;
-            case "ES":
-                idUF = 32;
-                break;
-            case "GO":
-                idUF = 52;
-                break;
-            case "MA":
-                idUF = 21;
-                break;
-            case "MT":
-                idUF = 51;
-                break;
-            case "MS":
-                idUF = 50;
-                break;
-            case "MG":
-                idUF = 31;
-                break;
-            case "PA":
-                idUF = 15;
-                break;
-            case "PB":
-                idUF = 25;
-                break;
-            case "PR":
-                idUF = 41;
-                break;
-            case "PE":
-                idUF = 26;
-                break;
-            case "PI":
-                idUF = 22;
-                break;
-            case "RJ":
-                idUF = 33;
-                break;
-            case "RN":
-                idUF = 24;
-                break;
-            case "RS":
-                idUF = 43;
-                break;
-            case "RO":
-                idUF = 11;
-                break;
-            case "RR":
-                idUF = 14;
-                break;
-            case "SC":
-                idUF = 42;
-                break;
-            case "SP":
-                idUF = 35;
-                break;
-            case "SE":
-                idUF = 28;
-                break;
-            case "TO":
-                idUF = 17;
-                break;
-            case "Selecione um estado":
-                cidadeBox.removeAllItems();
-                break;
-        }
-
-        if (idUF > 0) {
-            try {
-                //URL API IBGE para municipios
-                URL url = new URL("https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + idUF + "/municipios");
-
-                //JSON retornado para a variável jsonScanner. String criada com o JSON retornado
-                Scanner jsonScanner = new Scanner(url.openStream());
-                String jsonString = "";
-                while (jsonScanner.hasNext()) {
-                    jsonString += jsonScanner.nextLine();
-                }
-
-                //Parsing da String para JSON array. Assim é possível acessar as informações retornadas
-                JSONArray jsonarray = new JSONArray(jsonString);
-                List municipios = new ArrayList();
-                for (int i = 0; i < jsonarray.length(); i++) {
-                    JSONObject jsonobject = jsonarray.getJSONObject(i);
-                    municipios.add(jsonobject.getString("nome"));
-                }
-
-                municipios.forEach((municipio) -> {
-                    cidadeBox.addItem(municipio.toString());
-                });
-            } catch (IOException e) {
-            }
-        }
-    }//GEN-LAST:event_estadoBoxItemStateChanged
-
     private void botaoProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoProximoActionPerformed
 
         Aluno aluno = new Aluno();
@@ -2107,10 +1965,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoProximoActionPerformed
 
-    private void campoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoRGActionPerformed
-
     private void cadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarAlunoActionPerformed
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelCadastrarAluno");
@@ -2120,30 +1974,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelCursoTurma");
     }//GEN-LAST:event_cadastrarCursoTurmaActionPerformed
-
-    private void campoCEPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoCEPFocusLost
-        if (!campoCEP.getText().equals("")) {
-            try {
-                ViaCEP viacep = new ViaCEP();
-                viacep.buscar(campoCEP.getText().trim());
-                campoEstado.setText(viacep.getUf());
-                campoCidade.setText(viacep.getLocalidade());
-                campoBairro.setText(viacep.getBairro());
-                CampoRua.setText(viacep.getLogradouro());
-            } catch (ViaCEPException ex) {
-                campoEstado.setText("");
-                campoCidade.setText("");
-                campoBairro.setText("");
-                CampoRua.setText("");
-                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            campoEstado.setText("");
-            campoCidade.setText("");
-            campoBairro.setText("");
-            CampoRua.setText("");
-        }
-    }//GEN-LAST:event_campoCEPFocusLost
 
     private void menuConsultarCursosTurmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultarCursosTurmasActionPerformed
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
@@ -2160,10 +1990,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         cl.show(painelPrincipal, "painelCadastroProfessor");
     }//GEN-LAST:event_cadastrarProfessorActionPerformed
 
-    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeActionPerformed
-
     private void menuConsultarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultarProfessorActionPerformed
         CardLayout cl = (CardLayout) painelPrincipal.getLayout();
         cl.show(painelPrincipal, "painelConsultaProfessor");
@@ -2172,10 +1998,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private void campoConsultaCPFProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoConsultaCPFProfessorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoConsultaCPFProfessorActionPerformed
-
-    private void campoCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoCEPActionPerformed
 
     private void campoConsultaNomeProfessorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoConsultaNomeProfessorFocusGained
         if (campoConsultaCPFProfessor.getText().equals("") && campoConsultaRGProfessor.getText().equals("") && campoConsultaMatProfessor.getText().equals("")) {
@@ -2729,18 +2551,6 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkboxSabCursoTurmaItemStateChanged
 
-    private void radioOutroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radioOutroItemStateChanged
-
-    }//GEN-LAST:event_radioOutroItemStateChanged
-
-    private void radioOutroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOutroActionPerformed
-
-    }//GEN-LAST:event_radioOutroActionPerformed
-
-    private void radioOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_radioOutroStateChanged
-
-    }//GEN-LAST:event_radioOutroStateChanged
-
     private void radioDP7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioDP7ActionPerformed
 
     }//GEN-LAST:event_radioDP7ActionPerformed
@@ -3027,6 +2837,182 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             table.addRow(row);
         }*/
     }//GEN-LAST:event_consultarConsultarCursoActionPerformed
+
+    private void campoCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoCEPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoCEPActionPerformed
+
+    private void campoCEPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoCEPFocusLost
+        if (!campoCEP.getText().equals("")) {
+            try {
+                ViaCEP viacep = new ViaCEP();
+                viacep.buscar(campoCEP.getText().trim());
+                campoEstado.setText(viacep.getUf());
+                campoCidade.setText(viacep.getLocalidade());
+                campoBairro.setText(viacep.getBairro());
+                CampoRua.setText(viacep.getLogradouro());
+            } catch (ViaCEPException ex) {
+                campoEstado.setText("");
+                campoCidade.setText("");
+                campoBairro.setText("");
+                CampoRua.setText("");
+                Logger.getLogger(SistemaDeCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            campoEstado.setText("");
+            campoCidade.setText("");
+            campoBairro.setText("");
+            CampoRua.setText("");
+        }
+    }//GEN-LAST:event_campoCEPFocusLost
+
+    private void campoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoRGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoRGActionPerformed
+
+    private void cidadeBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeBoxActionPerformed
+
+    }//GEN-LAST:event_cidadeBoxActionPerformed
+
+    private void estadoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estadoBoxActionPerformed
+
+    private void estadoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_estadoBoxItemStateChanged
+        cidadeBox.removeAllItems();
+
+        int idUF = 0;
+
+        switch (estadoBox.getSelectedItem().toString()) {
+            case "AC":
+            idUF = 12;
+            break;
+            case "AL":
+            idUF = 27;
+            break;
+            case "AP":
+            idUF = 16;
+            break;
+            case "AM":
+            idUF = 13;
+            break;
+            case "BA":
+            idUF = 29;
+            break;
+            case "CE":
+            idUF = 23;
+            break;
+            case "DF":
+            idUF = 53;
+            break;
+            case "ES":
+            idUF = 32;
+            break;
+            case "GO":
+            idUF = 52;
+            break;
+            case "MA":
+            idUF = 21;
+            break;
+            case "MT":
+            idUF = 51;
+            break;
+            case "MS":
+            idUF = 50;
+            break;
+            case "MG":
+            idUF = 31;
+            break;
+            case "PA":
+            idUF = 15;
+            break;
+            case "PB":
+            idUF = 25;
+            break;
+            case "PR":
+            idUF = 41;
+            break;
+            case "PE":
+            idUF = 26;
+            break;
+            case "PI":
+            idUF = 22;
+            break;
+            case "RJ":
+            idUF = 33;
+            break;
+            case "RN":
+            idUF = 24;
+            break;
+            case "RS":
+            idUF = 43;
+            break;
+            case "RO":
+            idUF = 11;
+            break;
+            case "RR":
+            idUF = 14;
+            break;
+            case "SC":
+            idUF = 42;
+            break;
+            case "SP":
+            idUF = 35;
+            break;
+            case "SE":
+            idUF = 28;
+            break;
+            case "TO":
+            idUF = 17;
+            break;
+            case "Selecione um estado":
+            cidadeBox.removeAllItems();
+            break;
+        }
+
+        if (idUF > 0) {
+            try {
+                //URL API IBGE para municipios
+                URL url = new URL("https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + idUF + "/municipios");
+
+                //JSON retornado para a variável jsonScanner. String criada com o JSON retornado
+                Scanner jsonScanner = new Scanner(url.openStream());
+                String jsonString = "";
+                while (jsonScanner.hasNext()) {
+                    jsonString += jsonScanner.nextLine();
+                }
+
+                //Parsing da String para JSON array. Assim é possível acessar as informações retornadas
+                JSONArray jsonarray = new JSONArray(jsonString);
+                List municipios = new ArrayList();
+                for (int i = 0; i < jsonarray.length(); i++) {
+                    JSONObject jsonobject = jsonarray.getJSONObject(i);
+                    municipios.add(jsonobject.getString("nome"));
+                }
+
+                municipios.forEach((municipio) -> {
+                    cidadeBox.addItem(municipio.toString());
+                });
+            } catch (IOException e) {
+            }
+        }
+    }//GEN-LAST:event_estadoBoxItemStateChanged
+
+    private void radioOutroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOutroActionPerformed
+
+    }//GEN-LAST:event_radioOutroActionPerformed
+
+    private void radioOutroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_radioOutroStateChanged
+
+    }//GEN-LAST:event_radioOutroStateChanged
+
+    private void radioOutroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_radioOutroItemStateChanged
+
+    }//GEN-LAST:event_radioOutroItemStateChanged
+
+    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNomeActionPerformed
 
     /**
      * @param args the command line arguments
