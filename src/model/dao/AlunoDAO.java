@@ -22,7 +22,7 @@ public class AlunoDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, RGUF ,nomeMae, nomePai, telefone1, telefone2, CEP, estado, cidade, bairro, rua, numResidencia, complemento, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
+            stmt = con.prepareStatement("insert into Alunos(nome, sexo, estadoNasc, cidadeNasc, dataNasc, CPF, RG, RGUF, nomeMae, nomePai, telefone1, telefone2, CEP, estado, cidade, bairro, rua, numResidencia, complemento, dadosEscolares, dadosProfissionais, CPFResponsavel)\n" +
             "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, aluno.getNome());
             stmt.setString(2, aluno.getSexo());
@@ -31,20 +31,21 @@ public class AlunoDAO {
             stmt.setString(5, aluno.getDatNasc().toString());
             stmt.setString(6, aluno.getCPF());
             stmt.setString(7, aluno.getRG());
-            stmt.setString(8, aluno.getNomeMae());
-            stmt.setString(9, aluno.getNomePai());
-            stmt.setString(10, aluno.getFone1());
-            stmt.setString(11, aluno.getFone2());
-            stmt.setString(12, aluno.getCEP());
-            stmt.setString(13, aluno.getEstado());
-            stmt.setString(14, aluno.getCidade());
-            stmt.setString(15, aluno.getBairro());
-            stmt.setString(16, aluno.getRua());
-            stmt.setString(17, Integer.toString(aluno.getNumResidencia()));
-            stmt.setString(18, aluno.getComplemento());
-            stmt.setString(19, aluno.getDadosEscolaridade());
-            stmt.setString(20, aluno.getDadosProfissionais());
-            stmt.setString(21, aluno.getCPFResponsavel());
+            stmt.setString(8, aluno.getRGUF());
+            stmt.setString(9, aluno.getNomeMae());
+            stmt.setString(10, aluno.getNomePai());
+            stmt.setString(11, aluno.getFone1());
+            stmt.setString(12, aluno.getFone2());
+            stmt.setString(13, aluno.getCEP());
+            stmt.setString(14, aluno.getEstado());
+            stmt.setString(15, aluno.getCidade());
+            stmt.setString(16, aluno.getBairro());
+            stmt.setString(17, aluno.getRua());
+            stmt.setString(18, Integer.toString(aluno.getNumResidencia()));
+            stmt.setString(19, aluno.getComplemento());
+            stmt.setString(20, aluno.getDadosEscolaridade());
+            stmt.setString(21, aluno.getDadosProfissionais());
+            stmt.setString(22, aluno.getCPFResponsavel());
             
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Aluno cadastrado com sucesso!");

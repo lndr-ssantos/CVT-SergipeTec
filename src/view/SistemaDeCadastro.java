@@ -47,7 +47,7 @@ import java.util.Arrays;
  */
 public class SistemaDeCadastro extends javax.swing.JFrame {
 
-    static Boolean setNovoResponsavel;
+    static Boolean setNovoResponsavel = true;
 
     /**
      * Creates new form Tela
@@ -130,7 +130,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelCEP = new javax.swing.JLabel();
         campoCEP = new javax.swing.JTextField();
         labelRGUF = new javax.swing.JLabel();
-        campoRGUF = new javax.swing.JTextField();
+        campoRGUFAluno = new javax.swing.JTextField();
         painelDadosProfissionais = new javax.swing.JPanel();
         radioDP1 = new javax.swing.JRadioButton();
         radioDP2 = new javax.swing.JRadioButton();
@@ -152,6 +152,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         campoRGResponsavel = new javax.swing.JTextField();
         botaoProximo = new javax.swing.JButton();
         jButtonVerificaRespCPF = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        campoRGUFResponsavel = new javax.swing.JTextField();
         painelCadastroProfessor = new javax.swing.JPanel();
         labelTelefone1 = new javax.swing.JLabel();
         campoTelefone1Prof = new javax.swing.JTextField();
@@ -501,7 +503,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(labelRGUF)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campoRGUFAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(labelEstado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -558,7 +560,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(campoRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelRGUF)
-                    .addComponent(campoRGUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoRGUFAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelCPF))
                 .addGap(18, 18, 18)
                 .addComponent(labelFiliacao)
@@ -647,6 +649,11 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         labelDadosProfissionais.setText("Dados Profissionais");
 
         boxDadosEscolares.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ensino fundamental maior completo", "Ensino fundamental maior incompleto", "Ensino médio completo", "Ensino médio incompleto", "Nível superior completo", "Nível superior incompleto" }));
+        boxDadosEscolares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxDadosEscolaresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelDadosProfissionaisLayout = new javax.swing.GroupLayout(painelDadosProfissionais);
         painelDadosProfissionais.setLayout(painelDadosProfissionaisLayout);
@@ -723,6 +730,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("UF");
+
         javax.swing.GroupLayout painelDadosResponsavelLayout = new javax.swing.GroupLayout(painelDadosResponsavel);
         painelDadosResponsavel.setLayout(painelDadosResponsavelLayout);
         painelDadosResponsavelLayout.setHorizontalGroup(
@@ -735,20 +744,26 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                             .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
                                 .addComponent(labelRGResponsavel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7))
                             .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
                                 .addComponent(labelNomeResponsavel)
                                 .addGap(18, 18, 18)
                                 .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(botaoProximo)))
-                    .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(labelCPFResponsavel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jButtonVerificaRespCPF)))
-                .addContainerGap(396, Short.MAX_VALUE))
+                    .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(painelDadosResponsavelLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(campoRGUFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelDadosResponsavelLayout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(labelCPFResponsavel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(campoCPFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(26, 26, 26)
+                            .addComponent(jButtonVerificaRespCPF))))
+                .addContainerGap(435, Short.MAX_VALUE))
         );
         painelDadosResponsavelLayout.setVerticalGroup(
             painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -761,14 +776,16 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRGResponsavel)
-                    .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoRGResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(campoRGUFResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(painelDadosResponsavelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNomeResponsavel)
                     .addComponent(campoNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoProximo)
-                .addContainerGap(656, Short.MAX_VALUE))
+                .addContainerGap(659, Short.MAX_VALUE))
         );
 
         painelCadastrarAluno.addTab("D. do Responsável", painelDadosResponsavel);
@@ -1857,8 +1874,8 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         } else if (campoRG.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo RG");
         } else if (campoRG.getText().length() != 9) {
-            JOptionPane.showMessageDialog(null, "O campo RG deve conter 9 dígitos");
-        } else if (campoRGUF.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "O campo RG do aluno deve conter 9 dígitos");
+        } else if (campoRGUFAluno.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo UF");
         } else if (campoMae.getText().trim().equals("") && campoPai.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o campo com nome da mãe ou do pai");
@@ -1866,19 +1883,16 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo Telefone");
         } else if (!radioDP1.isSelected() & !radioDP2.isSelected() & !radioDP3.isSelected() & !radioDP4.isSelected() & !radioDP5.isSelected() & !radioDP7.isSelected()) {
             JOptionPane.showMessageDialog(null, "Informe os dados escolares");
-        } else if (!campoCPFResponsavel.getText().trim().equals("")) {
-            if (campoCPFResponsavel.getText().trim().length() != 11) {
-                JOptionPane.showMessageDialog(null, "O campo CPF do responsável deve conter 11 dígitos");
-            }
-        } else if (!campoRGResponsavel.getText().trim().equals("")) {
-            if (campoRGResponsavel.getText().trim().length() != 9) {
-                JOptionPane.showMessageDialog(null, "O campo RG deve conter 9 dígitos");
-            }
+        } else if (!campoCPFResponsavel.getText().trim().equals("") && campoCPFResponsavel.getText().trim().length() != 14) {      
+                JOptionPane.showMessageDialog(null, "O campo CPF do responsável deve conter 14 dígitos");
+        } else if (!campoRGResponsavel.getText().trim().equals("") && campoRGResponsavel.getText().trim().length() != 9) {
+                JOptionPane.showMessageDialog(null, "O campo RG do responsável deve conter 9 dígitos");
         } else {
             aluno.setNome(campoNome.getText());
             aluno.setDatNasc(campoDataNascimento.getText());
             aluno.setCPF(campoCPF.getText());
             aluno.setRG(campoRG.getText());
+            aluno.setRGUF(campoRGUFAluno.getText());
             aluno.setNomeMae(campoMae.getText());
             aluno.setNomePai(campoPai.getText());
             aluno.setCEP(campoCEP.getText());
@@ -1922,12 +1936,14 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
                 aluno.setSexo("O");
             }
 
-            /* labelNovoResponsavel é um texto invisível ao lado do campo de RG.
-            Serve para indicar se será feito o cadastro de um novo responsável */
+            /* setNovoResponsavel é uma variável estática. 
+            Serve para indicar se será feito o cadastro de um novo responsável.
+            O valor dessa variável é alterado em jButtonVerificaRespCPFActionPerformed */
             if (setNovoResponsavel) {
                 responsavel.setNome(campoNomeResponsavel.getText());
                 responsavel.setCPF(campoCPFResponsavel.getText());
                 responsavel.setRG(campoRGResponsavel.getText());
+                responsavel.setRGUF(campoRGUFResponsavel.getText());
 
                 responsavelDAO.save(responsavel);
                 setNovoResponsavel = false;
@@ -1944,7 +1960,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
             campoDataNascimento.setText("");
             campoCPF.setText("");
             campoRG.setText("");
-            campoRGUF.setText("");
+            campoRGUFAluno.setText("");
             campoMae.setText("");
             campoPai.setText("");
             campoTel1.setText("");
@@ -2768,29 +2784,27 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarAlunoTurmaActionPerformed
 	
     private void consultarConsultarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarConsultarCursoActionPerformed
-        /*INCOMPLETO
+        //INCOMPLETO
         
-        DefaultTableModel table = (DefaultTableModel)tableCTurma.getModel();
+       /* DefaultTableModel table = (DefaultTableModel)tableCTurma.getModel();
         Object[] row = new Object[6];
         ArrayList<Turma> turmaLista = new ArrayList<>();
         table.setRowCount(0);
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-             
-            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.0.26:3306/cvt?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC&autoReconnect=true&useSSL=false",
-                     "sergipetec", "Sergipetec@@2010");
+            ConnectionFactory connFactory = new ConnectionFactory();
+            Connection conn = connFactory.getConnection();
 
-            Statement statement = connection.createStatement();
+            Statement statement = conn.createStatement();
             String query = "SELECT * FROM Turmas \n";
             
             int[] sr = tableConsultarCursoTA.getSelectedRows();
-            int ctr = 0;
+            List() cursoList
             Curso[] curso = new Curso[sr.length];
             for(int s : sr){
                 //Object o = tableConsultarCursoTA.getModel().getValueAt(s, 0);
                 JOptionPane.showMessageDialog(null, "" + tableConsultarCursoTA.getValueAt(s, 0) + "\n" + s +"\n"+ Arrays.toString(sr));
-                curso[ctr].setCodCurso((int) tableConsultarCursoTA.getValueAt(s, 0));
+                curso[ctr].setCodCurso((int)tableConsultarCursoTA.getValueAt(s, 0));
                 ctr++;
             }
             
@@ -3014,6 +3028,10 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
+    private void boxDadosEscolaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxDadosEscolaresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxDadosEscolaresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3131,8 +3149,9 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campoRG;
     private javax.swing.JTextField campoRGProf;
     private javax.swing.JTextField campoRGResponsavel;
-    private javax.swing.JTextField campoRGUF;
+    private javax.swing.JTextField campoRGUFAluno;
     private javax.swing.JTextField campoRGUFProf;
+    private javax.swing.JTextField campoRGUFResponsavel;
     private javax.swing.JTextField campoTel1;
     private javax.swing.JTextField campoTel2;
     private javax.swing.JTextField campoTelefone1Prof;
@@ -3154,6 +3173,7 @@ public class SistemaDeCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel labelBairro;
     private javax.swing.JLabel labelBairro1;
     private javax.swing.JLabel labelCEP;

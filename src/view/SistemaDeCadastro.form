@@ -236,7 +236,7 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="labelRGUF" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="campoRGUF" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="campoRGUFAluno" min="-2" pref="37" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="labelEstado" min="-2" max="-2" attributes="0"/>
@@ -307,7 +307,7 @@
                               <Component id="campoCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoRG" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelRGUF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="campoRGUF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoRGUFAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -607,7 +607,7 @@
                     <Property name="text" type="java.lang.String" value="UF"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="campoRGUF">
+                <Component class="javax.swing.JTextField" name="campoRGUFAluno">
                 </Component>
               </SubComponents>
             </Container>
@@ -772,6 +772,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxDadosEscolaresActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -799,6 +802,8 @@
                                           <Component id="labelRGResponsavel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="campoRGResponsavel" min="-2" pref="145" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="labelNomeResponsavel" min="-2" max="-2" attributes="0"/>
@@ -808,16 +813,22 @@
                                       <Component id="botaoProximo" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                  <Component id="labelCPFResponsavel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="campoCPFResponsavel" min="-2" pref="128" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="jButtonVerificaRespCPF" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="campoRGUFResponsavel" min="-2" pref="38" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="labelCPFResponsavel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="campoCPFResponsavel" min="-2" pref="128" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="jButtonVerificaRespCPF" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="396" max="32767" attributes="0"/>
+                          <EmptySpace pref="435" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -834,6 +845,8 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelRGResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="campoRGResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoRGUFResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -842,7 +855,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="botaoProximo" max="-2" attributes="0"/>
-                          <EmptySpace pref="656" max="32767" attributes="0"/>
+                          <EmptySpace pref="659" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -884,6 +897,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerificaRespCPFActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="UF"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="campoRGUFResponsavel">
                 </Component>
               </SubComponents>
             </Container>

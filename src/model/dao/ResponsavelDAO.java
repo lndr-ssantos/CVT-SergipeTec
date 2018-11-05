@@ -24,10 +24,11 @@ public class ResponsavelDAO {
         con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("insert into Responsaveis(nome, CPF, RG)\n" + "values (?, ?, ?)");
+            stmt = con.prepareStatement("insert into Responsaveis(nome, CPF, RG, RG_UF)\n" + "values (?, ?, ?, ?)");
             stmt.setString(1, responsavel.getNome());
             stmt.setString(2, responsavel.getCPF());
             stmt.setString(3, responsavel.getRG());
+            stmt.setString(4, responsavel.getRGUF());
             if(responsavel.getCPF() != null){
                stmt.executeUpdate(); 
                JOptionPane.showMessageDialog(null, "Responsavel cadastrado com sucesso!");
